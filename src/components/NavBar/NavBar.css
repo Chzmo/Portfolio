@@ -1,0 +1,23 @@
+.navbar {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.9);
+  height: 7rem;
+  border-bottom: 1px solid black;
+}
+.navbar .navbar__logo {
+  margin-left: 6.5%;
+}
+.navbar .navbar__links {
+  display: flex;
+  align-items: center;
+  margin-right: 6.5%;
+}
+.navbar .navbar__links .navbar__links-ul {
+  display: flex;
+  gap: 2rem;
+}/*# sourceMappingURL=NavBar.css.map */

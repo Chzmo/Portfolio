@@ -1,7 +1,6 @@
 @font-face {
     font-family: 'THICCCBOI';
-    src: url('./assets/fonts/THICCCBOI-Regular.ttf') format('ttf'),
-        url('./assets/fonts/THICCCBOI-Regular.woff2') format('woff2');
+    src: url('./assets/fonts/THICCCBOI-Regular.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -9,8 +8,7 @@
 
 @font-face {
     font-family: 'THICCCBOI';
-    src: url('./assets/fonts/THICCCBOI-Bold.woff2') format('woff2'),
-        url('./assets/fonts/THICCCBOI-Bold.ttf') format('ttf');
+    src: url('./assets/fonts/THICCCBOI-Bold.woff2') format('woff2');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -18,8 +16,7 @@
 
 @font-face {
     font-family: 'THICCCBOI';
-    src: url('../fonts/THICCCBOI-Medium.woff2') format('woff2'),
-        url('../fonts/THICCCBOI-Medium.woff') format('woff');
+    src: url('./assets/fonts/THICCCBOI-Medium.woff2') format('woff2');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -27,8 +24,7 @@
 
 @font-face {
     font-family: 'THICCCBOI';
-    src: url('../fonts/THICCCBOI-ExtraBold.woff2') format('woff2'),
-        url('../fonts/THICCCBOI-ExtraBold.woff') format('woff');
+    src: url('./assets/fonts/THICCCBOI-ExtraBold.woff2') format('woff2');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -36,8 +32,7 @@
 
 @font-face {
     font-family: 'THICCCBOI Semi';
-    src: url('../fonts/THICCCBOI-Black.woff2') format('woff2'),
-        url('../fonts/THICCCBOI-Black.woff') format('woff');
+    src: url('./assets/fonts/THICCCBOI-Black.woff2') format('woff2');
     font-weight: 900;
     font-style: normal;
     font-display: swap;
@@ -45,8 +40,7 @@
 
 @font-face {
     font-family: 'THICCCBOI';
-    src: url('../fonts/THICCCBOI-SemiBold.woff2') format('woff2'),
-        url('../fonts/THICCCBOI-SemiBold.woff') format('woff');
+    src: url('./assets/fonts/THICCCBOI-SemiBold.woff2') format('woff2');
     font-weight: 600;
     font-style: normal;
     font-display: swap;
@@ -54,8 +48,7 @@
 
 @font-face {
     font-family: 'THICCCBOI';
-    src: url('../fonts/THICCCBOI-ThicccAF.woff2') format('woff2'),
-        url('../fonts/THICCCBOI-ThicccAF.woff') format('woff');
+    src: url('./assets/fonts/THICCCBOI-ThicccAF.woff2') format('woff2');
     font-weight: 900;
     font-style: normal;
     font-display: swap;
@@ -63,8 +56,7 @@
 
 @font-face {
     font-family: 'THICCCBOI';
-    src: url('../fonts/THICCCBOI-Light.woff2') format('woff2'),
-        url('../fonts/THICCCBOI-Light.woff') format('woff');
+    src: url('./assets/fonts/THICCCBOI-Light.woff2') format('woff2');
     font-weight: 300;
     font-style: normal;
     font-display: swap;
@@ -72,8 +64,7 @@
 
 @font-face {
     font-family: 'THICCCBOI';
-    src: url('../fonts/THICCCBOI-Thin.woff2') format('woff2'),
-        url('../fonts/THICCCBOI-Thin.woff') format('woff');
+    src: url('./assets/fonts/THICCCBOI-Thin.woff2') format('woff2');
     font-weight: 100;
     font-style: normal;
     font-display: swap;
@@ -92,9 +83,13 @@ a{
     padding: 0;
     margin: 0;
     font-family: THICCCBOI;
+
 }
 
 .container{
     margin: auto;
-    max-width: 80%;
+    max-width: 87%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
 }
