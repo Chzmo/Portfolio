@@ -1,0 +1,48 @@
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+.hero .hero__main {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%;
+  gap: 4rem;
+}
+.hero .hero__main .hero__main-left {
+  max-width: 270px;
+}
+.hero .hero__main .hero__main-left img {
+  max-width: 100%;
+  max-height: 100%;
+  vertical-align: middle;
+  display: inline-block;
+}
+.hero .hero__main .hero__main-right {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+  gap: 1rem;
+}
+.hero .hero__main .hero__main-right h1 {
+  font-size: 4rem;
+}
+.hero .hero__main .hero__main-right h3 {
+  font-weight: 400;
+}
+.hero .hero__main .hero__main-right p {
+  max-width: 22rem;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+.hero .hero__main .hero__main-right a {
+  background-color: #222;
+  padding: 1rem 2rem;
+  width: 6rem;
+  color: #fff;
+  display: flex;
+  gap: 1rem;
+}/*# sourceMappingURL=Hero.css.map */

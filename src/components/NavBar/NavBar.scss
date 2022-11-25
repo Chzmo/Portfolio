@@ -6,8 +6,9 @@
     align-items: center;
     position: fixed;
     background-color: rgba($color: #fff, $alpha: 0.9);
-    height: 7rem;
-    border-bottom: 1px solid black;
+    height: 5.75rem;
+    border-bottom: 1px solid #D9D9D9;
+    z-index: 999;
     .navbar__logo{
         margin-left: 6.5%;
     }
@@ -17,7 +18,11 @@
         margin-right: 6.5%;
     .navbar__links-ul{
         display: flex;
-        gap: 2rem;
-    }
+        gap: 2.5rem;
+
+        .navbar__links-ul_li-a{
+            color: #222;
+        }
+        }
     }
 }
