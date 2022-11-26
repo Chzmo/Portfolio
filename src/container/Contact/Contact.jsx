@@ -1,13 +1,14 @@
 import React from 'react'
+
 import NavBar from '../../components/NavBar/NavBar'
 
-function Portfolio() {
+function Contact() {
   return (
     <>
       <NavBar />
-      <div className='container'>Portfolio</div>
+      <div>Contact</div>
     </>
   )
 }
 
-export default Portfolio
+export default Contact

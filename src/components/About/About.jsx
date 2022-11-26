@@ -1,12 +1,12 @@
 import React from 'react'
 import { FiArrowUpRight } from 'react-icons/fi'
 import './About.css'
-
+import ABOUTIMG from './../../assets/media/ar-shakir.jpg'
 function About() {
   return (
     <div className='about'>
       <div className="about__left">
-
+        <img src={ABOUTIMG} alt="Chisomo Zaliro Moyo" />
       </div>
       <div className="about__right">
         <h3>ABOUT ME</h3>
