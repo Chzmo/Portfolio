@@ -1,5 +1,5 @@
 import React from 'react'
-import {BsArrowUpRight} from 'react-icons/bs'
+import {FiArrowUpRight} from 'react-icons/fi'
 
 import './Hero.css'
 import IMG1 from '../../assets/media/shakir.png'
@@ -18,7 +18,7 @@ function Hero() {
                     and applications. I solve all your 
                     business problems.
                 </p>
-                <a href="#Contact"><span>Lets Talk</span> <BsArrowUpRight /></a>
+                <a href="#Contact"><span>Lets Talk</span> <FiArrowUpRight /></a>
 
             </div>
         </div>

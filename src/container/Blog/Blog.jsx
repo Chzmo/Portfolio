@@ -1,8 +1,12 @@
 import React from 'react'
+import NavBar from '../../components/NavBar/NavBar'
 
 function Blog() {
   return (
-    <div>Blog</div>
+    <>
+      <NavBar />
+      <div className='container'>Blog</div>
+    </>
   )
 }
 

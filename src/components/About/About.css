@@ -1,0 +1,30 @@
+.about {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+}
+.about .about__right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.about .about__right h2 {
+  font-size: 2rem;
+  color: #313bac;
+}
+.about .about__right p {
+  max-width: 39rem;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  font-weight: 100;
+}
+.about .about__right a {
+  background-color: #222;
+  padding: 1rem 2rem;
+  width: 6rem;
+  color: #fff;
+  display: flex;
+  gap: 1rem;
+}/*# sourceMappingURL=About.css.map */
