@@ -13,6 +13,14 @@
 .navbar .navbar__logo {
   margin-left: 6.5%;
 }
+.navbar .navbar__logo a {
+  font-size: x-large;
+  letter-spacing: 2px;
+}
+.navbar .navbar__logo span {
+  font-size: x-larger;
+  letter-spacing: 2px;
+}
 .navbar .navbar__links {
   display: flex;
   align-items: center;

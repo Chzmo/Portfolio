@@ -11,6 +11,15 @@
     z-index: 999;
     .navbar__logo{
         margin-left: 6.5%;
+        a{
+            font-size: x-large;
+            letter-spacing: 2px;
+        } 
+
+        span{
+            font-size: x-larger;
+            letter-spacing: 2px;
+        }
     }
     .navbar__links{
         display: flex;

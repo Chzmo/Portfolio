@@ -3,7 +3,7 @@
     margin-right: 6.5%;
     display: flex;
     flex-direction: column;
-    padding: 5rem 0;
+    padding: 5rem 0 0;
     .footer__top{
         display: grid;
         grid-template-columns: 4fr 1fr;
@@ -62,11 +62,39 @@
         .footer__top-nav{
             align-self: flex-start;
             padding-top: .5rem;
+
+            h3{
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+                color: #ffffff;
+                font-weight: 300;
+            }
+
             nav > .footer__top-nav-list{
                 display: flex;
                 flex-direction: column;
                 gap: 1rem;
+
+                a{
+                    color: #8b8a8a;
+                    &:hover{
+                        color: #ffffff;
+                    }
+                }
             }
+        }
+    }
+
+    .footer__bottom{
+        display: flex;
+        justify-content: space-between;
+        padding: 3rem 0 1rem;
+        p{
+            color: rgb(75, 74, 74);
+        }
+
+        a{
+            color: rgb(75, 74, 74);
         }
     }
 }

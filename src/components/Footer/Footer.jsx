@@ -20,16 +20,11 @@ function Footer() {
           </div>
         </div>
         <div className="footer__top-nav">
+          <h3>Navigation</h3>
           <nav>
             <ul role="list" className="footer__top-nav-list">
               <li className="footer__top-nav-list-item">
                 <a href="#Home" className="footer__top-nav-link">Home</a>
-              </li>
-              <li className="footer__top-nav-list-item">
-                <a href="#Services" className="footer__top-nav-link">Services</a>
-              </li>
-              <li className="footer__top-nav-list-item">
-                <a href="#" className="footer__top-nav-link">About Me</a>
               </li>
               <li className="footer__top-nav-list-item">
                 <a href="#Testimonials" className="footer__top-nav-link">Testimonials</a>
@@ -38,15 +33,25 @@ function Footer() {
                 <a href="#Recent-Work" className="footer__top-nav-link">Recent Work</a>
               </li>
               <li className="footer__top-nav-list-item">
-                <a href="#FAQs" className="footer__top-nav-link">FAQs</a>
+                <a href="#" className="footer__top-nav-link">About Me</a>
+              </li>
+              <li className="footer__top-nav-list-item">
                 <a href="#Pricing" className="footer__top-nav-link">Contact</a>
+              </li>
+              <li className="footer__top-nav-list-item">
+                <a href="#FAQs" className="footer__top-nav-link">FAQs</a>
               </li>
           </ul>
           </nav>
         </div>
       </div>
       <div className="footer__bottom">
-        fsdfsdfs
+        <div className="footer__bottom-copyright">
+          <p>© 2022 CHZMO </p>
+        </div>
+        <div className="footer__bottom-backtotop">
+          <a href="/">Back to Top</a>
+        </div>
       </div>
     </div>
   )
