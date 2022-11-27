@@ -5,6 +5,7 @@ import Hero from '../../components/Hero/Hero'
 import About from '../../components/About/About'
 import Contact from '../Contact/Contact';
 import Footer from '../../components/Footer/Footer'
+import Work from '../Work/Work';
 
 import './Home.css'
 
@@ -15,6 +16,7 @@ function Home() {
       <div  className='container'>
         <Hero />
         <About />
+        <Work />
       </div>
       <section className='contact__wrapper'>
         <Contact />

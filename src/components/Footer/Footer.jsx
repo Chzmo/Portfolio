@@ -1,7 +1,6 @@
 import React from 'react'
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
-
 import './Footer.css'
 
 function Footer() {
@@ -26,23 +25,22 @@ function Footer() {
           <nav>
             <ul role="list" className="footer__top-nav-list">
               <li className="footer__top-nav-list-item">
-                <a href="/#Home" className="footer__top-nav-link">Home</a>
+                <AnchorLink href="/" className="footer__top-nav-link">Home</AnchorLink>
               </li>
               <li className="footer__top-nav-list-item">
-                <a href="#Testimonials" className="footer__top-nav-link">Testimonials</a>
+                <AnchorLink href="#Testimonials" className="footer__top-nav-link">Testimonials</AnchorLink>
               </li>
               <li className="footer__top-nav-list-item">
                 <a href="#Recent-Work" className="footer__top-nav-link">Recent Work</a>
               </li>
               <li className="footer__top-nav-list-item">
-                <a href="#" className="footer__top-nav-link">About Me</a>
+                <AnchorLink href="#About" className="footer__top-nav-link">About Me</AnchorLink>
               </li>
               <li className="footer__top-nav-list-item">
                 <a href="#Contact" className="footer__top-nav-link">Contact</a>
               </li>
               <li className="footer__top-nav-list-item">
                 <a href="#FAQs" className="footer__top-nav-link">FAQs</a>
-                <AnchorLink href='#Home'>fdgdgdgfdgdf</AnchorLink>
               </li>
           </ul>
           </nav>

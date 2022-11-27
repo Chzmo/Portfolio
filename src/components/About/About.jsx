@@ -4,7 +4,7 @@ import './About.css'
 import ABOUTIMG from './../../assets/media/ar-shakir.jpg'
 function About() {
   return (
-    <div className='about'>
+    <div id='About' className='about'>
       <div className="about__left">
         <img src={ABOUTIMG} alt="Chisomo Zaliro Moyo" />
       </div>

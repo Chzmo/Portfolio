@@ -1,0 +1,13 @@
+.work{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 7rem 0;
+    max-width: 100%;
+
+    .work__portfolio{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+}
