@@ -4,7 +4,7 @@ import './NavBar.css'
 
 function NavBar() {
   return (
-    <nav id='home' className='navbar'>
+    <nav className='navbar'>
       <div className="navbar__logo">
         <a href="/">CH<span>ZMO</span></a>
       </div>

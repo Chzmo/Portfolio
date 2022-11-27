@@ -6,8 +6,7 @@ import './Contact.css'
 function Contact() {
   return (
     <>
-      <NavBar />
-        <div className="contact">
+        <div id="Contact" className="contact">
           <div className="contact__header">
             <p>Lets meet up over a zoom call or telegram and discuss your venture and potential collaborations.</p>
           </div>

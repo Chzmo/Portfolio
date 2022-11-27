@@ -5,7 +5,7 @@ function Work() {
   
   return (
     <div>
-      <NavBar />
+      {/* <NavBar /> */}
       Work
     </div>
   )

@@ -11,7 +11,7 @@ import './Home.css'
 function Home() {
   return (
     <>
-      <NavBar />
+      {/* <NavBar /> */}
       <div  className='container'>
         <Hero />
         <About />

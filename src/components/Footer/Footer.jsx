@@ -1,4 +1,6 @@
 import React from 'react'
+import AnchorLink from "react-anchor-link-smooth-scroll";
+
 
 import './Footer.css'
 
@@ -24,7 +26,7 @@ function Footer() {
           <nav>
             <ul role="list" className="footer__top-nav-list">
               <li className="footer__top-nav-list-item">
-                <a href="#Home" className="footer__top-nav-link">Home</a>
+                <a href="/#Home" className="footer__top-nav-link">Home</a>
               </li>
               <li className="footer__top-nav-list-item">
                 <a href="#Testimonials" className="footer__top-nav-link">Testimonials</a>
@@ -36,10 +38,11 @@ function Footer() {
                 <a href="#" className="footer__top-nav-link">About Me</a>
               </li>
               <li className="footer__top-nav-list-item">
-                <a href="#Pricing" className="footer__top-nav-link">Contact</a>
+                <a href="#Contact" className="footer__top-nav-link">Contact</a>
               </li>
               <li className="footer__top-nav-list-item">
                 <a href="#FAQs" className="footer__top-nav-link">FAQs</a>
+                <AnchorLink href='#Home'>fdgdgdgfdgdf</AnchorLink>
               </li>
           </ul>
           </nav>
@@ -50,7 +53,7 @@ function Footer() {
           <p>© 2022 CHZMO </p>
         </div>
         <div className="footer__bottom-backtotop">
-          <a href="/">Back to Top</a>
+          <a href="#">Back to Top</a>
         </div>
       </div>
     </div>
