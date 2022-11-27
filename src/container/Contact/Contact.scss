@@ -32,7 +32,6 @@
     justify-content: center;
     flex-direction: column;
     gap: 2rem;
-    height: 100vh;
     width: 100%;
 
     .contact__header{
@@ -43,8 +42,10 @@
         width: 100%;
 
         p{
-            font-size: 1.5rem;
+            font-size: 2.2rem;
             margin-top: 6rem;
+            width: 80%;
+            padding: 0 5rem;
         }
     }
 
@@ -55,8 +56,9 @@
         align-items: center;
 
         form{
-            width: 100%;
-            padding: 1rem 4rem;
+            margin: auto;
+            width: 80%;
+            padding: 1rem 7rem;
             display: grid;
             gap: 1rem;
             grid-column: 2fr;
@@ -89,15 +91,16 @@
                     outline: none;
                     border: none;
                     &:focus{
-                        outline: solid black 1px;
+                        outline: solid #222 1px;
                     }
                 }
 
                 button{
-                    background-color: black;
+                    background-color: #222;
                     color: #FFFFFF;
                     width: 24rem;
                     font-weight: 300;
+                    margin: 2rem 0 5rem;
                 }
             }
         }

@@ -32,7 +32,6 @@
   justify-content: center;
   flex-direction: column;
   gap: 2rem;
-  height: 100vh;
   width: 100%;
 }
 .contact .contact__header {
@@ -43,8 +42,10 @@
   width: 100%;
 }
 .contact .contact__header p {
-  font-size: 1.5rem;
+  font-size: 2.2rem;
   margin-top: 6rem;
+  width: 80%;
+  padding: 0 5rem;
 }
 .contact .contact__form {
   display: flex;
@@ -53,8 +54,9 @@
   align-items: center;
 }
 .contact .contact__form form {
-  width: 100%;
-  padding: 1rem 4rem;
+  margin: auto;
+  width: 80%;
+  padding: 1rem 7rem;
   display: grid;
   gap: 1rem;
   grid-column: 2fr;
@@ -81,11 +83,12 @@
   border: none;
 }
 .contact .contact__form form div input:focus, .contact .contact__form form div select:focus, .contact .contact__form form div button:focus, .contact .contact__form form div textarea:focus {
-  outline: solid black 1px;
+  outline: solid #222 1px;
 }
 .contact .contact__form form div button {
-  background-color: black;
+  background-color: #222;
   color: #FFFFFF;
   width: 24rem;
   font-weight: 300;
+  margin: 2rem 0 5rem;
 }/*# sourceMappingURL=Contact.css.map */
