@@ -17,7 +17,7 @@ function Work() {
   
   return (
     <>
-      <div className='work'>
+      <div className='work '>
         {currntUrl && currntUrl === "http://localhost:5173/Work" &&(
           <div><NavBar /></div>
         )}

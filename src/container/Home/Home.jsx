@@ -18,8 +18,10 @@ function Home() {
         <Hero />
         <Mission />
         <About />
-        <Work />
       </div>
+      <section>
+        <Work />
+      </section>
       <section className='contact__wrapper'>
         <Contact />
       </section>
