@@ -17,12 +17,12 @@ function Work() {
   
   return (
     <>
-      <div className='work'>
-        {currntUrl && currntUrl === "http://localhost:5173/Work" &&(
-          <div><NavBar /></div>
-        )}
+      {currntUrl && currntUrl === "http://localhost:5173/Work" &&(
+        <div><NavBar /></div>
+      )}
+      <div className='work container'>
 
-        <div className="work__portfolio container">
+        <div className="work__portfolio ">
           <div className="work__portfolio-item">
             <a href='' className="work__portfolio-item_img">
               <img src={image2} alt="" />

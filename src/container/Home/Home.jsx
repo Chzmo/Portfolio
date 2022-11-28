@@ -14,8 +14,8 @@ function Home() {
   return (
     <>
       <NavBar />
+      <Hero />
       <div  className='container'>
-        <Hero />
         <Mission />
         <About />
         <Work />
