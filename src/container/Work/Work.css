@@ -8,5 +8,76 @@
 .work .work__portfolio {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.work .work__portfolio .work__portfolio-item {
+  display: flex;
+  flex-direction: column;
+  max-width: 580px;
+  border: solid 1px #D9D9D9;
+  gap: 0.5rem;
+}
+.work .work__portfolio .work__portfolio-item .work__portfolio-item_img {
+  padding: 1rem;
+}
+.work .work__portfolio .work__portfolio-item .work__portfolio-item_img img {
+  border: solid 1px #D9D9D9;
+  width: 100%;
+}
+.work .work__portfolio .work__portfolio-item .work__portfolio-item-heading {
+  padding: 1rem 1rem 2rem;
+}
+.work .work__portfolio .work__portfolio-item .work__portfolio-item-heading h3 {
+  font-size: 1.4rem;
+}
+.work .work__portfolio .work__portfolio-item .work__portfolio-item_links {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem 1rem;
+}
+.work .work__portfolio .work__portfolio-item .work__portfolio-item_links a {
+  font-size: 12px;
+  line-height: 10px;
+  padding: 8px 15px;
+  background: #dccafc;
+  color: #4b0ae5;
+  border-radius: 0.5rem;
+}
+.work .work__portfolio .work__portfolio-item .work__portfolio-item_details {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem 1rem;
+}
+.work .work__portfolio .work__portfolio-item .work__portfolio-item_details div {
+  border-right: #D9D9D9 solid 1px;
+  padding-right: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding-bottom: 1rem;
+}
+.work .work__portfolio .work__portfolio-item .work__portfolio-item_details div p {
+  font-size: 0.8rem;
+}
+.work .work__portfolio .work__portfolio-item .work__portfolio-item_details a {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding-bottom: 1rem;
+  padding-left: -2rem;
+}
+.work .work__portfolio .work__portfolio-item .work__portfolio-item_details a p {
+  font-size: 0.8rem;
+}
+.work .work__cta {
+  margin-top: 3rem;
+  align-self: center;
+  background-color: #222;
+  padding: 1rem 2rem;
+  width: 9rem;
+  color: #fff;
+  display: flex;
   gap: 1rem;
 }/*# sourceMappingURL=Work.css.map */

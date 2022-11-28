@@ -4,10 +4,93 @@
     justify-content: center;
     margin: 7rem 0;
     max-width: 100%;
-
+    
     .work__portfolio{
         display: grid;
         grid-template-columns: 1fr 1fr;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+
+        .work__portfolio-item{
+            display: flex;
+            flex-direction: column;
+            max-width: 580px;
+            border: solid 1px #D9D9D9;
+            gap: .5rem;
+
+            .work__portfolio-item_img{
+                padding: 1rem;
+                
+                img{
+                    border: solid 1px #D9D9D9;
+                    width: 100%;
+                }
+            }
+
+            .work__portfolio-item-heading{
+                padding: 1rem 1rem 2rem;
+                h3{
+                    font-size: 1.4rem;
+                }
+            }
+
+            .work__portfolio-item_links{
+                display: flex;
+                justify-content: space-between;
+                padding: 0 1rem 1rem;
+
+                a{
+                    font-size: 12px;
+                    line-height: 10px;
+                    padding: 8px 15px;
+                    background: #dccafc;
+                    color: #4b0ae5;
+                    border-radius: .5rem;
+                }
+            }
+
+            .work__portfolio-item_details{
+                display: flex;
+                justify-content: space-between;
+                padding: 0 1rem 1rem;
+
+                div{
+                    border-right: #D9D9D9 solid 1px;
+                    padding-right: 3rem;
+                    display: flex;
+                    flex-direction: column;
+                    gap: .6rem;
+                    padding-bottom: 1rem;
+                    
+                    p{
+                        font-size: .8rem;
+                    }
+                }
+
+                a{
+                    display: flex;
+                    flex-direction: column;
+                    gap: .6rem;
+                    padding-bottom: 1rem;
+                    padding-left: -2rem;
+
+                    p{
+                        font-size: .8rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .work__cta{
+        margin-top: 3rem;
+        align-self: center;
+        background-color: #222;
+        padding: 1rem 2rem;
+        width: 9rem;
+        color: #fff;
+        display: flex;
         gap: 1rem;
     }
 }
