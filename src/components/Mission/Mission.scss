@@ -34,4 +34,13 @@
         }
 
     }
+
+    .mission__bottom{
+        display: flex;
+        flex-direction: column;
+        gap: .6rem;
+        p{
+            font-weight: 400;
+        }
+    }
 }
