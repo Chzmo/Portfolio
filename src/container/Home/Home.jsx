@@ -1,10 +1,11 @@
 import React from 'react';
 
-import NavBar from '../../components/NavBar/NavBar';
-import Hero from '../../components/Hero/Hero'
-import About from '../../components/About/About'
-import Contact from '../Contact/Contact';
+import Mission from '../../components/Mission/Mission';
 import Footer from '../../components/Footer/Footer'
+import NavBar from '../../components/NavBar/NavBar';
+import About from '../../components/About/About'
+import Hero from '../../components/Hero/Hero'
+import Contact from '../Contact/Contact';
 import Work from '../Work/Work';
 
 import './Home.css'
@@ -15,6 +16,7 @@ function Home() {
       <NavBar />
       <div  className='container'>
         <Hero />
+        <Mission />
         <About />
         <Work />
       </div>
