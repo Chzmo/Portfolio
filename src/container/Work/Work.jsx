@@ -17,10 +17,17 @@ function Work() {
   
   return (
     <>
+<<<<<<< HEAD
       {currntUrl && currntUrl === "http://localhost:5173/Work" &&(
         <div><NavBar /></div>
       )}
       <div className='work container'>
+=======
+      <div className='work '>
+        {currntUrl && currntUrl === "http://localhost:5173/Work" &&(
+          <div><NavBar /></div>
+        )}
+>>>>>>> fb7525525bf8787936dbbc85235f9a1b6975ec81
 
         <div className="work__portfolio ">
           <div className="work__portfolio-item">

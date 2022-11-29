@@ -1,6 +1,7 @@
 .hero{
     margin: 7rem 6.7% 3rem;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     width: 100%;
@@ -53,4 +54,38 @@
             }
         }
     }
+
+    .hero__sub{
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        margin-top: 7rem;
+        width: 100%;
+        gap: 2rem;
+
+        .hero__sub-heading{
+            max-width: 23rem;
+            p{
+                width: 100%;
+            }
+        }
+
+        .hero__sub-projects, .hero__sub-years{
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            
+            p{
+                font-size: 7rem;
+                font-weight: 200;
+            }
+
+            h3{
+                font-size: 1rem;
+                font-weight: 400;
+                max-width: 5rem;
+            }
+
+        }
+    }
+    
 }

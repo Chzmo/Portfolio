@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 7rem 0;
+  margin: 7rem 3.5%;
   max-width: 100%;
 }
 .work .work__portfolio {
