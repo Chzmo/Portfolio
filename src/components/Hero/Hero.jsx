@@ -4,6 +4,29 @@ import {FiArrowUpRight} from 'react-icons/fi'
 import './Hero.css'
 import IMG1 from '../../assets/media/shakir.png'
 
+export const Intro = () =>{
+    return (
+        <>
+            <div className="hero__sub-heading">
+                <p>Currently working as a Director of Design @Redwhale, 
+                    I am passionate about making sure that systems, interfaces, 
+                    language and graphics are human-friendly, emotive, 
+                    aesthetically pleasing, clear, on-brand and 
+                    usable — with a touch of mellow smoothness.
+                </p>
+            </div>
+            <div className="hero__sub-projects">
+                <p>12</p>
+                <h3>SUCCESSFULLY COMPLETED PROJECTS</h3>
+            </div>
+            <div className="hero__sub-years">
+                <p>3+</p>
+                <h3>YEARS OF EXPERIENCE</h3>
+            </div>
+        </>
+    );
+}
+
 function Hero() {
   return (
     <div className='hero'>
@@ -22,22 +45,7 @@ function Hero() {
             </div>
         </div>
         <div className="hero__sub">
-            <div className="hero__sub-heading">
-                <p>Currently working as a Director of Design @Redwhale, 
-                    I am passionate about making sure that systems, interfaces, 
-                    language and graphics are human-friendly, emotive, 
-                    aesthetically pleasing, clear, on-brand and 
-                    usable — with a touch of mellow smoothness.
-                </p>
-            </div>
-            <div className="hero__sub-projects">
-                <p>12</p>
-                <h3>SUCCESSFULLY COMPLETED PROJECTS</h3>
-            </div>
-            <div className="hero__sub-years">
-                <p>3+</p>
-                <h3>YEARS OF EXPERIENCE</h3>
-            </div>
+            <Intro />
         </div>
     </div>
   )

@@ -4,10 +4,13 @@ import { useParams } from 'react-router-dom';
 
 import NavBar from '../../components/NavBar/NavBar';
 import Footer from '../../components/Footer/Footer';
+import {Intro} from '../../components/Hero/Hero';
 import image1 from '../../assets/media/thumbs_freebie-gpt-3-landing-page.jpg'
 import image2 from '../../assets/media/thumbs_freebie-website-landing-page-design.jpg'
 
+
 import './Work.css'
+
 function Work() {
   const [currntUrl, setCurrntUrl] = useState(null)
 
@@ -17,8 +20,33 @@ function Work() {
   
   return (
     <>
-      {currntUrl && currntUrl === "http://localhost:5173/Work" &&(
-        <div><NavBar /></div>
+      {(currntUrl && currntUrl === "http://localhost:5173/Work" || currntUrl === "http://chzmo.com/Work") &&(
+        <div >
+          <NavBar />
+          <div className='header'>
+            <div className="header__heading">
+              <h2>Portfolio</h2>
+            </div>
+            <div className="header__intro">
+              <div className="header__Intro-subheading">
+                  <p>Currently working as a Director of Design @Redwhale, 
+                      I am passionate about making sure that systems, interfaces, 
+                      language and graphics are human-friendly, emotive, 
+                      aesthetically pleasing, clear, on-brand and 
+                      usable — with a touch of mellow smoothness.
+                  </p>
+              </div>
+              <div className="header__Intro-projects">
+                  <p>12</p>
+                  <h3>SUCCESSFULLY COMPLETED PROJECTS</h3>
+              </div>
+              <div className="work__header-Intro_years">
+                  <p>3+</p>
+                  <h3>YEARS OF EXPERIENCE</h3>
+              </div>
+            </div>
+          </div>
+        </div>
       )}
       <div className='work '>
 

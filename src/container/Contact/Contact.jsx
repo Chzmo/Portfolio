@@ -1,12 +1,25 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
+import Footer from '../../components/Footer/Footer'
 import NavBar from '../../components/NavBar/NavBar'
+
 import './Contact.css'
 
 function Contact() {
+  const [currntUrl, setCurrntUrl] = useState(null)
+
+  useEffect(() => {
+    setCurrntUrl(window.location.href)
+  }, [])
+
   return (
     <>
         <div id="Contact" className="contact">
+          {
+            (currntUrl && currntUrl === "http://localhost:5173/Contact" || currntUrl === "http://chzmo.com/Contact") &&(
+              <NavBar />
+            )
+          }
           <div className="contact__header">
             <p>Lets meet up over a zoom call or telegram and discuss your venture and potential collaborations.</p>
           </div>
@@ -51,6 +64,11 @@ function Contact() {
             </form>
           </div>
         </div>
+        {(currntUrl && currntUrl === "http://localhost:5173/Contact" || currntUrl === "http://chzmo.com/Contact") && (
+          <div className="footer__wrapper">
+            <Footer />
+          </div>
+        )}
     </>
   )
 }

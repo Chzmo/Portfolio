@@ -1,3 +1,52 @@
+.header{
+    margin: 7rem 6.5% -3rem;
+
+    .header__heading{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        height: 14rem;
+        h2{
+            font-size: 7rem;
+            font-weight: 700;
+        }
+    }
+    .header__intro{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        margin-top: 3rem;
+        width: 100%;
+        gap: 2rem;
+
+        .header__Intro-subheading{
+            max-width: 23rem;
+                p{
+                    width: 100%;
+                }
+        }
+        .header__Intro-projects, .work__header-Intro_years{
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            
+            p{
+                font-size: 7rem;
+                font-weight: 200;
+            }
+
+            h3{
+                font-size: 1rem;
+                font-weight: 400;
+                max-width: 5rem;
+            }
+        }
+
+        .header__Intro-projects{
+            justify-content: flex-end;
+        }
+    }
+}
+
 .work{
     display: flex;
     flex-direction: column;
