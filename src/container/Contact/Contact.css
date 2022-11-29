@@ -80,10 +80,10 @@
 .contact .contact__form form div input, .contact .contact__form form div select, .contact .contact__form form div button, .contact .contact__form form div textarea {
   padding: 1rem;
   outline: none;
-  border: none;
+  border: solid 1px gray;
 }
 .contact .contact__form form div input:focus, .contact .contact__form form div select:focus, .contact .contact__form form div button:focus, .contact .contact__form form div textarea:focus {
-  outline: solid #222 1px;
+  border: solid #222 1px;
 }
 .contact .contact__form form div button {
   background-color: #222;

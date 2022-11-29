@@ -89,9 +89,9 @@
                 input, select, button, textarea{
                     padding: 1rem;
                     outline: none;
-                    border: none;
+                    border: solid 1px gray;
                     &:focus{
-                        outline: solid #222 1px;
+                        border: solid #222 1px;
                     }
                 }
 

@@ -20,7 +20,7 @@ function Contact() {
               <NavBar />
             )
           }
-          <div className="contact__header">
+          <div className="contact__header contact__wrapper">
             <p>Lets meet up over a zoom call or telegram and discuss your venture and potential collaborations.</p>
           </div>
           <div className="contact__form">
@@ -35,7 +35,7 @@ function Contact() {
               </div>
               <div id="div-interest"  className='contact__form-input'>
                 <label htmlFor="interest"><p>WHAT SERVICE YOU ARE INTERESTED IN<span>*</span></p></label>
-                <input type="text" />
+                <input type="text" placeholder='e.g Website, Desktop app, Android app'/>
               </div>
               <div id="div-budget"  className='contact__form-input'>
                 <label htmlFor="budget"><p>BUDGET RANGE (IN USD) <span>*</span></p></label>
