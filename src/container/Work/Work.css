@@ -41,6 +41,22 @@
 .header .header__intro .header__Intro-projects {
   justify-content: flex-end;
 }
+.header .header__categories {
+  display: flex;
+  max-width: 100%;
+  gap: 1rem;
+  overflow-x: scroll;
+  padding: 1rem 0;
+  margin: 3rem 0;
+}
+.header .header__categories button {
+  padding: 0.7rem 1rem;
+  background-color: #fff;
+  border: 1px solid #D9D9D9;
+  border-radius: 2rem;
+  color: rgb(126, 125, 125);
+  display: table-cell;
+}
 
 .work {
   display: flex;

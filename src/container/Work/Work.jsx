@@ -46,9 +46,8 @@ function Work() {
               </div>
             </div>
             <div className="header__categories">
-              <div className="header__categories-category">
                 <button>All</button>
-                <button>Landing Page</button>
+                <button>LandingPage</button>
                 <button>Shopify</button>
                 <button>Wordpress</button>
                 <button>Figma</button>
@@ -57,7 +56,6 @@ function Work() {
                 <button>Corporate</button>
                 <button>Webflow</button>
                 <button>Ecommerce</button>
-              </div>
             </div>
           </div>
         </div>
