@@ -45,6 +45,20 @@ function Work() {
                   <h3>YEARS OF EXPERIENCE</h3>
               </div>
             </div>
+            <div className="header__categories">
+              <div className="header__categories-category">
+                <button>All</button>
+                <button>Landing Page</button>
+                <button>Shopify</button>
+                <button>Wordpress</button>
+                <button>Figma</button>
+                <button>Dashboard</button>
+                <button>Startup</button>
+                <button>Corporate</button>
+                <button>Webflow</button>
+                <button>Ecommerce</button>
+              </div>
+            </div>
           </div>
         </div>
       )}
