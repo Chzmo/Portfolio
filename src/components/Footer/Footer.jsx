@@ -25,7 +25,7 @@ function Footer() {
           <nav>
             <ul role="list" className="footer__top-nav-list">
               <li className="footer__top-nav-list-item">
-                <AnchorLink href="/" className="footer__top-nav-link">Home</AnchorLink>
+                <a href="#" className="footer__top-nav-link">Home</a>
               </li>
               <li className="footer__top-nav-list-item">
                 <AnchorLink href="#Testimonials" className="footer__top-nav-link">Testimonials</AnchorLink>

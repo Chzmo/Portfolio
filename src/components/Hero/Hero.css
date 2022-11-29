@@ -49,7 +49,7 @@
 }
 .hero .hero__sub {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   margin-top: 7rem;
   width: 100%;
   gap: 2rem;
@@ -73,4 +73,7 @@
   font-size: 1rem;
   font-weight: 400;
   max-width: 5rem;
+}
+.hero .hero__sub .hero__sub-projects {
+  justify-content: flex-end;
 }/*# sourceMappingURL=Hero.css.map */

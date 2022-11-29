@@ -57,7 +57,7 @@
 
     .hero__sub{
         display: grid;
-        grid-template-columns: 2fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
         margin-top: 7rem;
         width: 100%;
         gap: 2rem;
@@ -86,6 +86,11 @@
             }
 
         }
+
+        .hero__sub-projects{
+            justify-content: flex-end;
+        }
+        
     }
     
 }
