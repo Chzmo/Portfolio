@@ -7,6 +7,7 @@ import Home from "./container/Home/Home";
 import Blog from "./container/Blog/Blog";
 import Work from "./container/Work/Work";
 import Contact from "./container/Contact/Contact";
+import Single from "./container/Single/Single";
 
 const App = () => {;
   return (
@@ -15,6 +16,7 @@ const App = () => {;
         <Routes>
           <Route path="*" element = {<Home />}/>
           <Route path="/work" element = {<Work />}/>
+          <Route path="/work/single" element= {<Single />}/>
           <Route path="/blog" element = {<Blog />}/>
           <Route path="/contact" element = {<Contact />}/>
           <Route path="/login" element = {<Login />}/>

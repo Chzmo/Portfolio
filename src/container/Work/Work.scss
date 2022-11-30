@@ -19,6 +19,9 @@
         gap: 2rem;
 
         .header__Intro-subheading{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
             max-width: 23rem;
                 p{
                     width: 100%;

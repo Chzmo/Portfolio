@@ -7,9 +7,35 @@ import Footer from '../../components/Footer/Footer';
 import {Intro} from '../../components/Hero/Hero';
 import image1 from '../../assets/media/thumbs_freebie-gpt-3-landing-page.jpg'
 import image2 from '../../assets/media/thumbs_freebie-website-landing-page-design.jpg'
+import image3 from '../../assets/media/thumbs_freelancer-landing-page-minimal-design-figma-freebie.jpg'
+import image4 from '../../assets/media/thumbs_real-estate-landing-page-ui-freebie.jpg'
 
 
 import './Work.css'
+
+const websites = [
+  {
+    image:image1,
+    url:"/work/single",
+    gitHub:"https://www.github.com/Chzmo"
+  },
+  {
+    image:image2,
+    url:"/work/single",
+    gitHub:"https://www.github.com/Chzmo"
+  },
+  {
+    image:image3,
+    url:"/work/single",
+    gitHub:"https://www.github.com/Chzmo"
+  },
+  {
+    image:image4,
+    url:"/work/single",
+    gitHub:"https://www.github.com/Chzmo"
+  }
+]
+
 
 function Work() {
   const [currntUrl, setCurrntUrl] = useState(null)
@@ -29,11 +55,7 @@ function Work() {
             </div>
             <div className="header__intro">
               <div className="header__Intro-subheading">
-                  <p>Currently working as a Director of Design @Redwhale, 
-                      I am passionate about making sure that systems, interfaces, 
-                      language and graphics are human-friendly, emotive, 
-                      aesthetically pleasing, clear, on-brand and 
-                      usable — with a touch of mellow smoothness.
+                  <p>I create and maintain modern websites and applications. I solve all your business problems.
                   </p>
               </div>
               <div className="header__Intro-projects">
@@ -63,115 +85,40 @@ function Work() {
       <div className='work '>
 
         <div className="work__portfolio container">
-          <div className="work__portfolio-item">
-            <a href='' className="work__portfolio-item_img">
-              <img src={image2} alt="" />
-            </a>
-            <div className="work__portfolio-item_links">
-              <a href="https://github.com/chzmo">GitHub</a>
-              <a href="https://github.com/chzmo">View Site</a>
-            </div>
-            <div className="work__portfolio-item-heading">
-              <h3>Landing Page Design for Bee Honey</h3>
-            </div>
-            <div className="work__portfolio-item_details">
-              <div className="work__portfolio-item_details-time">
-                  <p>COMPLETION TIME</p>          
-                  <p>10 WEEKS</p>          
+          { websites.map((website, key)=>{
+            return (
+              <div className="work__portfolio-item">
+                <a href={website.url} className="work__portfolio-item_img">
+                  <img src={website.image} alt="" />
+                </a>
+                <div className="work__portfolio-item_links">
+                  <a href={website.gitHub}>GitHub</a>
+                  <a href={website.url}>View Site</a>
+                </div>
+                <div className="work__portfolio-item-heading">
+                  <h3>Landing Page Design for Bee Honey</h3>
+                </div>
+                <div className="work__portfolio-item_details">
+                  <div className="work__portfolio-item_details-time">
+                      <p>COMPLETION TIME</p>          
+                      <p>10 WEEKS</p>          
+                  </div>
+                  <div className="work__portfolio-item_details-charges">
+                    <p>FEE  CHARGED</p>          
+                    <p>$0.00</p>  
+                  </div>
+                  <a href='' className="work__portfolio-item_details-view">
+                    <p>VIEW</p>          
+                    <p>FULL DETAILS</p>               
+                  </a>
+                </div>
               </div>
-              <div className="work__portfolio-item_details-charges">
-                <p>FEE  CHARGED</p>          
-                <p>$0.00</p>  
-              </div>
-              <a href='' className="work__portfolio-item_details-view">
-                <p>VIEW</p>          
-                <p>FULL DETAILS</p>               
-              </a>
-            </div>
-          </div>
-
-          <div className="work__portfolio-item">
-            <a href='' className="work__portfolio-item_img">
-              <img src={image1} alt="" />
-            </a>
-            <div className="work__portfolio-item_links">
-              <a href="https://github.com/chzmo">GitHub</a>
-              <a href="https://github.com/chzmo">View Site</a>
-            </div>
-            <div className="work__portfolio-item-heading">
-              <h3>Landing Page Design for Bee Honey</h3>
-            </div>
-            <div className="work__portfolio-item_details">
-              <div className="work__portfolio-item_details-time">
-                  <p>COMPLETION TIME</p>          
-                  <p>10 WEEKS</p>          
-              </div>
-              <div className="work__portfolio-item_details-charges">
-                <p>FEE  CHARGED</p>          
-                <p>$0.00</p>  
-              </div>
-              <a href='' className="work__portfolio-item_details-view">
-                <p>VIEW</p>          
-                <p>FULL DETAILS</p>               
-              </a>
-            </div>
-          </div>
-
-          <div className="work__portfolio-item">
-            <a href='' className="work__portfolio-item_img">
-              <img src={image1} alt="" />
-            </a>
-            <div className="work__portfolio-item_links">
-              <a href="https://github.com/chzmo">GitHub</a>
-              <a href="https://github.com/chzmo">View Site</a>
-            </div>
-            <div className="work__portfolio-item-heading">
-              <h3>Landing Page Design for Bee Honey</h3>
-            </div>
-            <div className="work__portfolio-item_details">
-              <div className="work__portfolio-item_details-time">
-                  <p>COMPLETION TIME</p>          
-                  <p>10 WEEKS</p>          
-              </div>
-              <div className="work__portfolio-item_details-charges">
-                <p>FEE  CHARGED</p>          
-                <p>$0.00</p>  
-              </div>
-              <a href='' className="work__portfolio-item_details-view">
-                <p>VIEW</p>          
-                <p>FULL DETAILS</p>               
-              </a>
-            </div>
-          </div>
-          
-          <div className="work__portfolio-item">
-            <a href='' className="work__portfolio-item_img">
-              <img src={image2} alt="" />
-            </a>
-            <div className="work__portfolio-item_links">
-              <a href="https://github.com/chzmo">GitHub</a>
-              <a href="https://github.com/chzmo">View Site</a>
-            </div>
-            <div className="work__portfolio-item-heading">
-              <h3>Landing Page Design for Bee Honey</h3>
-            </div>
-            <div className="work__portfolio-item_details">
-              <div className="work__portfolio-item_details-time">
-                  <p>COMPLETION TIME</p>          
-                  <p>10 WEEKS</p>          
-              </div>
-              <div className="work__portfolio-item_details-charges">
-                <p>FEE  CHARGED</p>          
-                <p>$0.00</p>  
-              </div>
-              <a href='' className="work__portfolio-item_details-view">
-                <p>VIEW</p>          
-                <p>FULL DETAILS</p>               
-              </a>
-            </div>
-          </div>
+            );
+          })}
         </div>
+        {(currntUrl !== "http://localhost:5173/Work" && currntUrl !== "http://chzmo.com/Work") &&(
           <a href="#Contact" className='work__cta'><span>View all Work</span> <FiArrowUpRight /></a>
+        )}
       </div>
       {currntUrl && currntUrl === "http://localhost:5173/Work" &&(
         <div className="footer__wrapper">
