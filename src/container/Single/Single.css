@@ -22,4 +22,31 @@
   border-radius: 2rem;
   color: rgb(126, 125, 125);
   display: table-cell;
+}
+.single .single__details {
+  display: flex;
+  gap: 2rem;
+  justify-content: flex-start;
+}
+.single .single__details .single__details-time,
+.single .single__details .single__details-charges {
+  border-right: #D9D9D9 solid 1px;
+  padding-right: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding-bottom: 1rem;
+}
+.single .single__details .single__details-time p,
+.single .single__details .single__details-charges p {
+  font-size: 0.8rem;
+}
+.single .single__details .single__details-feedback {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding-bottom: 1rem;
+}
+.single .single__details .single__details-feedback p {
+  font-size: 0.8rem;
 }/*# sourceMappingURL=Single.css.map */

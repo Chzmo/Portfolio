@@ -1,7 +1,7 @@
 import React from 'react'
 
 import NavBar from '../../components/NavBar/NavBar'
-
+import srarRating from '../../assets/media/star-rating.svg'
 import './Single.css'
 
 function Single() {
@@ -26,13 +26,9 @@ function Single() {
           <p>FEE  CHARGED</p>          
           <p>$0.00</p>  
         </div>
-        <a href='' className="single__details-view">
-          <p>VIEW</p>          
-          <p>FULL DETAILS</p>               
-        </a>
         <div className="single__details-feedback">
-          <p>VIEW</p>          
-          <img src={} alt="" srcset="" />
+          <p>Client Feedback:</p>          
+          <img src={srarRating} alt="" srcset="" />
         </div>
       </div>
     </div>
