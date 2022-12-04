@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { FiArrowUpRight } from 'react-icons/fi';
-import { useParams } from 'react-router-dom';
 
 import NavBar from '../../components/NavBar/NavBar';
 import Footer from '../../components/Footer/Footer';
-import {Intro} from '../../components/Hero/Hero';
 import image1 from '../../assets/media/thumbs_freebie-gpt-3-landing-page.jpg'
 import image2 from '../../assets/media/thumbs_freebie-website-landing-page-design.jpg'
 import image3 from '../../assets/media/thumbs_freelancer-landing-page-minimal-design-figma-freebie.jpg'
 import image4 from '../../assets/media/thumbs_real-estate-landing-page-ui-freebie.jpg'
-
 
 import './Work.css'
 
