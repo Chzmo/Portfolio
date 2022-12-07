@@ -1,8 +1,11 @@
 import React from 'react'
 
 import NavBar from '../../components/NavBar/NavBar'
+import Work from '../Work/Work'
+
 import srarRating from '../../assets/media/star-rating.svg'
 import './Single.css'
+import Footer from '../../components/Footer/Footer'
 
 function Single() {
   return (
@@ -31,6 +34,10 @@ function Single() {
           <img src={srarRating} alt="" srcSet="" />
         </div>
       </div>
+    </div>
+    < Work />
+    <div className="footer__wrapper">
+      <Footer />
     </div>
     </>
   )

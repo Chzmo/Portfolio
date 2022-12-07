@@ -100,7 +100,7 @@ function Work() {
                       <p>10 WEEKS</p>          
                   </div>
                   <div className="work__portfolio-item_details-charges">
-                    <p>FEE  CHARGED</p>          
+                    <p>FEE  CHARGED</p>
                     <p>$0.00</p>  
                   </div>
                   <a href='' className="work__portfolio-item_details-view">
