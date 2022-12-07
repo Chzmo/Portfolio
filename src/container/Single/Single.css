@@ -65,4 +65,24 @@
 }
 .single .single__main .single__main-img img {
   max-width: 100%;
+}
+.single .single__main .single__main-quote {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem 0;
+  background: hsl(234deg, 88%, 60%);
+  height: 22rem;
+  width: 100%;
+}
+.single .single__main .single__main-quote:before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-right: 50px solid transparent;
+  border-top: 50px solid #555;
+  top: 0;
+  left: 0;
 }/*# sourceMappingURL=Single.css.map */
