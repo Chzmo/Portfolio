@@ -82,7 +82,8 @@
   width: 0;
   height: 0;
   border-right: 50px solid transparent;
-  border-top: 50px solid #555;
+  border-top: 50px solid #fff;
+  position: absolute;
   top: 0;
   left: 0;
 }/*# sourceMappingURL=Single.css.map */
