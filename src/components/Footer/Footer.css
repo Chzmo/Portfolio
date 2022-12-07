@@ -24,10 +24,10 @@
 }
 .footer .footer__top .footer__top-left .footer__top-left_chzmo p {
   color: #fff;
-  rotate: -90deg;
   font-size: 4rem;
   font-weight: 200;
   letter-spacing: 5px;
+  transform: rotate(-90deg);
 }
 .footer .footer__top .footer__top-left .footer__top-left_motive {
   display: flex;
@@ -80,6 +80,7 @@
 }
 .footer .footer__bottom p {
   color: rgb(75, 74, 74);
+  font-size: small;
 }
 .footer .footer__bottom a {
   color: rgb(75, 74, 74);

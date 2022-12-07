@@ -28,7 +28,7 @@ function Single() {
         </div>
         <div className="single__details-feedback">
           <p>Client Feedback:</p>          
-          <img src={srarRating} alt="" srcset="" />
+          <img src={srarRating} alt="" srcSet="" />
         </div>
       </div>
     </div>

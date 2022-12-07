@@ -48,7 +48,7 @@ function Footer() {
       </div>
       <div className="footer__bottom">
         <div className="footer__bottom-copyright">
-          <p>© 2022 CHZMO </p>
+          <p>©2022 CHZMO. All Rights Reserved</p>
         </div>
         <div className="footer__bottom-backtotop">
           <a href="#">Back to Top</a>

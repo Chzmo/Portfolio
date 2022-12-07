@@ -33,7 +33,6 @@ const websites = [
   }
 ]
 
-
 function Work() {
   const [currntUrl, setCurrntUrl] = useState(null)
 
@@ -82,9 +81,9 @@ function Work() {
       <div className='work '>
 
         <div className="work__portfolio container">
-          { websites.map((website, key)=>{
+          { websites.map((website, key) =>{
             return (
-              <div className="work__portfolio-item">
+              <div key={key} className="work__portfolio-item">
                 <a href={website.url} className="work__portfolio-item_img">
                   <img src={website.image} alt="" />
                 </a>
@@ -114,7 +113,7 @@ function Work() {
           })}
         </div>
         {(currntUrl !== "http://localhost:5173/Work" && currntUrl !== "http://chzmo.com/Work") &&(
-          <a href="#Contact" className='work__cta'><span>View all Work</span> <FiArrowUpRight /></a>
+          <a href="/Work" className='work__cta'><span>View all Work</span> <FiArrowUpRight /></a>
         )}
       </div>
       {currntUrl && currntUrl === "http://localhost:5173/Work" &&(

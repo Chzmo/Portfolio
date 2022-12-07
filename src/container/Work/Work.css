@@ -125,10 +125,7 @@
   font-size: 0.8rem;
 }
 .work .work__portfolio .work__portfolio-item .work__portfolio-item_details a {
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-  padding-bottom: 1rem;
+  border-right: none;
   padding-left: -2rem;
 }
 .work .work__portfolio .work__portfolio-item .work__portfolio-item_details a p {
