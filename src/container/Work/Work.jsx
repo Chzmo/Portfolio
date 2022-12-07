@@ -112,7 +112,7 @@ function Work() {
             );
           })}
         </div>
-        {(currntUrl !== "http://localhost:5173/Work" && currntUrl !== "http://chzmo.com/Work") &&(
+        {(currntUrl !== "http://localhost:5173/Work" && currntUrl !== "http://chzmo.com/Work" && currntUrl !== "http://localhost:5173/work/single") &&(
           <a href="/Work" className='work__cta'><span>View all Work</span> <FiArrowUpRight /></a>
         )}
       </div>
