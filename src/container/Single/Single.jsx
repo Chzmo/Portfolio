@@ -48,7 +48,10 @@ function Single() {
             task and after checking the details, I will 
             send you email to schedule a call or chat.
           </p>
-          <a href="/contact"></a>
+          <a href="/Contact">Request a Quote</a>
+        </div>
+        <div className="single__related">
+          <h2>Related Work</h2>
         </div>
       </div>
     </div>
