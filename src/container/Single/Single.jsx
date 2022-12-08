@@ -11,6 +11,10 @@ function Single() {
   
   const [viewFull, setViewFull] = useState(false);
 
+  const fullPreview = () =>{
+    setViewFull(true)
+  }
+
   return (
     <>
     <NavBar />
@@ -38,8 +42,10 @@ function Single() {
         </div>
       </div>
       <div className="single__main">
-        <div className="single__main-img">
-          <button>Click To View Full</button>
+        <div className={ !viewFull ? "single__main-img" : "preview"}>
+          { !viewFull &&
+            <button onClick={ fullPreview }>Click To View Full Preview</button>
+          }
         </div>
         <div className="single__main-quote">
           <h2>Get Started With Chzmo</h2>

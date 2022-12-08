@@ -62,7 +62,7 @@
         flex-direction: column;
         margin-top: 5rem;
 
-        .single__main-img{
+        .single__main-img, .preview{
             box-shadow: 0 0 100px rgb(187, 185, 185);
             position: relative;
             max-width: 100%;
@@ -72,17 +72,27 @@
             background-repeat: no-repeat;
             background-size: cover;
             position: relative;
-
+            display: flex;
+            justify-content: center;
+            
             button{
+                background: #673ab7;
+                color: #fff;
                 outline: none;
                 padding: .9rem 3rem;
                 border: none;
                 border-radius: 2.5rem;
                 position: absolute;
                 bottom: 4rem;
-                left: auto;
-                right: auto;
+
+                &:hover{
+                    cursor: pointer;
+                }
             }
+        }
+
+        .preview{
+            height: 100%;
         }
 
         .single__main-quote{
