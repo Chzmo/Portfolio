@@ -6,11 +6,10 @@ import Work from '../Work/Work'
 import srarRating from '../../assets/media/star-rating.svg'
 import './Single.css'
 import Footer from '../../components/Footer/Footer'
-import IMG1 from '../../assets/media/full-preview-landing-page-design-for-shopify-products.png'
 
 function Single() {
   
-  const [viewFull, setViewFull] = useState(true);
+  const [viewFull, setViewFull] = useState(false);
 
   return (
     <>
@@ -40,7 +39,7 @@ function Single() {
       </div>
       <div className="single__main">
         <div className="single__main-img">
-          <img src={IMG1} alt="" srcSet="" />
+          <button>Click To View Full</button>
         </div>
         <div className="single__main-quote">
           <h2>Get Started With Chzmo</h2>

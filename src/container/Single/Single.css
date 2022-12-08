@@ -53,18 +53,27 @@
   display: flex;
   flex-direction: column;
   margin-top: 5rem;
-  box-shadow: 9px 9px 9px;
 }
 .single .single__main .single__main-img {
+  box-shadow: 0 0 100px rgb(187, 185, 185);
   position: relative;
   max-width: 100%;
-  display: flex;
-  flex-direction: column;
   height: 50rem;
   overflow-y: hidden;
+  background-image: url(../../assets/media/full-preview-landing-page-design-for-shopify-products.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
 }
-.single .single__main .single__main-img img {
-  max-width: 100%;
+.single .single__main .single__main-img button {
+  outline: none;
+  padding: 0.9rem 3rem;
+  border: none;
+  border-radius: 2.5rem;
+  position: absolute;
+  bottom: 4rem;
+  left: auto;
+  right: auto;
 }
 .single .single__main .single__main-quote {
   position: relative;
