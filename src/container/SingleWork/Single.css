@@ -1,9 +1,9 @@
-.single {
+.singleWork {
   margin: 7rem 6.5% 0;
   display: flex;
   flex-direction: column;
 }
-.single .single__header {
+.singleWork .singleWork__header {
   max-width: 100%;
   display: flex;
   flex-direction: column;
@@ -11,24 +11,24 @@
   padding: 1rem 0;
   margin: 3rem 0;
 }
-.single .single__header h2 {
+.singleWork .singleWork__header h2 {
   font-size: 2.5rem;
   max-width: 45rem;
 }
-.single .single__header .single__header-related button {
+.singleWork .singleWork__header .singleWork__header-related button {
   padding: 0.7rem 1rem;
   background-color: #fff;
   border: 1px solid #D9D9D9;
   border-radius: 2rem;
   color: rgb(126, 125, 125);
 }
-.single .single__details {
+.singleWork .singleWork__details {
   display: flex;
   gap: 2rem;
   justify-content: flex-start;
 }
-.single .single__details .single__details-time,
-.single .single__details .single__details-charges {
+.singleWork .singleWork__details .singleWork__details-time,
+.singleWork .singleWork__details .singleWork__details-charges {
   border-right: #D9D9D9 solid 1px;
   padding-right: 3rem;
   display: flex;
@@ -36,25 +36,25 @@
   gap: 0.6rem;
   padding-bottom: 1rem;
 }
-.single .single__details .single__details-time p,
-.single .single__details .single__details-charges p {
+.singleWork .singleWork__details .singleWork__details-time p,
+.singleWork .singleWork__details .singleWork__details-charges p {
   font-size: 0.8rem;
 }
-.single .single__details .single__details-feedback {
+.singleWork .singleWork__details .singleWork__details-feedback {
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
   padding-bottom: 1rem;
 }
-.single .single__details .single__details-feedback p {
+.singleWork .singleWork__details .singleWork__details-feedback p {
   font-size: 0.8rem;
 }
-.single .single__main {
+.singleWork .singleWork__main {
   display: flex;
   flex-direction: column;
   margin-top: 5rem;
 }
-.single .single__main .single__main-img, .single .single__main .preview {
+.singleWork .singleWork__main .singleWork__main-img, .singleWork .singleWork__main .preview {
   box-shadow: 0 0 100px rgb(187, 185, 185);
   position: relative;
   max-width: 100%;
@@ -67,7 +67,7 @@
   display: flex;
   justify-content: center;
 }
-.single .single__main .single__main-img button, .single .single__main .preview button {
+.singleWork .singleWork__main .singleWork__main-img button, .singleWork .singleWork__main .preview button {
   background: #673ab7;
   color: #fff;
   outline: none;
@@ -77,13 +77,13 @@
   position: absolute;
   bottom: 4rem;
 }
-.single .single__main .single__main-img button:hover, .single .single__main .preview button:hover {
+.singleWork .singleWork__main .singleWork__main-img button:hover, .singleWork .singleWork__main .preview button:hover {
   cursor: pointer;
 }
-.single .single__main .preview {
+.singleWork .singleWork__main .preview {
   height: 340rem;
 }
-.single .single__main .single__main-quote {
+.singleWork .singleWork__main .singleWork__main-quote {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -96,24 +96,24 @@
   gap: 1rem;
   padding: 1rem;
 }
-.single .single__main .single__main-quote h2 {
+.singleWork .singleWork__main .singleWork__main-quote h2 {
   font-weight: 700;
   font-size: 2.3rem;
   color: #fff;
   text-align: center;
 }
-.single .single__main .single__main-quote p {
+.singleWork .singleWork__main .singleWork__main-quote p {
   font-size: 1.1rem;
   color: #fff;
   max-width: 43rem;
   text-align: center;
 }
-.single .single__main .single__main-quote a {
+.singleWork .singleWork__main .singleWork__main-quote a {
   background-color: #F9896B;
   color: #fff;
   padding: 1rem 2rem;
 }
-.single .single__main .single__main-quote:before {
+.singleWork .singleWork__main .singleWork__main-quote:before {
   content: "";
   width: 0;
   height: 0;
@@ -123,7 +123,7 @@
   top: 0;
   left: 0;
 }
-.single .single__main .single__main-quote:after {
+.singleWork .singleWork__main .singleWork__main-quote:after {
   content: "";
   width: 0;
   height: 0;
@@ -133,11 +133,11 @@
   bottom: 0;
   right: 0;
 }
-.single .single__related {
+.singleWork .singleWork__related {
   margin-top: 1rem;
   margin-bottom: -4rem;
 }
-.single .single__related h2 {
+.singleWork .singleWork__related h2 {
   font-weight: 700;
   font-size: 2.3rem;
 }/*# sourceMappingURL=Single.css.map */
