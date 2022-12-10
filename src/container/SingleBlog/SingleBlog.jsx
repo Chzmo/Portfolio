@@ -35,7 +35,23 @@ function SingleBlog() {
                 <div className="socials__links-share"><a href=""><HiOutlineShare className="social-icon"/> <span>Share</span></a></div>
               </div>
             </div>
-            
+            <div className="blog">
+              <div className="blog__post">
+                <div className="blog__post-profile">
+                  <div className="blog__post-profile_img"></div>
+                  <div className="blog__post-profile_info">
+                    <h2>Chisomo Zaliro Moyo</h2>
+                    <a href="/">Author</a>
+                  </div>
+                </div>
+                <div className="blog__post-content"></div>
+              </div>
+              <div className="related">
+                <h2>Related Blog Posts</h2>
+                <div className="related__img"></div>
+                <div className="related__title"></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
