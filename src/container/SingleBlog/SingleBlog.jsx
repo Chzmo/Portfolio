@@ -69,24 +69,27 @@ function SingleBlog() {
                   </div>
                 </div>
                 <div className="blog__post-content">
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Quam iste exercitationem reiciendis molestias 
-                    aspernatur at velit dolorum vero cum minima!
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Quam iste exercitationem reiciendis molestias 
-                    aspernatur at velit dolorum vero cum minima!
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Quam iste exercitationem reiciendis molestias 
-                    aspernatur at velit dolorum vero cum minima!
-                  </p>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Quam iste exercitationem reiciendis molestias 
-                    aspernatur at velit dolorum vero cum minima!
-                  </p>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Quam iste exercitationem reiciendis molestias 
-                    aspernatur at velit dolorum vero cum minima!
-                  </p>
+                  <summary>ShareMe is a photo sharing web application, inspired by Pinterest. ShareMe 
+                    is a social media platform that allows users to save and 
+                    share images that they find online.
+                    Users can create boards to organize their pins and follow 
+                    other users to discover new content. ShareMe is often used 
+                    as a source of inspiration for various activities, including 
+                    crafting, DIY projects, fashion, home decor, and more.
+                  </summary>
+                  <div className="blog__post-content_technologies">
+                    <h3>Technologies used</h3>
+                    <div className="blog__post-content_technologies-items">
+                      <ul>
+                        <li>ReactJs</li>
+                        <li>Oauth2</li>
+                        <li>Mansonry-Layout</li>
+                        <li>Tailwind Css</li>
+                        <li>Sanity io</li>
+                        <li>jwt-decode</li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div className="related">
