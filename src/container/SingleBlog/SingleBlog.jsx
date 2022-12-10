@@ -1,12 +1,34 @@
 import React from 'react'
-import {CiHeart} from 'react-icons/ci'
+
+import {CiHeart } from 'react-icons/ci'
+import {BsFillHeartFill} from 'react-icons/bs'
 import {HiOutlineShare} from 'react-icons/hi'
 import {BiMessageRoundedDetail} from 'react-icons/bi'
 
 import NavBar from '../../components/NavBar/NavBar'
 import Footer from '../../components/Footer/Footer'
 
+import profileImg from '../../assets/media/zaliro_p.png';
+import image1 from '../../assets/media/thumbs_freebie-gpt-3-landing-page.jpg';
+import image2 from '../../assets/media/thumbs_freebie-website-landing-page-design.jpg';
+import image3 from '../../assets/media/thumbs_freelancer-landing-page-minimal-design-figma-freebie.jpg';
+import image4 from '../../assets/media/thumbs_real-estate-landing-page-ui-freebie.jpg';
 import './SingleBlog.css'
+
+const blogs = [
+  {
+    image:image1,
+  },
+  {
+    image:image2,
+  },
+  {
+    image:image3,
+  },
+  {
+    image:image4,
+  }
+]
 
 function SingleBlog() {
   return (
@@ -38,18 +60,37 @@ function SingleBlog() {
             <div className="blog">
               <div className="blog__post">
                 <div className="blog__post-profile">
-                  <div className="blog__post-profile_img"></div>
+                  <div className="blog__post-profile_img">
+                    <a href="/"><img src={profileImg} height={45} alt="Chisomo-Zaliro-Moyo" /></a>
+                  </div>
                   <div className="blog__post-profile_info">
                     <h2>Chisomo Zaliro Moyo</h2>
                     <a href="/">Author</a>
                   </div>
                 </div>
-                <div className="blog__post-content"></div>
+                <div className="blog__post-content">
+
+                </div>
               </div>
               <div className="related">
-                <h2>Related Blog Posts</h2>
-                <div className="related__img"></div>
-                <div className="related__title"></div>
+              <h2>Related Blog Posts</h2>
+                { blogs.map((blog, key) =>{
+                  return (
+                    <div className="related__post">
+                      <a key={key} className="related__post-img" href="/Blog/Single">
+                        <img src={blog.image} alt="" />
+                      </a>
+                      <div className="related__post-title"><h3>Shopify Website Design and Development for Organic Products</h3></div>
+                      <div className="related__post-socials">
+                        <div className="related__post-socials_date"><p>2 years ago</p></div>
+                        <div className="related__post-socials_links">
+                          <div className="socials__links-like"><a href="/"><BsFillHeartFill className="social-icon"/> <span> 30K</span></a></div>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })
+                }
               </div>
             </div>
           </div>
