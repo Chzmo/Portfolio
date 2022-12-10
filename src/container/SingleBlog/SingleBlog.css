@@ -103,6 +103,32 @@
   flex-direction: column;
   gap: 1rem;
 }
+.singleBlog .singleBlog__main .singleBlog__blog .blog .blog__post .blog__post-content summary {
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  line-height: 1.6rem;
+}
+.singleBlog .singleBlog__main .singleBlog__blog .blog .blog__post .blog__post-content .blog__post-content_technologies {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.singleBlog .singleBlog__main .singleBlog__blog .blog .blog__post .blog__post-content .blog__post-content_technologies h2 {
+  font-size: 1.4rem;
+  margin-top: 1rem;
+}
+.singleBlog .singleBlog__main .singleBlog__blog .blog .blog__post .blog__post-content .blog__post-content_technologies .blog__post-content_technologies-items ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.singleBlog .singleBlog__main .singleBlog__blog .blog .blog__post .blog__post-content .blog__post-content_technologies .blog__post-content_technologies-items ul li {
+  background: #dccafc;
+  color: #4b0ae5;
+  border-radius: 2rem;
+  padding: 8px 15px;
+  font-size: 12px;
+}
 .singleBlog .singleBlog__main .singleBlog__blog .blog .related {
   max-width: 100%;
   display: flex;

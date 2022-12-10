@@ -69,7 +69,7 @@ function SingleBlog() {
                   </div>
                 </div>
                 <div className="blog__post-content">
-                  <summary>ShareMe is a photo sharing web application, inspired by Pinterest. ShareMe 
+                  <summary> <strong>ShareMe</strong>  is a photo sharing web application, inspired by Pinterest. ShareMe 
                     is a social media platform that allows users to save and 
                     share images that they find online.
                     Users can create boards to organize their pins and follow 
@@ -78,15 +78,18 @@ function SingleBlog() {
                     crafting, DIY projects, fashion, home decor, and more.
                   </summary>
                   <div className="blog__post-content_technologies">
-                    <h3>Technologies used</h3>
+                    <h2>Technologies used</h2>
                     <div className="blog__post-content_technologies-items">
                       <ul>
                         <li>ReactJs</li>
-                        <li>Oauth2</li>
+                        <li>Google oauth2</li>
                         <li>Mansonry-Layout</li>
-                        <li>Tailwind Css</li>
+                        <li>Tailwind CSS</li>
                         <li>Sanity io</li>
                         <li>jwt-decode</li>
+                        <li>uuId</li>
+                        <li>Tailwind Css</li>
+                        <li>Sanity io</li>
                       </ul>
                     </div>
                   </div>
