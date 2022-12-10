@@ -1,6 +1,6 @@
 import React from 'react'
 import {CiHeart} from 'react-icons/ci'
-import {RiShareLine} from 'react-icons/ri'
+import {HiOutlineShare} from 'react-icons/hi'
 import {BiMessageRoundedDetail} from 'react-icons/bi'
 
 import NavBar from '../../components/NavBar/NavBar'
@@ -32,20 +32,10 @@ function SingleBlog() {
               <div className="socials__links">
                 <div className="socials__links-like"><a href=""><CiHeart className="social-icon"/> <span>30K</span></a></div>
                 <div className="socials__links-comment"><a href=""><BiMessageRoundedDetail className="social-icon"/> <span>390</span></a></div>
-                <div className="socials__links-share"><a href=""><RiShareLine className="social-icon"/> <span>Share</span></a></div>
+                <div className="socials__links-share"><a href=""><HiOutlineShare className="social-icon"/> <span>Share</span></a></div>
               </div>
             </div>
-            <div className="blog">
-              <div className="blog__post">
-                vccxvxcv
-              </div>
-              <div className="blog__comments"></div>
-            </div>
-            <div className="related">
-              <h2>Related Blog Posts</h2>
-              <div className="related__img"></div>
-              <div className="related__title"></div>
-            </div>
+            
           </div>
         </div>
       </div>

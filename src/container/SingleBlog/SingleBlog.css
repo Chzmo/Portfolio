@@ -74,7 +74,12 @@
 .singleBlog .singleBlog__main .singleBlog__blog .socials .socials__links a {
   display: flex;
   align-items: center;
+  color: #696868;
 }
 .singleBlog .singleBlog__main .singleBlog__blog .socials .socials__links a .social-icon {
   font-size: 25px;
+}
+.singleBlog .singleBlog__main .singleBlog__blog .blog {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
 }/*# sourceMappingURL=SingleBlog.css.map */

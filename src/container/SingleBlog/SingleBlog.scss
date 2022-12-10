@@ -80,12 +80,18 @@
                     a{
                         display: flex;
                         align-items: center;
+                        color: #696868;
 
                         .social-icon{
                             font-size: 25px;
                         }
                     }
                 }
+            }
+
+            .blog{
+                display: grid;
+                grid-template-columns: 2fr 1fr;
             }
         }
     }
