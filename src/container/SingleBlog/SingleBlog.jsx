@@ -69,7 +69,24 @@ function SingleBlog() {
                   </div>
                 </div>
                 <div className="blog__post-content">
-
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Quam iste exercitationem reiciendis molestias 
+                    aspernatur at velit dolorum vero cum minima!
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Quam iste exercitationem reiciendis molestias 
+                    aspernatur at velit dolorum vero cum minima!
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Quam iste exercitationem reiciendis molestias 
+                    aspernatur at velit dolorum vero cum minima!
+                  </p>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Quam iste exercitationem reiciendis molestias 
+                    aspernatur at velit dolorum vero cum minima!
+                  </p>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Quam iste exercitationem reiciendis molestias 
+                    aspernatur at velit dolorum vero cum minima!
+                  </p>
                 </div>
               </div>
               <div className="related">
