@@ -52,5 +52,41 @@
                 background-position: bottom;
             }
         }
+
+        .singleBlog__blog{
+            display: flex;
+            flex-direction: column;
+            max-width: 100%;
+            
+            .socials{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                padding: 2rem .4rem;
+                align-items: center;
+                border-bottom: #d6d3d3 solid 1px;
+                margin-bottom: 2rem;
+
+                .socials__date{
+                    p{
+                        color: #696868;
+                    }
+                }
+
+                .socials__links{
+                    display: flex;
+                    gap: .7rem;
+                    align-items: center;
+                    a{
+                        display: flex;
+                        align-items: center;
+
+                        .social-icon{
+                            font-size: 25px;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
