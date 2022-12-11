@@ -15,20 +15,7 @@ import image3 from '../../assets/media/thumbs_freelancer-landing-page-minimal-de
 import image4 from '../../assets/media/thumbs_real-estate-landing-page-ui-freebie.jpg';
 import './SingleBlog.css'
 
-const blogs = [
-  {
-    image:image1,
-  },
-  {
-    image:image2,
-  },
-  {
-    image:image3,
-  },
-  {
-    image:image4,
-  }
-]
+const blogs = [{ image:image1 }, { image:image2,}, {image:image3}, {image:image4}]
 
 function Comment(){
   return (
@@ -57,6 +44,25 @@ function Comment(){
     </>
   );
 }
+
+function Reply(){
+  return (
+    <>
+      <div className="comments__main">
+        <div className="comments__main-profile">
+          <img src={profileImg} alt="profile" />
+        </div>
+        <div className="form">
+          <textarea name="reply" cols="80" rows="5">
+
+          </textarea>
+          <button>Comment</button>
+        </div>
+      </div>
+    </>
+  );
+}
+
 
 function SingleBlog() {
   return (
@@ -145,6 +151,7 @@ function SingleBlog() {
                     <h2>Comments</h2>
                     <Comment />
                     <Comment />
+                    <Reply />
                   </div>
                 </div>
               </div>
