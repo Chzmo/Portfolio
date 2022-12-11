@@ -44,7 +44,7 @@
   position: relative;
   display: flex;
   justify-content: center;
-  transition: 5000ms ease-in-out;
+  transition: 7000ms ease-in-out;
 }
 .singleBlog .singleBlog__main .singleBlog__main-img:hover, .singleBlog .singleBlog__main .preview:hover {
   background-position: bottom;
@@ -129,6 +129,24 @@
   padding: 8px 15px;
   font-size: 12px;
 }
+.singleBlog .singleBlog__main .singleBlog__blog .blog .blog__post .blog__post-content .blog__post-content_overview {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.singleBlog .singleBlog__main .singleBlog__blog .blog .blog__post .blog__post-content .blog__post-content_overview h2 {
+  font-size: 1.4rem;
+  margin-top: 1rem;
+}
+.singleBlog .singleBlog__main .singleBlog__blog .blog .blog__post .blog__post-content .blog__post-content_overview div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-left: 2rem;
+}
+.singleBlog .singleBlog__main .singleBlog__blog .blog .blog__post .blog__post-content .blog__post-content_overview div p {
+  font-weight: 400;
+}
 .singleBlog .singleBlog__main .singleBlog__blog .blog .related {
   max-width: 100%;
   display: flex;
@@ -162,8 +180,78 @@
   display: flex;
   align-items: center;
   gap: 0.3rem;
+  color: #696868;
 }
 .singleBlog .singleBlog__main .singleBlog__blog .blog .related .related__post .related__post-socials .related__post-socials_links a .social-icon {
   font-size: 15px;
   color: #eb1010;
+}
+.singleBlog .comments {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.singleBlog .comments h2 {
+  font-size: 1.5rem;
+  padding: 1rem 0;
+  margin: 2rem 0 0 0;
+}
+.singleBlog .comments .comments__main {
+  display: flex;
+  gap: 1rem;
+  max-width: 100%;
+}
+.singleBlog .comments .comments__main .comments__main-profile img {
+  width: 3.5rem;
+  border-radius: 50%;
+}
+.singleBlog .comments .comments__main .comments__main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.singleBlog .comments .comments__main .comments__main-content .comments__main-content_top {
+  display: flex;
+  gap: 0.4rem;
+  flex-direction: column;
+}
+.singleBlog .comments .comments__main .comments__main-content .comments__main-content_top p {
+  color: #696868;
+}
+.singleBlog .comments .comments__main .comments__main-content .comments__main-content_message {
+  border: 1px solid #D9D9D9;
+  background-color: rgba(242, 242, 242, 0.9490196078);
+  border-radius: 5px;
+  margin-top: 0.5rem;
+}
+.singleBlog .comments .comments__main .comments__main-content .comments__main-content_message p {
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  line-height: 1.6rem;
+  padding: 1rem 1rem;
+}
+.singleBlog .comments .comments__main .comments__main-content .comments__main-content_bottom {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.singleBlog .comments .comments__main .comments__main-content .comments__main-content_bottom div {
+  display: flex;
+  align-content: center;
+}
+.singleBlog .comments .comments__main .comments__main-content .comments__main-content_bottom div button {
+  display: flex;
+  gap: 0.2rem;
+  align-items: center;
+  height: 2rem;
+  background: transparent;
+  border: none;
+}
+.singleBlog .comments .comments__main .comments__main-content .comments__main-content_bottom div button:hover {
+  cursor: pointer;
+  color: #131111;
+}
+.singleBlog .comments .comments__main .comments__main-content .comments__main-content_bottom div button .social-icon {
+  font-size: 1.6rem;
 }/*# sourceMappingURL=SingleBlog.css.map */

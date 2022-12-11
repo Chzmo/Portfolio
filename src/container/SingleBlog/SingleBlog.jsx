@@ -1,7 +1,7 @@
 import React from 'react'
 
 import {CiHeart } from 'react-icons/ci'
-import {BsFillHeartFill} from 'react-icons/bs'
+import {BsFillHeartFill, BsReplyAll} from 'react-icons/bs'
 import {HiOutlineShare} from 'react-icons/hi'
 import {BiMessageRoundedDetail} from 'react-icons/bi'
 
@@ -29,6 +29,38 @@ const blogs = [
     image:image4,
   }
 ]
+
+function Comment(){
+  return (
+    <>
+      <div className="comments__main">
+        <div className="comments__main-profile">
+          <img src={profileImg} alt="profile" />
+        </div>
+        <div className="comments__main-content">
+          <div className="comments__main-content_top">
+            <h3>Chisomo Zaliro Moyo</h3> <p>3 Months ago</p>
+          </div>
+          <div className="comments__main-content_message">
+            <p>A good web design is one that is user-friendly, visually appealing, 
+              and easy to navigate. It should provide an optimal viewing experience 
+              across a wide range of devices, including desktop computers, laptops, 
+              tablets, and smartphones. Good web design also takes into account the needs
+               and preferences of the target audience, 
+               as well as the goals and objectives of the website
+            </p>
+          </div>
+          <div className="comments__main-content_bottom">
+            <div className="content_bottom-social">
+              <button><CiHeart className="social-icon"/><span>30K</span></button>
+            </div>
+            <div className="content_bottom-reply"><button><BsReplyAll className="social-icon"/><span>Reply</span></button></div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
 
 function SingleBlog() {
   return (
@@ -88,10 +120,34 @@ function SingleBlog() {
                         <li>Sanity io</li>
                         <li>jwt-decode</li>
                         <li>uuId</li>
-                        <li>Tailwind Css</li>
+                        <li>Custom CSS</li>
                         <li>Sanity io</li>
                       </ul>
                     </div>
+                  </div>
+                  <div className="blog__post-content_overview">
+                    <h2>Overview</h2>
+                    <hr />
+                    <h3>Users should be able to</h3>
+                    <div className="blog__post-content_overview-items">
+                      <p>01. View the application on defferent devices.</p>
+                      <p>02. Login using their Email.</p>
+                      <p>03. View different pins/images posted by other users.</p>
+                      <p>04. View specific pins selected by the user with related pins if exits.</p>
+                      <p>05. comment on specific pins.</p>
+                      <p>06. Create a Pin by clicking a on a plus icon on top right.</p>
+                      <p>07. Delete a Pin by clicking a on delete icon.</p>
+                      <p>08. Delete User profile</p>
+                      <p>09. Logout from the system</p>
+                    </div>
+                    <h3>Continued development</h3>
+                    <div>
+                      <p>Still working on the design and adding more features!!!!</p>
+                    </div>
+                  </div>
+                  <div className="comments">
+                    <h2>Comments</h2>
+                    <Comment />
                   </div>
                 </div>
               </div>
@@ -99,8 +155,8 @@ function SingleBlog() {
               <h2>Related Blog Posts</h2>
                 { blogs.map((blog, key) =>{
                   return (
-                    <div className="related__post">
-                      <a key={key} className="related__post-img" href="/Blog/Single">
+                    <div key={key} className="related__post">
+                      <a  className="related__post-img" href="/Blog/Single">
                         <img src={blog.image} alt="" />
                       </a>
                       <div className="related__post-title"><h3>Shopify Website Design and Development for Organic Products</h3></div>
