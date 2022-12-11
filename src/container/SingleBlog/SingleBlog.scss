@@ -20,10 +20,10 @@
             gap: .6rem;
             button{
                 padding: .7rem 1rem;
-                background-color:#fff;
-                border: 1px solid #D9D9D9;
+                background-color: var(--white);
+                border: 1px solid var(--grey);
                 border-radius: 2rem;
-                color: rgb(126, 125, 125);
+                color: var(--grey);
             }
         }
     }
@@ -35,7 +35,7 @@
         margin-bottom: 5rem;
 
         .singleBlog__main-img, .preview{
-            box-shadow: 0 0 100px rgb(187, 185, 185);
+            box-shadow: 0 0 100px var(--grey);
             position: relative;
             max-width: 100%;
             height: 35rem;
@@ -64,12 +64,12 @@
                 justify-content: space-between;
                 padding: 2rem .4rem;
                 align-items: center;
-                border-bottom: #d6d3d3 solid 1px;
+                border-bottom: var(--light_grey) solid 1px;
                 margin-bottom: 2rem;
 
                 .socials__date{
                     p{
-                        color: #696868;
+                        color: var(--grey);
                     }
                 }
 
@@ -80,7 +80,7 @@
                     a{
                         display: flex;
                         align-items: center;
-                        color: #696868;
+                        color: var(--grey);
 
                         .social-icon{
                             font-size: 25px;
@@ -136,8 +136,8 @@
                                 gap: .5rem;
 
                                 li{
-                                    background: #dccafc;
-                                    color: #4b0ae5;
+                                    background: var(--pale_blue);
+                                    color: var(--blue);
                                     border-radius: 2rem;
                                     padding: 8px 15px;
                                     font-size: 12px;
@@ -214,7 +214,7 @@
                     }
                 }
             }
-        }
+        }  
     }
 
     .comments{

@@ -96,3 +96,13 @@ a{
     display: flex;
     flex-direction: column;
 }
+
+:root{
+    --white: #FFF;
+    --grey:  #696868;
+    --light_grey:  #d6d3d3;
+    --black: black;
+    --pale_black: #222;
+    --blue: #4b0ae5;
+    --pale_blue: #dccafc;
+}

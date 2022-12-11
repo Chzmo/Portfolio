@@ -43,11 +43,7 @@ function Comment(){
           </div>
           <div className="comments__main-content_message">
             <p>A good web design is one that is user-friendly, visually appealing, 
-              and easy to navigate. It should provide an optimal viewing experience 
-              across a wide range of devices, including desktop computers, laptops, 
-              tablets, and smartphones. Good web design also takes into account the needs
-               and preferences of the target audience, 
-               as well as the goals and objectives of the website
+              and easy to navigate. 
             </p>
           </div>
           <div className="comments__main-content_bottom">
