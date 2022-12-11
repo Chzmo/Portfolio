@@ -148,6 +148,7 @@ function SingleBlog() {
                   <div className="comments">
                     <h2>Comments</h2>
                     <Comment />
+                    <Comment />
                   </div>
                 </div>
               </div>
