@@ -15,7 +15,7 @@ function Home() {
     <>
       <NavBar />
       <Hero />
-      <div  className='container'>
+      {/* <div  className='container'>
         <Mission />
         <About />
       </div>
@@ -27,7 +27,7 @@ function Home() {
       </section>
       <section className='footer__wrapper'>
         <Footer />
-      </section>
+      </section> */}
     </>
   )
 }
