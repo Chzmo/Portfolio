@@ -27,6 +27,7 @@
   display: flex;
   align-items: center;
   margin-right: 6.5%;
+  justify-content: space-between;
 }
 .navbar .navbar__links .navbar__links-ul {
   display: flex;
@@ -34,4 +35,41 @@
 }
 .navbar .navbar__links .navbar__links-ul .navbar__links-ul_li-a {
   color: #222;
+}
+.navbar .navbar__links .button {
+  height: 1.6rem;
+  width: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  display: none;
+}
+.navbar .navbar__links .button div {
+  background-color: var(--grey);
+  width: 90%;
+  height: 2px;
+}
+
+@media screen and (max-width: 1040px) {
+  .navbar__links .navbar__links-ul {
+    display: none !important;
+  }
+  .navbar__links .button {
+    align-self: flex-end;
+    display: flex !important;
+  }
+  .mobile {
+    position: absolute !important;
+    display: flex !important;
+    flex-direction: column;
+    padding: 1rem 6.5%;
+    gap: 3rem;
+    top: 5.7rem;
+    left: 0;
+    background-color: var(--light_grey);
+    width: 100%;
+  }
 }/*# sourceMappingURL=NavBar.css.map */
