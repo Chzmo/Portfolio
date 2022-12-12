@@ -11,25 +11,28 @@ function About() {
       <div className="about__right">
         <h3>ABOUT ME</h3>
         <h2>MOYO CHISOMO</h2>
-        <p>Hello, I am Chisomo Zaliro Moyo, a User Experience Designer specializing in bespoke, 
-          artisanal, single origin, grass fed, fixed gear, and slow roasted apps & websites for 
-          clients of all sizes. 
+        <p>
+          As a web developer with over 5 years of experience, I have a deep 
+          understanding of the technologies and techniques that are essential 
+          for building successful web projects. I am proficient in a range of
+          programming languages, including HTML, CSS, JavaScript, and PHP, 
+          and I have experience with popular frameworks such as Angular, 
+          React, and Laravel. With my full-stack skill set, I can handle 
+          both the visual design and the underlying functionality of a website or 
+          application, ensuring that it looks great and performs well.
         </p>
         <p>
-          I am capable within a wide range of tactical and big-picture design tasks.
-          I am passionate about making sure that systems, interfaces, language and 
-          graphics are human-friendly, emotive, aesthetically pleasing, clear, on-brand 
-          and usable — with a touch of mellow smoothness. 
+          In addition to my technical expertise, I am also a strong communicator 
+          and problem-solver. I enjoy working with clients to understand their needs 
+          and goals, and I am committed to delivering high-quality work that meets their 
+          expectations. I am always eager to learn and try new things, and I am constantly 
+          expanding my knowledge and skills in the rapidly-evolving world of web development.
         </p>
         <p>
-          I have worked in a variety of 
-          environments, from mega-consultancies to small-ish agencies to product companies. 
-          From workflow diagrams to detailed user interface mockups, I love shaping and 
-          crafting on-screen experiences.
-‍
-          It's important to me to build long-term relationships with clients. My client’s 
-          satisfaction is what motivates me most in my work. If you need high-quality design and 
-          responsible approach to work, you're in the right place!
+          In my free time, I enjoy staying active and exploring the great outdoors. I am an avid 
+          hiker and rock climber, and I also enjoy playing guitar and experimenting with virtual 
+          reality. I believe in the power of technology to connect people and improve lives, and 
+          I am passionate about using my skills to make a positive impact in the world.
         </p>
         <a href="#Contact"><span>Lets Talk</span> <FiArrowUpRight /></a>
       </div>

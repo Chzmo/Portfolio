@@ -144,4 +144,9 @@
   .hero .hero__main .hero__main-right p {
     max-width: 100%;
   }
+  .hero .hero__sub {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    grid-template-rows: 1fr 1fr 1fr !important;
+  }
 }/*# sourceMappingURL=Hero.css.map */

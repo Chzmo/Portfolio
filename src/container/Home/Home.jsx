@@ -13,7 +13,7 @@ import './Home.css'
 function Home() {
   return (
     <>
-      {/* <NavBar /> */}
+      <NavBar />
       <Hero />
       <div  className='container'>
         <Mission />

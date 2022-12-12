@@ -177,5 +177,11 @@
                 }
             }
         }
+
+        .hero__sub{
+            display: grid !important;
+            grid-template-columns: 1fr !important;
+            grid-template-rows: 1fr 1fr 1fr!important;
+        }
     }
 }
