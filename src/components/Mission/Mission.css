@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  gap: 1rem;
 }
 .mission .mission__top {
   display: flex;
@@ -37,4 +38,63 @@
 }
 .mission .mission__bottom p {
   font-weight: 400;
+}
+
+@media screen and (max-width: 1080px) {
+  .mission__top-statement {
+    align-self: center;
+    justify-self: center;
+    position: absolute;
+    left: 13% !important;
+    right: 13% !important;
+  }
+  .mission__top-statement p {
+    font-size: 3rem;
+    font-weight: 700;
+    max-width: 50rem !important;
+  }
+}
+@media screen and (max-width: 880px) {
+  .mission__top-statement {
+    align-self: center;
+    justify-self: center;
+    position: absolute;
+    left: 7% !important;
+    right: 7% !important;
+  }
+  .mission__top-statement p {
+    font-size: 2.5rem !important;
+    font-weight: 700;
+    max-width: 50rem !important;
+    color: rgb(0, 0, 17);
+  }
+}
+@media screen and (max-width: 680px) {
+  .mission__top {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .mission__top .mission__top-statement {
+    display: flex !important;
+    justify-self: center;
+    position: relative !important;
+  }
+  .mission__top .mission__top-statement p {
+    font-size: 2rem !important;
+    font-weight: 700;
+    max-width: 29rem !important;
+    color: rgb(0, 0, 17);
+    margin-left: -2rem;
+  }
+  .mission__top .mission__top-img {
+    max-width: 100% !important;
+    max-height: 100% !important;
+  }
+  .mission__top .mission__top-img img {
+    max-width: 100%;
+  }
+  .mission__bottom {
+    margin-top: 2rem;
+  }
 }/*# sourceMappingURL=Mission.css.map */

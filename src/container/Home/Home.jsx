@@ -13,13 +13,13 @@ import './Home.css'
 function Home() {
   return (
     <>
-      <NavBar />
+      {/* <NavBar /> */}
       <Hero />
-      {/* <div  className='container'>
+      <div  className='container'>
         <Mission />
         <About />
       </div>
-      <section>
+      {/* <section>
         <Work />
       </section>
       <section className='contact__wrapper'>
