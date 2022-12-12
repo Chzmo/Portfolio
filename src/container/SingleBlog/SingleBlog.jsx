@@ -132,7 +132,7 @@ function SingleBlog() {
                     <hr />
                     <h3>Users should be able to</h3>
                     <div className="blog__post-content_overview-items">
-                      <p>01. View the application on defferent devices.</p>
+                      <p>01. View the application on different devices.</p>
                       <p>02. Login using their Email.</p>
                       <p>03. View different pins/images posted by other users.</p>
                       <p>04. View specific pins selected by the user with related pins if exits.</p>
