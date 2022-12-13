@@ -1,5 +1,4 @@
 .about {
-  height: 100vh;
   padding-top: 5rem;
   display: flex;
   align-items: center;
@@ -40,4 +39,17 @@
   color: #fff;
   display: flex;
   gap: 1rem;
+}
+
+@media screen and (max-width: 1040px) {
+  .about {
+    justify-content: flex-start;
+    margin-top: -2rem;
+  }
+  .about .about__left {
+    display: none !important;
+  }
+  .about .about__right p {
+    max-width: 100%;
+  }
 }/*# sourceMappingURL=About.css.map */
