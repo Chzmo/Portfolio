@@ -165,11 +165,16 @@
     display: grid;
     grid-template-columns: 1fr;
     max-width: 100%;
+    margin: 1rem;
   }
   .work .work__portfolio .work__portfolio-item {
     max-width: 100%;
   }
+  .work .work__portfolio .work__portfolio-item .work__portfolio-item_details {
+    display: flex;
+    flex-direction: column;
+  }
   .work .work__portfolio .work__portfolio-item .work__portfolio-item_details div, .work .work__portfolio .work__portfolio-item .work__portfolio-item_details a {
-    padding-right: 2%;
+    border-right: none;
   }
 }/*# sourceMappingURL=Work.css.map */

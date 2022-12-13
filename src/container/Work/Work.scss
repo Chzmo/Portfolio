@@ -201,11 +201,15 @@
             display: grid;
             grid-template-columns: 1fr;
             max-width: 100%;
+            margin: 1rem;
             .work__portfolio-item{
                 max-width: 100%;
                 .work__portfolio-item_details{
+                    display: flex;
+                    flex-direction: column;
+                    
                     div, a{
-                        padding-right: 2%;
+                        border-right: none;
                     }
                 }
             }
