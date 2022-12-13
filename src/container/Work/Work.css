@@ -124,6 +124,9 @@
   gap: 0.6rem;
   padding-bottom: 1rem;
 }
+.work .work__portfolio .work__portfolio-item .work__portfolio-item_details div :first-child, .work .work__portfolio .work__portfolio-item .work__portfolio-item_details a :first-child {
+  font-weight: 700;
+}
 .work .work__portfolio .work__portfolio-item .work__portfolio-item_details div p, .work .work__portfolio .work__portfolio-item .work__portfolio-item_details a p {
   font-size: 0.8rem;
 }
@@ -179,5 +182,8 @@
   }
   .work .work__portfolio .work__portfolio-item .work__portfolio-item_details div, .work .work__portfolio .work__portfolio-item .work__portfolio-item_details a {
     border-right: none;
+  }
+  .work .work__portfolio .work__portfolio-item .work__portfolio-item_details div:first-child, .work .work__portfolio .work__portfolio-item .work__portfolio-item_details a:first-child {
+    font-weight: 300;
   }
 }/*# sourceMappingURL=Work.css.map */

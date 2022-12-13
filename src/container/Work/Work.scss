@@ -136,6 +136,10 @@
                     gap: .6rem;
                     padding-bottom: 1rem;
                     // align-self: center;
+
+                    :first-child{
+                        font-weight: 700;
+                    }
                     
                     p{
                         font-size: .8rem;
@@ -213,6 +217,10 @@
                     
                     div, a{
                         border-right: none;
+
+                        &:first-child{
+                            font-weight: 300;
+                        }
                     }
                 }
             }
