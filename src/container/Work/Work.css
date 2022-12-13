@@ -187,4 +187,15 @@
   .work .work__portfolio .work__portfolio-item .work__portfolio-item_details div:first-child, .work .work__portfolio .work__portfolio-item .work__portfolio-item_details a:first-child {
     font-weight: 300;
   }
+  .work .work__cta {
+    margin-top: 3rem;
+    align-self: center;
+    background-color: #222;
+    padding: 1rem 2rem;
+    width: 100%;
+    color: #fff;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
 }/*# sourceMappingURL=Work.css.map */
