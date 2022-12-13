@@ -188,11 +188,11 @@
     font-weight: 300;
   }
   .work .work__cta {
-    margin-top: 3rem;
+    margin: 3rem 2rem;
     align-self: center;
     background-color: #222;
     padding: 1rem 2rem;
-    width: 100%;
+    width: 93%;
     color: #fff;
     display: flex;
     gap: 1rem;
