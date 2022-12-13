@@ -124,6 +124,7 @@
                 justify-content: space-between;
                 padding: 0 1rem 1rem;
 
+
                 div, a{
                     border-right: #D9D9D9 solid 1px;
                     padding-right: 3rem;
@@ -131,6 +132,7 @@
                     flex-direction: column;
                     gap: .6rem;
                     padding-bottom: 1rem;
+                    // align-self: center;
                     
                     p{
                         font-size: .8rem;
@@ -158,5 +160,37 @@
         color: #fff;
         display: flex;
         gap: 1rem;
+    }
+}
+
+@media screen and (max-width:1100px){
+    .work{
+        .work__portfolio{
+            .work__portfolio-item{
+                .work__portfolio-item_details{
+                    div, a{
+                        padding-right: 2%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:870px){
+    .work{
+        .work__portfolio{
+            display: grid;
+            grid-template-columns: 1fr;
+            max-width: 100%;
+            .work__portfolio-item{
+                max-width: 100%;
+                .work__portfolio-item_details{
+                    div, a{
+                        padding-right: 3rem;
+                    }
+                }
+            }
+        }
     }
 }

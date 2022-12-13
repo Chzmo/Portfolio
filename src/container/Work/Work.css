@@ -140,4 +140,23 @@
   color: #fff;
   display: flex;
   gap: 1rem;
+}
+
+@media screen and (max-width: 1100px) {
+  .work .work__portfolio .work__portfolio-item .work__portfolio-item_details div, .work .work__portfolio .work__portfolio-item .work__portfolio-item_details a {
+    padding-right: 2%;
+  }
+}
+@media screen and (max-width: 870px) {
+  .work .work__portfolio {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+  .work .work__portfolio .work__portfolio-item {
+    max-width: 100%;
+  }
+  .work .work__portfolio .work__portfolio-item .work__portfolio-item_details div, .work .work__portfolio .work__portfolio-item .work__portfolio-item_details a {
+    padding-right: 3rem;
+  }
 }/*# sourceMappingURL=Work.css.map */
