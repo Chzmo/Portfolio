@@ -84,4 +84,107 @@
 }
 .footer .footer__bottom a {
   color: rgb(75, 74, 74);
+}
+
+@media screen and (max-width: 1070px) {
+  body .footer .footer__top {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+@media screen and (max-width: 805px) {
+  body .footer .footer__top {
+    gap: 1rem;
+  }
+  body .footer .footer__top .footer__top-left {
+    gap: 0rem;
+  }
+}
+@media screen and (max-width: 728px) {
+  body .footer .footer__top {
+    gap: 1rem;
+  }
+  body .footer .footer__top .footer__top-left {
+    gap: 0rem;
+  }
+  body .footer .footer__top .footer__top-left .footer__top-left_chzmo {
+    display: flex;
+    width: 10px;
+    justify-content: flex-start;
+  }
+  body .footer .footer__top .footer__top-left .footer__top-left_chzmo p {
+    color: #fff;
+    font-size: 3rem;
+    font-weight: 200;
+    letter-spacing: 5px;
+    transform: rotate(-90deg);
+  }
+  body .footer .footer__top .footer__top-left .footer__top-left_motive {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  body .footer .footer__top .footer__top-left .footer__top-left_motive .footer__top-left_motive-impression {
+    display: flex;
+    justify-content: flex-start;
+    max-width: 35rem;
+  }
+  body .footer .footer__top .footer__top-left .footer__top-left_motive .footer__top-left_motive-impression p {
+    width: 100%;
+    font-size: 3rem;
+    font-weight: 600;
+    color: #fff;
+  }
+  body .footer .footer__top .footer__top-left .footer__top-left_motive .footer__top-left_motive-amazing p {
+    color: #b0ebe9;
+    font-size: 26px;
+    line-height: 48px;
+    font-weight: 500;
+  }
+}
+@media screen and (max-width: 576px) {
+  body .footer .footer__top {
+    gap: 1rem;
+  }
+  body .footer .footer__top .footer__top-left {
+    gap: 0rem;
+    max-width: 90%;
+    margin: auto;
+  }
+  body .footer .footer__top .footer__top-left .footer__top-left_chzmo {
+    display: flex;
+    width: 5px;
+    justify-content: flex-start;
+  }
+  body .footer .footer__top .footer__top-left .footer__top-left_chzmo p {
+    color: #fff;
+    font-size: 3rem;
+    font-weight: 200;
+    letter-spacing: 5px;
+    transform: rotate(-90deg);
+  }
+  body .footer .footer__top .footer__top-left .footer__top-left_motive {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  body .footer .footer__top .footer__top-left .footer__top-left_motive .footer__top-left_motive-impression {
+    display: flex;
+    justify-content: flex-start;
+    max-width: 35rem;
+  }
+  body .footer .footer__top .footer__top-left .footer__top-left_motive .footer__top-left_motive-impression p {
+    width: 100%;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fff;
+  }
+  body .footer .footer__top .footer__top-left .footer__top-left_motive .footer__top-left_motive-amazing p {
+    color: #b0ebe9;
+    font-size: 26px;
+    line-height: 48px;
+    font-weight: 500;
+  }
 }/*# sourceMappingURL=Footer.css.map */

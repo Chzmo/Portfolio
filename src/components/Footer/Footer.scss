@@ -100,3 +100,138 @@
         }
     }
 }
+
+@media screen and (max-width:1070px) {
+    body{
+        .footer{
+            .footer__top{
+                display: grid;
+                grid-template-columns: 1fr;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:805px) {
+    body{
+        .footer{
+            .footer__top{
+                gap: 1rem;
+                .footer__top-left{
+                    gap: 0rem;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:728px) {
+    body{
+        .footer{
+            .footer__top{
+                gap: 1rem;
+                .footer__top-left{
+                    gap: 0rem;
+                    .footer__top-left_chzmo{
+                        display: flex;
+                        width: 10px;
+                        justify-content: flex-start;
+                        p{  
+                            color: #fff;
+                            font-size: 3rem;
+                            font-weight: 200;
+                            letter-spacing: 5px;
+                            transform: rotate(-90deg);
+                        }
+                    }
+
+                    .footer__top-left_motive{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-start;
+                        align-items: flex-start;
+        
+                        .footer__top-left_motive-impression{
+                            display: flex;
+                            justify-content: flex-start;
+                            max-width: 35rem;
+                            p{  
+                                width: 100%;
+                                font-size:3rem;
+                                font-weight: 600;
+                                color: #fff;
+                            }
+        
+                        }
+        
+                        .footer__top-left_motive-amazing{
+                            p{
+                                color: #b0ebe9;
+                                font-size: 26px;
+                                line-height: 48px;
+                                font-weight: 500;
+                            }
+                        }
+                    } 
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width:576px) {
+    body{
+        .footer{
+            .footer__top{
+                gap: 1rem;
+                .footer__top-left{
+                    gap: 0rem;
+                    max-width: 90%;
+                    margin: auto;
+                    .footer__top-left_chzmo{
+                        display: flex;
+                        width: 5px;
+                        justify-content: flex-start;
+                        p{  
+                            color: #fff;
+                            font-size: 3rem;
+                            font-weight: 200;
+                            letter-spacing: 5px;
+                            transform: rotate(-90deg);
+                        }
+                    }
+
+                    .footer__top-left_motive{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-start;
+                        align-items: flex-start;
+        
+                        .footer__top-left_motive-impression{
+                            display: flex;
+                            justify-content: flex-start;
+                            max-width: 35rem;
+                            p{  
+                                width: 100%;
+                                font-size:2rem;
+                                font-weight: 600;
+                                color: #fff;
+                            }
+        
+                        }
+        
+                        .footer__top-left_motive-amazing{
+                            p{
+                                color: #b0ebe9;
+                                font-size: 26px;
+                                line-height: 48px;
+                                font-weight: 500;
+                            }
+                        }
+                    } 
+                }
+            }
+        }
+    }
+}

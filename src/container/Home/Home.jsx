@@ -25,9 +25,9 @@ function Home() {
       <section className='contact__wrapper'>
         <Contact />
       </section>
-      {/* <section className='footer__wrapper'>
+      <section className='footer__wrapper'>
         <Footer />
-      </section> */}
+      </section>
     </>
   )
 }
