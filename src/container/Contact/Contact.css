@@ -113,6 +113,7 @@
   .contact .contact__form form {
     width: 100%;
     padding: 1rem 3rem;
-    grid-template-areas: "name name" "email email" "interest interest" "budget budget" "message message" "select select" "submit submit";
+    grid-column: 1fr;
+    grid-template-areas: "name" "email" "interest" "budget" "message" "select" "submit";
   }
 }/*# sourceMappingURL=Contact.css.map */

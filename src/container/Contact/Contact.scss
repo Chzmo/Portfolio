@@ -138,14 +138,15 @@
             form{
                 width: 100% ;
                 padding: 1rem 3rem;
+                grid-column: 1fr;;
                 grid-template-areas: 
-                    "name name"
-                    "email email"
-                    "interest interest"
-                    "budget budget"
-                    "message message"
-                    "select select"
-                    "submit submit"
+                    "name"
+                    "email"
+                    "interest"
+                    "budget"
+                    "message"
+                    "select"
+                    "submit"
                 ;
             }
         }
