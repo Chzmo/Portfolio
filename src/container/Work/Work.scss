@@ -185,6 +185,62 @@
 }
 
 @media screen and (max-width:870px){
+
+    .header{
+        margin: 7rem 6.5% -3rem;
+    
+        .header__heading{
+            height: 3rem; //hgh
+            h2{
+                font-size: 5rem; //jkjk
+                font-weight: 700;
+            }
+        }
+        .header__intro{
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            margin-top: 1rem;
+    
+            .header__Intro-subheading{
+                grid-column: span 2;
+                    p{
+                        width: 100%;
+                    }
+            }
+            .header__Intro-projects, .work__header-Intro_years{
+                p{
+                    font-size: 4rem;//gh
+                }
+    
+                h3{
+                    font-size: 1rem;
+                }
+            }
+    
+            .header__Intro-projects{
+                justify-content: flex-start;
+            }
+        }
+        .header__categories{
+            display: flex;
+            max-width: 100%;
+            gap: 1rem;
+            overflow-x: scroll;
+            padding: 1rem 0;
+            margin: 3rem 0;
+    
+            button{
+                padding: .7rem 1rem;
+                background-color:#fff;
+                border: 1px solid #D9D9D9;
+                border-radius: 2rem;
+                color: rgb(126, 125, 125);
+                display: table-cell;
+            }
+        }
+    }
+
+
     .work{
         .work__portfolio{
             display: grid;
@@ -204,6 +260,33 @@
 }
 
 @media screen and (max-width:560px){
+    
+
+
+    .header{
+        margin: 7rem 6.5% -3rem;
+    
+        .header__heading{
+            height: 3rem; //hgh
+            h2{
+                font-size: 5rem; //jkjk
+                font-weight: 700;
+            }
+        }
+        .header__intro{
+            display: flex;
+            flex-direction: column;
+            margin-top: 1rem;
+    
+            .header__Intro-subheading{
+                margin-top: 1rem;
+            }
+            .header__Intro-projects, .work__header-Intro_years{
+                margin-top: -1rem;
+            }
+        }
+    }
+
     .work{
         .work__portfolio{
             display: flex;
