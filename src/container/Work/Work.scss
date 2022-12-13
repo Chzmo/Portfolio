@@ -194,3 +194,21 @@
         }
     }
 }
+
+@media screen and (max-width:560px){
+    .work{
+        .work__portfolio{
+            display: grid;
+            grid-template-columns: 1fr;
+            max-width: 100%;
+            .work__portfolio-item{
+                max-width: 100%;
+                .work__portfolio-item_details{
+                    div, a{
+                        padding-right: 2%;
+                    }
+                }
+            }
+        }
+    }
+}
