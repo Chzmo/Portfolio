@@ -141,8 +141,13 @@
   .hero .hero__main .hero__main-right h1 {
     font-size: 2rem;
   }
-  .hero .hero__main .hero__main-right p {
-    max-width: 100%;
+  .hero .hero__main .hero__main-right p, .hero .hero__main .hero__main-right a {
+    max-width: 100% !important;
+  }
+  .hero .hero__main .hero__main-right a {
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
   .hero .hero__sub {
     display: flex !important;

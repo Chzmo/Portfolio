@@ -172,8 +172,14 @@
                     font-size: 2rem;
                 }
 
-                p{
-                    max-width: 100%;
+                p, a{
+                    max-width: 100% !important;
+                }
+
+                a{
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
                 }
             }
         }
