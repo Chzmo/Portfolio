@@ -2,7 +2,7 @@ import React from 'react'
 import {FiArrowUpRight} from 'react-icons/fi'
 
 import './Hero.css'
-import IMG1 from '../../assets/media/shakir.png'
+import IMG1 from '../../assets/media/chisomo.jpg'
 
 export const Intro = () =>{
     return (
