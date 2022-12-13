@@ -148,6 +148,17 @@
                     "select"
                     "submit"
                 ;
+                div{
+                    input, select, button, textarea{
+                        padding: 1rem;
+                        outline: none;
+                        width: 100%;
+                        border: solid 1px rgb(233, 233, 233);
+                        &:focus{
+                            border: solid #222 1px;
+                        }
+                    }
+                }
             }
         }
     }
