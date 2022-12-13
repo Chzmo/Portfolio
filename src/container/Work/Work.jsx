@@ -117,7 +117,7 @@ function Work() {
           <a href="/Work" className='work__cta'><span>View all Work</span> <FiArrowUpRight /></a>
         )}
       </div>
-      {currntUrl && currntUrl === "http://localhost:5173/Work" || currntUrl === "https://inquisitive-croissant-516f39.netlify.app/Work" &&(
+      {(currntUrl === "http://localhost:5173/Work") | (currntUrl === "https://inquisitive-croissant-516f39.netlify.app/Work") &&(
         <div className="footer__wrapper">
           <Footer />
         </div>
