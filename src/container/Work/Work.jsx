@@ -42,7 +42,7 @@ function Work() {
   
   return (
     <>
-      {(currntUrl && currntUrl === "http://localhost:5173/Work" || currntUrl === "http://chzmo.com/Work") &&(
+      {(currntUrl && currntUrl === "http://localhost:5173/Work" || currntUrl === "https://inquisitive-croissant-516f39.netlify.app/Work") &&(
         <div >
           <NavBar />
           <div className='header'>
@@ -113,11 +113,11 @@ function Work() {
             );
           })}
         </div>
-        {(currntUrl !== "http://localhost:5173/Work" && currntUrl !== "http://chzmo.com/Work" && currntUrl !== "http://localhost:5173/work/single") &&(
+        {(currntUrl !== "http://localhost:5173/Work" && currntUrl !== "https://inquisitive-croissant-516f39.netlify.app/Work" && currntUrl !== "http://localhost:5173/work/single") &&(
           <a href="/Work" className='work__cta'><span>View all Work</span> <FiArrowUpRight /></a>
         )}
       </div>
-      {currntUrl && currntUrl === "http://localhost:5173/Work" &&(
+      {currntUrl && currntUrl === "http://localhost:5173/Work" || currntUrl === "https://inquisitive-croissant-516f39.netlify.app/Work" &&(
         <div className="footer__wrapper">
           <Footer />
         </div>

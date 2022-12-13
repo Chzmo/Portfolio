@@ -56,7 +56,7 @@
 .contact .contact__form form {
   margin: auto;
   width: 80%;
-  padding: 1rem 7rem;
+  padding: 1rem 3rem;
   display: grid;
   gap: 1rem;
   grid-column: 2fr;
@@ -91,4 +91,25 @@
   width: 24rem;
   font-weight: 300;
   margin: 2rem 0 5rem;
+}
+
+@media screen and (max-width: 1040px) {
+  .contact .contact__header p {
+    width: 95%;
+  }
+  .contact .contact__form form {
+    width: 95%;
+    padding: 1rem 3rem;
+  }
+}
+@media screen and (max-width: 800px) {
+  .contact .contact__header p {
+    width: 100%;
+    padding: 0 2rem;
+  }
+  .contact .contact__form form {
+    width: 100%;
+    padding: 1rem 3rem;
+    grid-template-areas: "name name" "email email" "interest interest" "budget budget" "message message" "select select" "submit submit";
+  }
 }/*# sourceMappingURL=Contact.css.map */

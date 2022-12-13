@@ -11,7 +11,7 @@ function Contact() {
   useEffect(() => {
     setCurrntUrl(window.location.href)
   }, [])
-
+  currntUrl
   return (
     <>
         <div id="Contact" className="contact">
