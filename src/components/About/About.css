@@ -21,6 +21,7 @@
   max-height: 700px;
   justify-content: baseline;
   align-items: flex-start;
+  max-height: 100%;
 }
 .about .about__right h2 {
   font-size: 2rem;

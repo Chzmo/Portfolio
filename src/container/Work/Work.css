@@ -65,7 +65,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 7rem 3.5%;
+  margin: 3rem 3.5%;
   max-width: 100%;
 }
 .work .work__portfolio {
@@ -161,6 +161,7 @@
   }
   .work .work__portfolio .work__portfolio-item {
     max-width: 100%;
+    max-height: 100%;
   }
   .work .work__portfolio .work__portfolio-item .work__portfolio-item_details div, .work .work__portfolio .work__portfolio-item .work__portfolio-item_details a {
     padding-right: 3rem;
@@ -168,8 +169,8 @@
 }
 @media screen and (max-width: 560px) {
   .work .work__portfolio {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     max-width: 100%;
     margin: 1rem;
   }

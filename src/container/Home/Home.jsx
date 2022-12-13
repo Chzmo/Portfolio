@@ -19,7 +19,6 @@ function Home() {
         <Mission />
         <About />
       </div>
-      <br />
       <section>
         <Work />
       </section>
