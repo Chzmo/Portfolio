@@ -19,10 +19,10 @@ function Home() {
         <Mission />
         <About />
       </div>
-      {/* <section>
+      <section>
         <Work />
       </section>
-      <section className='contact__wrapper'>
+      {/* <section className='contact__wrapper'>
         <Contact />
       </section>
       <section className='footer__wrapper'>

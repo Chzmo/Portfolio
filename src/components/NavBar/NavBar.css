@@ -66,10 +66,10 @@
     display: flex !important;
     flex-direction: column;
     padding: 1rem 6.5%;
-    gap: 3rem;
+    gap: 2rem;
     top: 5.7rem;
     left: 0;
-    background-color: rgba(172, 168, 168, 0.9);
+    background-color: rgba(209, 207, 207, 0.9);
     width: 100%;
   }
 }/*# sourceMappingURL=NavBar.css.map */
