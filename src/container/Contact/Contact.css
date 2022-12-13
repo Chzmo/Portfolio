@@ -94,6 +94,9 @@
 }
 
 @media screen and (max-width: 1040px) {
+  .contact .contact__header {
+    padding: 1rem 0;
+  }
   .contact .contact__header p {
     width: 95%;
   }
