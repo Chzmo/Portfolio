@@ -1,5 +1,5 @@
 .about {
-  padding-top: 5rem;
+  padding-top: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -44,7 +44,7 @@
 @media screen and (max-width: 1040px) {
   .about {
     justify-content: flex-start;
-    margin-top: -2rem;
+    margin-top: 1rem;
   }
   .about .about__left {
     display: none !important;

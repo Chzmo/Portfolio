@@ -34,7 +34,7 @@ function About() {
           reality. I believe in the power of technology to connect people and improve lives, and 
           I am passionate about using my skills to make a positive impact in the world.
         </p>
-        <a href="#Contact"><span>Lets Talk</span> <FiArrowUpRight /></a>
+        {/* <a href="#Contact"><span>Lets Talk</span> <FiArrowUpRight /></a> */}
       </div>
     </div>
   )
