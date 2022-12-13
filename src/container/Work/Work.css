@@ -90,7 +90,10 @@
   width: 100%;
 }
 .work .work__portfolio .work__portfolio-item .work__portfolio-item-heading {
-  padding: 1rem 1rem 2rem;
+  padding: 1rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
 }
 .work .work__portfolio .work__portfolio-item .work__portfolio-item-heading h3 {
   font-size: 1.4rem;

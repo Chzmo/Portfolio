@@ -93,6 +93,7 @@ function Work() {
                 </div>
                 <div className="work__portfolio-item-heading">
                   <h3>Landing Page Design for Bee Honey</h3>
+                  <hr paddingTop={2} />
                 </div>
                 <div className="work__portfolio-item_details">
                   <div className="work__portfolio-item_details-time">
