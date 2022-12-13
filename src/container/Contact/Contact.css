@@ -102,7 +102,7 @@
   }
   .contact .contact__form form {
     width: 95%;
-    padding: 1rem 3rem;
+    padding: 1rem 4rem;
   }
 }
 @media screen and (max-width: 800px) {
@@ -112,7 +112,7 @@
   }
   .contact .contact__form form {
     width: 100%;
-    padding: 1rem 3rem;
+    padding: 1rem 1.5rem;
     grid-column: 1fr;
     grid-template-areas: "name" "email" "interest" "budget" "message" "select" "submit";
   }
