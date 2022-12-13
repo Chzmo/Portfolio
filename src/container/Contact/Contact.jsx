@@ -11,12 +11,12 @@ function Contact() {
   useEffect(() => {
     setCurrntUrl(window.location.href)
   }, [])
-  currntUrl
+
   return (
     <>
         <div id="Contact" className="contact">
           {
-            (currntUrl && currntUrl === "http://localhost:5173/Contact" || currntUrl === "http://chzmo.com/Contact") &&(
+            (currntUrl && currntUrl === "http://localhost:5173/Contact" || currntUrl === "https://inquisitive-croissant-516f39.netlify.app/Contact") &&(
               <NavBar />
             )
           }
@@ -64,7 +64,7 @@ function Contact() {
             </form>
           </div>
         </div>
-        {(currntUrl && currntUrl === "http://localhost:5173/Contact" || currntUrl === "http://chzmo.com/Contact") && (
+        {(currntUrl && currntUrl === "http://localhost:5173/Contact" || currntUrl === "https://inquisitive-croissant-516f39.netlify.app/Contact") && (
           <div className="footer__wrapper">
             <Footer />
           </div>
