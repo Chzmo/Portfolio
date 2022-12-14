@@ -54,7 +54,7 @@ function Reply(){
           <img src={profileImg} alt="profile" />
         </div>
         <div className="form">
-          <textarea name="reply" cols="80" rows="5">
+          <textarea name="reply" cols="80"rows="1" >
 
           </textarea>
           <button>Comment</button>
