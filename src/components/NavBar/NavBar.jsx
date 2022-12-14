@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 
 import './NavBar.css'
 
@@ -15,15 +16,15 @@ function NavBar() {
   return (
     <nav className='navbar'>
       <div className="navbar__logo">
-        <a href="/">CH<span>ZMO</span></a>
+        <Link to="/">CH<span>ZMO</span></Link>
       </div>
       <div className="navbar__links">
         <ul className={mobileNav? "mobile": "navbar__links-ul"}>
-          <li className="navbar__links-ul_li"><a className="navbar__links-ul_li-a"href="/#Testimonials">Testimonials</a></li>
-          <li className="navbar__links-ul_li"><a className="navbar__links-ul_li-a"href="/Work">Latest Work</a></li>
-          <li className="navbar__links-ul_li"><a className="navbar__links-ul_li-a"href="/Blog">Blog</a></li>
-          <li className="navbar__links-ul_li"><a className="navbar__links-ul_li-a"href="/Contact">Contact</a></li>
-          <li className="navbar__links-ul_li"><a className="navbar__links-ul_li-a"href="/Login">Login</a></li>
+          <li className="navbar__links-ul_li"><Link className="navbar__links-ul_li-a" to="/#Testimonials">Testimonials</Link></li>
+          <li className="navbar__links-ul_li"><Link className="navbar__links-ul_li-a" to="/Work">Latest Work</Link></li>
+          <li className="navbar__links-ul_li"><Link className="navbar__links-ul_li-a" to="/Blog">Blog</Link></li>
+          <li className="navbar__links-ul_li"><Link className="navbar__links-ul_li-a" to="/Contact">Contact</Link></li>
+          <li className="navbar__links-ul_li"><Link className="navbar__links-ul_li-a" to="/Login">Login</Link></li>
         </ul>
         <div onClick={responsiveNav} className='button'>
           <div></div><div></div><div></div>

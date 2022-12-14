@@ -10,7 +10,7 @@ import Contact from "./container/Contact/Contact";
 import SingleWork from "./container/SingleWork/SingleWork";
 import SingleBlog from "./container/SingleBlog/SingleBlog";
 
-const App = () => {;
+const App = () => {
   return (
     <>
       <BrowserRouter>
