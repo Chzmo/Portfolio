@@ -309,6 +309,9 @@
   .blog .related h2 {
     grid-column: span 1;
   }
+  .comments .comments__main {
+    gap: 0.5rem !important;
+  }
   .comments .comments__main .comments__main-profile img {
     width: 2rem !important;
     border-radius: 50%;
