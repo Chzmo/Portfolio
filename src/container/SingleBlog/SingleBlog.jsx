@@ -73,7 +73,7 @@ function SingleBlog() {
         <div className="singleBlog__header">
           <h2>Shopify Website Design and Development for Organic Products</h2>
           <div className="singleBlog__header-related">
-            <button>Landing Page</button>
+            <button>LandingPage</button>
             <button>Shopify</button>
             <button>Wordpress</button>
           </div>
