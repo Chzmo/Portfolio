@@ -331,3 +331,40 @@
 }
 
 // Medim devices
+@media screen and (max-width:1040px){
+    .blog{
+        display: flex !important;
+        flex-direction: column !important;
+        .related{
+            display: grid !important;
+            grid-template-columns: 1fr 1fr;
+            //grid-template-columns: 1fr 1fr;
+            // grid-template-rows: ;
+            // flex-direction: row !important;
+            // flex-wrap: wrap !important;
+
+            h2{
+                grid-column: span 2;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:620px){
+    .blog{
+        display: flex !important;
+        flex-direction: column !important;
+        .related{
+            display: grid !important;
+            grid-template-columns: 1fr;
+            //grid-template-columns: 1fr 1fr;
+            // grid-template-rows: ;
+            // flex-direction: row !important;
+            // flex-wrap: wrap !important;
+
+            h2{
+                grid-column: span 1;
+            }
+        }
+    }
+}

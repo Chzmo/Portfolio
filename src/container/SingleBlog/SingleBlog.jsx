@@ -14,6 +14,7 @@ import image2 from '../../assets/media/thumbs_freebie-website-landing-page-desig
 import image3 from '../../assets/media/thumbs_freelancer-landing-page-minimal-design-figma-freebie.jpg';
 import image4 from '../../assets/media/thumbs_real-estate-landing-page-ui-freebie.jpg';
 import './SingleBlog.css'
+import { Link } from 'react-router-dom'
 
 const blogs = [{ image:image1 }, { image:image2,}, {image:image3}, {image:image4}]
 
@@ -99,7 +100,7 @@ function SingleBlog() {
                   </div>
                   <div className="blog__post-profile_info">
                     <h2>Chisomo Zaliro Moyo</h2>
-                    <a href="/">Author</a>
+                    <Link to="/">Author</Link>
                   </div>
                 </div>
                 <div className="blog__post-content">
