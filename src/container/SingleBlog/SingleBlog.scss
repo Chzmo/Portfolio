@@ -18,6 +18,7 @@
         .singleBlog__header-related{
             display: flex;
             gap: .6rem;
+            overflow-x: scroll;
             button{
                 padding: .7rem 1rem;
                 background-color: var(--white);
@@ -348,12 +349,6 @@
 }
 
 @media screen and (max-width:620px){
-
-    .singleBlog__header-related{
-        display: flex;
-        flex-wrap: wrap !important;
-    }
-
     .blog{
         display: flex !important;
         flex-direction: column !important;

@@ -18,6 +18,7 @@
 .singleBlog .singleBlog__header .singleBlog__header-related {
   display: flex;
   gap: 0.6rem;
+  overflow-x: scroll;
 }
 .singleBlog .singleBlog__header .singleBlog__header-related button {
   padding: 0.7rem 1rem;
@@ -298,10 +299,6 @@
   }
 }
 @media screen and (max-width: 620px) {
-  .singleBlog__header-related {
-    display: flex;
-    flex-wrap: wrap !important;
-  }
   .blog {
     display: flex !important;
     flex-direction: column !important;
