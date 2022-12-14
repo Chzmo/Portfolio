@@ -13,7 +13,7 @@ import './Work.css'
 const websites = [
   {
     image:image1,
-    url:"/blog/single",
+    url:"/Work/single",
     gitHub:"https://www.github.com/Chzmo"
   },
   {
