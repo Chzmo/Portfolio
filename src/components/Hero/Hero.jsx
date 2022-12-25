@@ -8,7 +8,7 @@ export const Intro = () =>{
     return (
         <>
             <div className="hero__sub-heading">
-                <p>Currently working as a Director of Design @Redwhale, 
+                <p>
                     I am passionate about making sure that systems, interfaces, 
                     language and graphics are human-friendly, emotive, 
                     aesthetically pleasing, clear, on-brand and 
