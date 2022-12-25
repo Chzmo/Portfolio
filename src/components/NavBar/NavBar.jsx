@@ -20,7 +20,7 @@ function NavBar() {
       </div>
       <div className="navbar__links">
         <ul className={mobileNav? "mobile": "navbar__links-ul"}>
-          <li className="navbar__links-ul_li"><Link className="navbar__links-ul_li-a" to="/#Testimonials">Testimonials</Link></li>
+          <li className="navbar__links-ul_li"><Link className="navbar__links-ul_li-a" to="#Testimonials">Testimonials</Link></li>
           <li className="navbar__links-ul_li"><Link className="navbar__links-ul_li-a" to="/Work">Latest Work</Link></li>
           <li className="navbar__links-ul_li"><Link className="navbar__links-ul_li-a" to="/Blog">Blog</Link></li>
           <li className="navbar__links-ul_li"><Link className="navbar__links-ul_li-a" to="/Contact">Contact</Link></li>

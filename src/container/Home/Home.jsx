@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Testimonial from '../../components/Testimonial/Testimonial';
 import Mission from '../../components/Mission/Mission';
 import Footer from '../../components/Footer/Footer'
 import NavBar from '../../components/NavBar/NavBar';
@@ -20,6 +21,7 @@ function Home() {
         <Mission />
         <About />
       </div>
+      <Testimonial />
       <section>
         <Work />
       </section>

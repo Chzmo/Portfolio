@@ -39,7 +39,7 @@ function SingleWork() {
         <div className="singleWork__details-feedback">
           <p>Client Feedback:</p>          
           <img src={srarRating} alt="" srcSet="" />
-        </div>
+        </div> 
       </div>
       <div className="singleWork__main">
         <div className={ !viewFull ? "singleWork__main-img" : "preview"}>

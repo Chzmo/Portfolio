@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import { FiArrowUpRight } from 'react-icons/fi';
 
@@ -33,6 +34,15 @@ const websites = [
   }
 ]
 
+function Heading(){
+  return (
+    <>
+      <h2 className='heading'>Work</h2>
+      <p className='paragraph'>Award-winning designs for real clients.</p>
+    </>
+  )
+}
+
 function Work() {
   const [currntUrl, setCurrntUrl] = useState(null)
 
@@ -42,7 +52,7 @@ function Work() {
   
   return (
     <>
-      {(currntUrl && currntUrl === "http://localhost:5173/Work" || currntUrl === "https://inquisitive-croissant-516f39.netlify.app/Work") &&(
+      {(currntUrl === "http://localhost:5173/Work" || currntUrl === "https://inquisitive-croissant-516f39.netlify.app/Work") &&(
         <div >
           <NavBar />
           <div className='header'>
@@ -78,8 +88,11 @@ function Work() {
           </div>
         </div>
       )}
+      
       <div className='work '>
-
+        {currntUrl === "http://localhost:5173/" &&(
+          <Heading/>
+        )}
         <div className="work__portfolio container">
           { websites.map((website, key) =>{
             return (
@@ -104,23 +117,28 @@ function Work() {
                     <p>FEE  CHARGED</p>
                     <p>$0.00</p>  
                   </div>
-                  <a href='' className="work__portfolio-item_details-view">
+                  <Link href='' className="work__portfolio-item_details-view">
                     <p>VIEW</p>          
                     <p>FULL DETAILS</p>               
-                  </a>
+                  </Link>
                 </div>
               </div>
             );
           })}
         </div>
-        {(currntUrl !== "http://localhost:5173/Work" && currntUrl !== "https://inquisitive-croissant-516f39.netlify.app/Work" && currntUrl !== "http://localhost:5173/work/single") &&(
+        {(currntUrl?.toLowerCase() === "http://localhost:5173/work" | 
+          currntUrl?.toLowerCase() === "http://localhost:5173/blog" |
+          currntUrl?.toLowerCase() === "https://inquisitive-croissant-516f39.netlify.app/work" |
+          currntUrl?.toLowerCase() === "http://localhost:5173/work/single")?(<></>):(
           <a href="/Work" className='work__cta'><span>View all Work</span> <FiArrowUpRight /></a>
         )}
       </div>
-      {currntUrl && currntUrl === "http://localhost:5173/Work" | currntUrl === "https://inquisitive-croissant-516f39.netlify.app/Work" &&(
+      {(currntUrl === "http://localhost:5173/Work" | currntUrl === "https://inquisitive-croissant-516f39.netlify.app/Work")?(
         <div className="footer__wrapper">
           <Footer />
         </div>
+      ):(
+        <></>
       )}
     </>
   )

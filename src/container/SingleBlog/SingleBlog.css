@@ -38,7 +38,7 @@
   box-shadow: 0 0 100px var(--grey);
   position: relative;
   max-width: 100%;
-  height: 35rem;
+  height: 40rem;
   overflow-y: hidden;
   background-image: url(../../assets/media/full-preview-landing-page-design-for-shopify-products.png);
   background-repeat: no-repeat;
@@ -270,6 +270,7 @@
   border-radius: 0.3rem;
   border: 1px solid var(--light_grey);
   width: 100%;
+  height: auto;
   font-size: 1.1rem;
   letter-spacing: 1px;
   line-height: 1.6rem;
