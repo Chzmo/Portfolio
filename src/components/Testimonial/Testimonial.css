@@ -60,4 +60,10 @@
   max-width: 27rem;
   font-size: 1.2rem;
   line-height: 1.5rem;
+}
+
+@media screen and (max-width: 800px) {
+  .testimonial .testimonial__content-t3 {
+    display: none;
+  }
 }/*# sourceMappingURL=Testimonial.css.map */
