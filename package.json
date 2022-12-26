@@ -19,6 +19,7 @@
     "react-icons": "^4.6.0",
     "react-loader-spinner": "^5.3.4",
     "react-router-dom": "^6.4.3",
+    "react-router-hash-link": "^2.4.3",
     "uuid": "^9.0.0",
     "uuidv4": "^6.2.13"
   },
