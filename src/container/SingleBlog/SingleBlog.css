@@ -318,6 +318,9 @@
   .reply {
     margin-left: 2.6rem !important;
   }
+  .reply .comments__main-content_message {
+    margin-left: -2.6rem !important;
+  }
   .comments .comments__main {
     gap: 0.5rem !important;
   }

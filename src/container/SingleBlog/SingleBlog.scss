@@ -371,6 +371,10 @@
 
     .reply{
         margin-left: 2.6rem !important;
+
+        .comments__main-content_message{
+            margin-left: -2.6rem !important;
+        }
     }
 
     .comments{
