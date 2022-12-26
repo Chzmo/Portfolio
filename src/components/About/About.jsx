@@ -12,7 +12,7 @@ function About() {
         <h3>ABOUT ME</h3>
         <h2>MOYO CHISOMO</h2>
         <p>
-          As developer with over 3 years of experience, I have a deep 
+          A developer with over 3 years of experience, I have a deep 
           understanding of the technologies and techniques that are essential 
           for building successful web projects. I am proficient in a range of
           programming languages, including HTML, CSS, JavaScript, and PHP, 
