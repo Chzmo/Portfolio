@@ -19,7 +19,7 @@ import { Link } from 'react-router-dom'
 const blogs = [{ image:image1 }, { image:image2,}, {image:image3}, {image:image4}]
 
 function Comment(){
-  return (
+  return ( 
     <>
       <div className="comments__main">
         <div className="comments__main-profile">
@@ -46,7 +46,7 @@ function Comment(){
   );
 }
 
-function Reply(){
+function CommentField(){
   return (
     <>
       <div className="comments__main">
@@ -151,8 +151,10 @@ function SingleBlog() {
                   <div className="comments">
                     <h2>Comments</h2>
                     <Comment />
-                    <Comment />
-                    <Reply />
+                    <div className="reply">
+                      <Comment />
+                    </div>
+                    <CommentField/>
                   </div>
                 </div>
               </div>

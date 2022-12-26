@@ -219,6 +219,10 @@
         }  
     }
 
+    .reply{
+        margin-left: 4.3rem;
+    }
+
     .comments{
         max-width: 100%;
         display: flex;
@@ -363,6 +367,10 @@
                 grid-column: span 1;
             }
         }
+    }
+
+    .reply{
+        margin-left: 2.6rem !important;
     }
 
     .comments{

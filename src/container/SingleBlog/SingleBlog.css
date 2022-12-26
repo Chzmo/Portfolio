@@ -188,6 +188,9 @@
   font-size: 15px;
   color: var(--red);
 }
+.singleBlog .reply {
+  margin-left: 4.3rem;
+}
 .singleBlog .comments {
   max-width: 100%;
   display: flex;
@@ -311,6 +314,9 @@
   }
   .blog .related h2 {
     grid-column: span 1;
+  }
+  .reply {
+    margin-left: 2.6rem !important;
   }
   .comments .comments__main {
     gap: 0.5rem !important;
