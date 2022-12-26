@@ -1,5 +1,6 @@
 import React from 'react'
 import AnchorLink from "react-anchor-link-smooth-scroll";
+import { HashLink } from 'react-router-hash-link';
 
 import './Footer.css'
 
@@ -25,22 +26,22 @@ function Footer() {
           <nav>
             <ul role="list" className="footer__top-nav-list">
               <li className="footer__top-nav-list-item">
-                <a href="#" className="footer__top-nav-link">Home</a>
+                <HashLink to="/#" className="footer__top-nav-link" smooth>Home</HashLink>
               </li>
               <li className="footer__top-nav-list-item">
-                <AnchorLink href="#Testimonials" className="footer__top-nav-link">Testimonials</AnchorLink>
+                <HashLink to="/#Testimonials" className="footer__top-nav-link" smooth>Testimonials</HashLink>
               </li>
               <li className="footer__top-nav-list-item">
-                <a href="#Recent-Work" className="footer__top-nav-link">Recent Work</a>
+                <HashLink to="/Work#" className="footer__top-nav-link" smooth>Recent Work</HashLink>
               </li>
               <li className="footer__top-nav-list-item">
-                <AnchorLink href="#About" className="footer__top-nav-link">About Me</AnchorLink>
+                <HashLink to="/#About" className="footer__top-nav-link" smooth>About Me</HashLink>
               </li>
               <li className="footer__top-nav-list-item">
-                <a href="#Contact" className="footer__top-nav-link">Contact</a>
+                <HashLink to="/Contact#" className="footer__top-nav-link" smooth>Contact</HashLink>
               </li>
               <li className="footer__top-nav-list-item">
-                <a href="#FAQs" className="footer__top-nav-link">FAQs</a>
+                <HashLink to="/Work#FAQs" className="footer__top-nav-link" smooth>FAQs</HashLink>
               </li>
           </ul>
           </nav>

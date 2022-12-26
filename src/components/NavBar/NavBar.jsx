@@ -19,9 +19,12 @@ function NavBar() {
       setMobileNav(false);
     }
     window.addEventListener('scroll', closeNav);
-    return () => window.removeEventListener('scroll', closeNav);
+    
+    return () => {
+      window.removeEventListener('scroll', closeNav);
+    }
   }, []);
-
+  
   return (
     <nav className='navbar'>
       <div className="navbar__logo">
