@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import {CiHeart } from 'react-icons/ci'
 import {BsFillHeartFill, BsReplyAll} from 'react-icons/bs'
@@ -16,20 +16,11 @@ import image4 from '../../assets/media/thumbs_real-estate-landing-page-ui-freebi
 import './SingleBlog.css'
 import { Link } from 'react-router-dom'
 
-const blogs = [{ image:image1 }, { image:image2,}, {image:image3}, {image:image4}]
+const blogs = [{ image:image1 }, { image:image2,}, {image:image3}, {image:image4}];
 
-function Comment(){
+function Comment(props){
+  console.log(props);
 
-  useEffect(() => {
-    const textarea = document.querySelector('textarea');
-
-    textarea.addEventListener('input', function() {
-      this.style.height = 'auto';
-      this.style.height = this.scrollHeight + 'px';
-    });
-
-  }, [])
-  
   return ( 
     <>
       <div className="comments__main">
@@ -57,7 +48,7 @@ function Comment(){
   );
 }
 
-function CommentField(){
+function CommentField(props){
   return (
     <>
       <div className="comments__main">
@@ -68,7 +59,7 @@ function CommentField(){
           <textarea name="reply" cols="80" rows="1" >
 
           </textarea>
-          <button>Comment</button>
+          <button onClick={props.addComment}>Comment</button>
         </div>
       </div>
     </>
@@ -77,6 +68,29 @@ function CommentField(){
 
 
 function SingleBlog() {
+  
+  const [items, setItems] = useState(['item1', 'item2', 'item3']);
+  const [comment, setComment] = useState(null);
+  const [replyTo, setReplyTo] = useState(null)
+  const [commentType, setCommentType] = useState('comment');
+
+  const addComment = () =>{
+    const newItem = 'item1.5';
+    const updatedItems = [...items];
+    updatedItems.splice(1, 0, newItem);
+    setItems(updatedItems);
+  }
+
+  useEffect(() => {
+    const textarea = document.querySelector('textarea');
+
+    textarea.addEventListener('input', function() {
+      this.style.height = 'auto';
+      this.style.height = this.scrollHeight + 'px';
+    });
+
+  }, [])
+
   return (
     <>
       <NavBar />
@@ -161,11 +175,18 @@ function SingleBlog() {
                   </div>
                   <div className="comments">
                     <h2>Comments</h2>
-                    <Comment />
+                    {
+                      items.map((item, key)=>{
+                        return(
+                          <Comment item={item} key={key}/>
+                        )
+                      })
+                    }
+                    {/* <Comment items={items} setItems={setItems}/>
                     <div className="reply">
-                      <Comment />
-                    </div>
-                    <CommentField/>
+                      <Comment items={items} setItems={setItems}/>
+                    </div> */}
+                    <CommentField addComment={addComment}/>
                   </div>
                 </div>
               </div>

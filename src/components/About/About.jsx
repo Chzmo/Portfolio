@@ -29,9 +29,8 @@ function About() {
           expanding my knowledge and skills in the rapidly-evolving world of web development.
         </p>
         <p>
-          In my free time, I enjoy staying active and exploring the great outdoors. I am an avid 
-          hiker and rock climber, and I also enjoy playing guitar and experimenting with virtual 
-          reality. I believe in the power of technology to connect people and improve lives, and 
+          In my free time, I enjoy staying active and exploring the great outdoors and 
+          I am a great fun of Chess. I believe in the power of technology to connect people and improve lives, and 
           I am passionate about using my skills to make a positive impact in the world.
         </p>
         {/* <a href="#Contact"><span>Lets Talk</span> <FiArrowUpRight /></a> */}
