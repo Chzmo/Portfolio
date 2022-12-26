@@ -90,7 +90,7 @@ function Work() {
       )}
       
       <div className='work '>
-        {currntUrl === "http://localhost:5173/" || currntUrl === "https://inquisitive-croissant-516f39.netlify.app/"&&(
+        {currntUrl === "http://localhost:5173/" | currntUrl === "https://inquisitive-croissant-516f39.netlify.app/"&&(
           <Heading/>
         )}
         <div className="work__portfolio container">
