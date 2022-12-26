@@ -26,6 +26,16 @@
 .about .about__right h2 {
   font-size: 2rem;
   color: #313bac;
+  position: relative;
+}
+.about .about__right h2:before {
+  content: "";
+  position: absolute;
+  width: 6rem;
+  height: 3px;
+  bottom: 0;
+  top: 2.7rem;
+  background-color: #313bac;
 }
 .about .about__right p {
   max-width: 39rem;

@@ -27,6 +27,17 @@
         h2{
             font-size: 2rem;
             color: #313bac;
+            position: relative;
+
+            &:before{
+                content: "";
+                position: absolute;
+                width: 6rem;
+                height: 3px;
+                bottom: 0;
+                top: 2.7rem;
+                background-color:  #313bac;
+            }
         }
 
         p{
