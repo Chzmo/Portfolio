@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import {CiHeart } from 'react-icons/ci'
 import {BsFillHeartFill, BsReplyAll} from 'react-icons/bs'
@@ -19,6 +19,17 @@ import { Link } from 'react-router-dom'
 const blogs = [{ image:image1 }, { image:image2,}, {image:image3}, {image:image4}]
 
 function Comment(){
+
+  useEffect(() => {
+    const textarea = document.querySelector('textarea');
+
+    textarea.addEventListener('input', function() {
+      this.style.height = 'auto';
+      this.style.height = this.scrollHeight + 'px';
+    });
+
+  }, [])
+  
   return ( 
     <>
       <div className="comments__main">

@@ -317,11 +317,12 @@
             border-radius: .3rem;
             border: 1px solid var(--light_grey);
             width: 100%;
-            height: auto;
             font-size: 1.1rem;
             letter-spacing: 1px;
             line-height: 1.6rem;
             padding: 1rem 1rem;
+            resize: vertical;
+            overflow-y: hidden;
 
             &:focus{
                 border: 1px solid var(--grey);
@@ -371,8 +372,12 @@
 
     .reply{
         margin-left: 2.6rem !important;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
 
-        .comments__main-content_message{
+        .comments__main-content_message,
+        .comments__main-content_bottom{
             margin-left: -2.6rem !important;
         }
     }
