@@ -1,11 +1,8 @@
 import React from 'react'
-
-
 import {CiHeart } from 'react-icons/ci'
-import {BsFillHeartFill, BsReplyAll} from 'react-icons/bs'
+import {BsReplyAll} from 'react-icons/bs'
+
 import profileImg from '../../assets/media/zaliro_p.png';
-
-
 
 export function CommentField(props){
   return (
@@ -34,7 +31,6 @@ export function CommentField(props){
 
 
 function Comment(props){
-  console.log(props);
 
   return ( 
     <>
@@ -47,13 +43,11 @@ function Comment(props){
             <h3>Chisomo Zaliro Moyo</h3> <p>3 Months ago</p>
           </div>
           <div className="comments__main-content_message">
-            <p>A good web design is one that is user-friendly, visually appealing, 
-              and easy to navigate. 
-            </p>
+            <p>{props.item.content}</p>
           </div>
           <div className="comments__main-content_bottom">
             <div className="content_bottom-social">
-              <button><CiHeart className="social-icon"/><span>30K</span></button>
+              <button><CiHeart className="social-icon"/><span>{props.item.likes}</span></button>
             </div>
             <div className="content_bottom-reply"><button><BsReplyAll className="social-icon"/><span>Reply</span></button></div>
           </div>

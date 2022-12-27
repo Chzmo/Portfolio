@@ -16,14 +16,16 @@ import image1 from '../../assets/media/thumbs_freebie-gpt-3-landing-page.jpg';
 import image2 from '../../assets/media/thumbs_freebie-website-landing-page-design.jpg';
 import image3 from '../../assets/media/thumbs_freelancer-landing-page-minimal-design-figma-freebie.jpg';
 import image4 from '../../assets/media/thumbs_real-estate-landing-page-ui-freebie.jpg';
+
 import './SingleBlog.css'
+import data from './data'
 
 const blogs = [{ image:image1 }, { image:image2,}, {image:image3}, {image:image4}];
 
 
 function SingleBlog() {
   
-  const [items, setItems] = useState(['item1', 'item2', 'item3']);
+  const [items, setItems] = useState(data.comments);
   const [comment, setComment] = useState('');
   const [replyTo, setReplyTo] = useState(null)
   const [commentType, setCommentType] = useState('comment');
@@ -139,7 +141,14 @@ function SingleBlog() {
                     {
                       items.map((item, key)=>{
                         return(
-                          <Comment item={item} key={key}/>
+                          <>
+                            <Comment item={item} key={key}/>
+                            {item?.replies?.length && (
+                              item?.replies?.map((item, key) =>{
+                                return <div key={key} className="reply"><Comment item={item}/></div>
+                              })
+                            )}
+                          </>
                         )
                       })
                     }
