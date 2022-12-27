@@ -1,12 +1,15 @@
+import { Link } from 'react-router-dom'
 import React, { useEffect, useState } from 'react'
 
 import {CiHeart } from 'react-icons/ci'
-import {BsFillHeartFill, BsReplyAll} from 'react-icons/bs'
+import {BsFillHeartFill} from 'react-icons/bs'
 import {HiOutlineShare} from 'react-icons/hi'
 import {BiMessageRoundedDetail} from 'react-icons/bi'
 
 import NavBar from '../../components/NavBar/NavBar'
 import Footer from '../../components/Footer/Footer'
+import Comment from './Comment'
+import {CommentField} from './Comment'
 
 import profileImg from '../../assets/media/zaliro_p.png';
 import image1 from '../../assets/media/thumbs_freebie-gpt-3-landing-page.jpg';
@@ -14,68 +17,14 @@ import image2 from '../../assets/media/thumbs_freebie-website-landing-page-desig
 import image3 from '../../assets/media/thumbs_freelancer-landing-page-minimal-design-figma-freebie.jpg';
 import image4 from '../../assets/media/thumbs_real-estate-landing-page-ui-freebie.jpg';
 import './SingleBlog.css'
-import { Link } from 'react-router-dom'
 
 const blogs = [{ image:image1 }, { image:image2,}, {image:image3}, {image:image4}];
-
-function Comment(props){
-  console.log(props);
-
-  return ( 
-    <>
-      <div className="comments__main">
-        <div className="comments__main-profile">
-          <img src={profileImg} alt="profile" />
-        </div>
-        <div className="comments__main-content">
-          <div className="comments__main-content_top">
-            <h3>Chisomo Zaliro Moyo</h3> <p>3 Months ago</p>
-          </div>
-          <div className="comments__main-content_message">
-            <p>A good web design is one that is user-friendly, visually appealing, 
-              and easy to navigate. 
-            </p>
-          </div>
-          <div className="comments__main-content_bottom">
-            <div className="content_bottom-social">
-              <button><CiHeart className="social-icon"/><span>30K</span></button>
-            </div>
-            <div className="content_bottom-reply"><button><BsReplyAll className="social-icon"/><span>Reply</span></button></div>
-          </div>
-        </div>
-      </div>
-    </>
-  );
-}
-
-function CommentField(props){
-  return (
-    <>
-      <div className="comments__main">
-        <div className="comments__main-profile">
-          <img src={profileImg} alt="profile" />
-        </div>
-        <div className="form">
-          <textarea 
-            name="reply" 
-            cols="80" rows="1" 
-            onChange={(e) => props?.setComment(e.target.value)} 
-            value={props.comment}
-          >
-
-          </textarea>
-          <button onClick={props.addComment}>Comment</button>
-        </div>
-      </div>
-    </>
-  );
-}
 
 
 function SingleBlog() {
   
   const [items, setItems] = useState(['item1', 'item2', 'item3']);
-  const [comment, setComment] = useState(null);
+  const [comment, setComment] = useState('');
   const [replyTo, setReplyTo] = useState(null)
   const [commentType, setCommentType] = useState('comment');
 
@@ -87,7 +36,7 @@ function SingleBlog() {
       updatedItems.push(comment);
       setItems(updatedItems);
       setComment(null);
-      document.querySelector('textarea').value = null
+      document.querySelector('textarea').value = ''
     }else{
       alert();
     }
