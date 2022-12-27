@@ -5,9 +5,10 @@ import {BsReplyAll} from 'react-icons/bs'
 import profileImg from '../../assets/media/zaliro_p.png';
 
 export function CommentField(props){
+  console.log(props)
   return (
     <>
-      <div className="comments__main">
+      <div className="comments__main" key={props.key}>
         <div className="comments__main-profile">
           <img src={profileImg} alt="profile" />
         </div>

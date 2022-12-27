@@ -221,10 +221,11 @@
 
     .reply{
         margin-left: 4.3rem;
+        width: 100%;
     }
 
     .comments{
-        max-width: 100%;
+        width: 100%;
         display: flex;
         flex-direction: column;
         gap: 1rem;
@@ -251,11 +252,14 @@
                 display: flex;
                 flex-direction: column;
                 gap: .3rem;
+                width: 100%;
                 
                 .comments__main-content_top{
+                    width: 100%;
                     display: flex;
                     gap: .4rem;
                     flex-direction: column;
+                    width: 100%;
                     p{
                         color: var(--grey);
                     }
@@ -266,11 +270,13 @@
                     background-color: rgba(242, 242, 242, 0.9490196078);
                     border-radius: 5px;
                     margin-top: .5rem;
+                    width: 100%;
                     p{
                         font-size: 1.1rem;
                         letter-spacing: 1px;
                         line-height: 1.6rem;
                         padding: 1rem 1rem;
+                        width: 100%;
                     }
                 }
 

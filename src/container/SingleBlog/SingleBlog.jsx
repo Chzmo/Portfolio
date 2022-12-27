@@ -31,13 +31,26 @@ function SingleBlog() {
   const [commentType, setCommentType] = useState('comment');
 
   const addComment = () =>{
-    const newItem = 'item1.5';
+    const newItem = {
+      "id": 1,
+      "content": comment,
+      "createdAt": "2022-08-28T07:33:40.202Z",
+      "likes": 0,
+      "user": {
+        "image": { 
+          "png": "./images/avatars/image-amyrobson.png",
+          "webp": "./images/avatars/image-amyrobson.webp"
+        },
+        "username": "amyrobson"
+      },
+      "replies": null
+    };
 
     if (comment ){
       const updatedItems = [...items];
-      updatedItems.push(comment);
+      updatedItems.push(newItem);
       setItems(updatedItems);
-      setComment(null);
+      setComment('');
       document.querySelector('textarea').value = ''
     }else{
       alert();
@@ -139,7 +152,7 @@ function SingleBlog() {
                   <div className="comments">
                     <h2>Comments</h2>
                     {
-                      items.map((item, key)=>{
+                      items.map((item, key=item.id)=>{
                         return(
                           <>
                             <Comment item={item} key={key}/>
