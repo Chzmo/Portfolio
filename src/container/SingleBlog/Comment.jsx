@@ -35,8 +35,8 @@ function Comment(props){
 
   return ( 
     
-      props.items.map((comment)=>{
-       return(
+    props.items.map((comment)=>{
+      return(
         <div className="comments__main" key={comment.id}>
           <div className="comments__main-profile">
             <img src={profileImg} alt="profile" />
@@ -56,8 +56,8 @@ function Comment(props){
             </div>
           </div>
         </div>
-       )
-      })
+      )
+    })
   );
 }
 
