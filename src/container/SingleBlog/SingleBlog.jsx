@@ -56,7 +56,12 @@ function CommentField(props){
           <img src={profileImg} alt="profile" />
         </div>
         <div className="form">
-          <textarea name="reply" cols="80" rows="1" >
+          <textarea 
+            name="reply" 
+            cols="80" rows="1" 
+            onChange={(e) => props?.setComment(e.target.value)} 
+            value={props.comment}
+          >
 
           </textarea>
           <button onClick={props.addComment}>Comment</button>
@@ -76,9 +81,16 @@ function SingleBlog() {
 
   const addComment = () =>{
     const newItem = 'item1.5';
-    const updatedItems = [...items];
-    updatedItems.splice(1, 0, newItem);
-    setItems(updatedItems);
+
+    if (comment ){
+      const updatedItems = [...items];
+      updatedItems.push(comment);
+      setItems(updatedItems);
+      setComment(null);
+      document.querySelector('textarea').value = null
+    }else{
+      alert();
+    }
   }
 
   useEffect(() => {
@@ -182,11 +194,11 @@ function SingleBlog() {
                         )
                       })
                     }
-                    {/* <Comment items={items} setItems={setItems}/>
-                    <div className="reply">
-                      <Comment items={items} setItems={setItems}/>
-                    </div> */}
-                    <CommentField addComment={addComment}/>
+                    <CommentField 
+                      addComment={addComment} // function
+                      setComment = {setComment} // set comment
+                      comment = {comment} // set comment
+                    />
                   </div>
                 </div>
               </div>
