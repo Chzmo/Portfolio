@@ -5,10 +5,10 @@ import {BsReplyAll} from 'react-icons/bs'
 import profileImg from '../../assets/media/zaliro_p.png';
 
 export function CommentField(props){
-  console.log(props)
+
   return (
     <>
-      <div className="comments__main" key={props.key}>
+      <div className="comments__main">
         <div className="comments__main-profile">
           <img src={profileImg} alt="profile" />
         </div>
@@ -34,27 +34,30 @@ export function CommentField(props){
 function Comment(props){
 
   return ( 
-    <>
-      <div className="comments__main">
-        <div className="comments__main-profile">
-          <img src={profileImg} alt="profile" />
-        </div>
-        <div className="comments__main-content">
-          <div className="comments__main-content_top">
-            <h3>Chisomo Zaliro Moyo</h3> <p>3 Months ago</p>
+    
+      props.items.map((comment)=>{
+       return(
+        <div className="comments__main" key={comment.id}>
+          <div className="comments__main-profile">
+            <img src={profileImg} alt="profile" />
           </div>
-          <div className="comments__main-content_message">
-            <p>{props.item.content}</p>
-          </div>
-          <div className="comments__main-content_bottom">
-            <div className="content_bottom-social">
-              <button><CiHeart className="social-icon"/><span>{props.item.likes}</span></button>
+          <div className="comments__main-content">
+            <div className="comments__main-content_top">
+              <h3>Chisomo Zaliro Moyo</h3> <p>3 Months ago</p>
             </div>
-            <div className="content_bottom-reply"><button><BsReplyAll className="social-icon"/><span>Reply</span></button></div>
+            <div className="comments__main-content_message">
+              <p>{comment.content}</p>
+            </div>
+            <div className="comments__main-content_bottom">
+              <div className="content_bottom-social">
+                <button><CiHeart className="social-icon"/><span>{comment.likes}</span></button>
+              </div>
+              <div className="content_bottom-reply"><button><BsReplyAll className="social-icon"/><span>Reply</span></button></div>
+            </div>
           </div>
         </div>
-      </div>
-    </>
+       )
+      })
   );
 }
 

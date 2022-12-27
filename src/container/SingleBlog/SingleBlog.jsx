@@ -46,7 +46,7 @@ function SingleBlog() {
       "replies": null
     };
 
-    if (comment ){
+    if (comment && commentType === 'comment'){
       const updatedItems = [...items];
       updatedItems.push(newItem);
       setItems(updatedItems);
@@ -151,20 +151,22 @@ function SingleBlog() {
                   </div>
                   <div className="comments">
                     <h2>Comments</h2>
-                    {
-                      items.map((item, key=item.id)=>{
+                    <Comment items={items} />
+
+                    {/* {
+                      items.map(item=>{
                         return(
                           <>
-                            <Comment item={item} key={key}/>
+                            <Comment item={item} />
                             {item?.replies?.length && (
-                              item?.replies?.map((item, key) =>{
-                                return <div key={key} className="reply"><Comment item={item}/></div>
+                              item?.replies?.map(item =>{
+                                return <Comment item={item} key={item?.replies?.id}/>
                               })
                             )}
                           </>
                         )
                       })
-                    }
+                    } */}
                     <CommentField 
                       addComment={addComment} // function
                       setComment = {setComment} // set comment
