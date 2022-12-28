@@ -1,4 +1,6 @@
 import React from 'react'
+import { formatDistanceToNow } from 'date-fns';
+
 import {CiHeart } from 'react-icons/ci'
 import {BsReplyAll} from 'react-icons/bs'
 
@@ -8,7 +10,6 @@ function handleReply(){
   const textarea = document.querySelector('textarea');
   textarea.focus();
 }
-
 
 export function CommentField(props){
 
@@ -50,7 +51,7 @@ function Comment(props){
         </div>
         <div className="comments__main-content">
           <div className="comments__main-content_top">
-            <h3>{comment.user.username}</h3> <p>3 Months ago</p>
+            <h3>{comment.user.username}</h3><p>{formatDistanceToNow(new Date(comment.createdAt))} ago</p>
           </div>
           <div className="comments__main-content_message">
             <p>{comment.content}</p>
@@ -74,7 +75,7 @@ function Comment(props){
                   </div>
                   <div className="comments__main-content">
                     <div className="comments__main-content_top">
-                      <h3>{reply.user.username}</h3> <p>3 Months ago</p>
+                      <h3>{reply.user.username}</h3> <p>{formatDistanceToNow(new Date(reply.createdAt))} ago</p>
                     </div>
                     <div className="comments__main-content_message">
                       <p>{reply.content}</p>

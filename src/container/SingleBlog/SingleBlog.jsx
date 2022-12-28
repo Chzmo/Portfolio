@@ -34,7 +34,7 @@ function SingleBlog() {
     const newItem = {
       "id": crypto.randomUUID(),
       "content": comment,
-      "createdAt": "2022-08-28T07:33:40.202Z",
+      "createdAt": new Date(),
       "likes": 0,
       "user": {
         "image": { 
