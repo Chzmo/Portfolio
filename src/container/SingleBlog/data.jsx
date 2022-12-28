@@ -19,7 +19,7 @@
           },
           "username": "amyrobson"
         },
-        "replies": null
+        "replies": []
       },
       {
         "id": 2,

@@ -48,7 +48,7 @@ function SingleBlog() {
 
     if (comment && commentType === 'comment'){
       const updatedItems = [...items];
-      updatedItems.push(newItem);
+      updatedItems[0].replies.push(newItem);
       setItems(updatedItems);
       setComment('');
       document.querySelector('textarea').value = ''
