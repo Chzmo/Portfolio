@@ -6,7 +6,7 @@ import {BsReplyAll} from 'react-icons/bs'
 
 import profileImg from '../../assets/media/zaliro_p.png';
 
-function handleReply(){
+function handleReply(id=5){
   const textarea = document.querySelector('textarea');
   textarea.focus();
 }
