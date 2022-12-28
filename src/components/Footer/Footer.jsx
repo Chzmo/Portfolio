@@ -41,7 +41,7 @@ function Footer() {
                 <HashLink to="/Contact#" className="footer__top-nav-link" smooth>Contact</HashLink>
               </li>
               <li className="footer__top-nav-list-item">
-                <HashLink to="/Work#FAQs" className="footer__top-nav-link" smooth>FAQs</HashLink>
+                <HashLink to="/Work#" className="footer__top-nav-link" smooth>FAQs</HashLink>
               </li>
           </ul>
           </nav>
