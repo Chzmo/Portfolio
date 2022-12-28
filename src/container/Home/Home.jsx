@@ -21,10 +21,10 @@ function Home() {
         <Mission />
         <About />
       </div>
-      <Testimonial />
       <section>
         <Work />
       </section>
+      <Testimonial />
       <section className='contact__wrapper'>
         <Contact />
       </section>
