@@ -4,7 +4,7 @@ import {BsReplyAll} from 'react-icons/bs'
 
 import profileImg from '../../assets/media/zaliro_p.png';
 
-function hundleReply(){
+function handleReply(){
   const textarea = document.querySelector('textarea');
   textarea.focus();
 }
@@ -59,7 +59,7 @@ function Comment(props){
             <div className="content_bottom-social">
               <button><CiHeart className="social-icon"/><span>{comment.likes}</span></button>
             </div>
-            <div className="content_bottom-reply"><button onClick={hundleReply}><BsReplyAll className="social-icon"/><span>Reply</span></button></div>
+            <div className="content_bottom-reply"><button onClick={handleReply}><BsReplyAll className="social-icon"/><span>Reply</span></button></div>
           </div>
         </div>
       </div>
@@ -83,7 +83,7 @@ function Comment(props){
                       <div className="content_bottom-social">
                         <button><CiHeart className="social-icon"/><span>{reply.likes}</span></button>
                       </div>
-                      <div className="content_bottom-reply"><button onClick={hundleReply}><BsReplyAll className="social-icon" /><span>Reply</span></button></div>
+                      <div className="content_bottom-reply"><button onClick={handleReply}><BsReplyAll className="social-icon" /><span>Reply</span></button></div>
                     </div>
                   </div>
                 </div>
