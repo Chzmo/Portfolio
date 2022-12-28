@@ -32,7 +32,7 @@ function SingleBlog() {
 
   const addComment = () =>{
     const newItem = {
-      "id": crypto.randomUUID,
+      "id": crypto.randomUUID(),
       "content": comment,
       "createdAt": "2022-08-28T07:33:40.202Z",
       "likes": 0,
@@ -152,21 +152,6 @@ function SingleBlog() {
                   <div className="comments">
                     <h2>Comments</h2>
                     <Comment items={items} />
-
-                    {/* {
-                      items.map(item=>{
-                        return(
-                          <>
-                            <Comment item={item} />
-                            {item?.replies?.length && (
-                              item?.replies?.map(item =>{
-                                return <Comment item={item} key={item?.replies?.id}/>
-                              })
-                            )}
-                          </>
-                        )
-                      })
-                    } */}
                     <CommentField 
                       addComment={addComment} // function
                       setComment = {setComment} // set comment
