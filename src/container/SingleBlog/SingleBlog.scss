@@ -221,11 +221,11 @@
 
     .reply{
         margin-left: 4.3rem;
-        width: 100%;
+        max-width: 100%;
     }
 
     .comments{
-        width: 100%;
+        //width: 100%;
         display: flex;
         flex-direction: column;
         gap: 1rem;

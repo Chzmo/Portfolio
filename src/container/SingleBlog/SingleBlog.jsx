@@ -32,7 +32,7 @@ function SingleBlog() {
 
   const addComment = () =>{
     const newItem = {
-      "id": 1,
+      "id": crypto.randomUUID,
       "content": comment,
       "createdAt": "2022-08-28T07:33:40.202Z",
       "likes": 0,
