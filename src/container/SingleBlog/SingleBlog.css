@@ -328,6 +328,11 @@
     flex-direction: column;
     gap: 1rem;
   }
+  .reply .comments__main-content_message,
+.reply .comments__main-content_bottom {
+    width: calc(100% + 2.6rem) !important;
+    margin-left: -2.6rem !important;
+  }
   .comments .comments__main {
     gap: 0.5rem !important;
   }

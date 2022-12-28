@@ -44,7 +44,7 @@ function Comment(props){
             </div>
             <div className="comments__main-content">
               <div className="comments__main-content_top">
-                <h3>Chisomo Zaliro Moyo</h3> <p>3 Months ago</p>
+                <h3>{comment.user.username}</h3> <p>3 Months ago</p>
               </div>
               <div className="comments__main-content_message">
                 <p>{comment.content}</p>
@@ -68,7 +68,7 @@ function Comment(props){
                       </div>
                       <div className="comments__main-content">
                         <div className="comments__main-content_top">
-                          <h3>Chisomo Zaliro Moyo</h3> <p>3 Months ago</p>
+                          <h3>{reply.user.username}</h3> <p>3 Months ago</p>
                         </div>
                         <div className="comments__main-content_message">
                           <p>{reply.content}</p>
