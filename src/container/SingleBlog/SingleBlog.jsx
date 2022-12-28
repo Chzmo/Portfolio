@@ -46,14 +46,18 @@ function SingleBlog() {
       "replies": null
     };
 
-    if (comment && commentType === 'comment'){
-      const updatedItems = [...items];
-      updatedItems[0].replies.push(newItem);
-      setItems(updatedItems);
-      setComment('');
-      document.querySelector('textarea').value = ''
+    if(comment){
+      if(commentType === 'comment'){
+
+      }else if( commentType == 'reply'){
+        const updatedItems = [...items];
+        updatedItems[0].replies.push(newItem);
+        setItems(updatedItems);
+        setComment('');
+        document.querySelector('textarea').value = '';
+      }
     }else{
-      alert();
+      alert('please type a comment')
     }
   }
 

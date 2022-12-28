@@ -38,7 +38,7 @@ export function CommentField(props){
 }
 
 function Comment(props){
-  function handleReplyReply(id, setReplyTo){
+  function handleReplyReply(id){
     const textarea = document.querySelector('textarea');
     textarea.focus();
     
@@ -46,15 +46,17 @@ function Comment(props){
       return acc.concat(comment.replies.filter(reply => reply.id === id));
     }, []);
     
-    setReplyTo(replyToReply[0].user.username)
+    props.setReplyTo(replyToReply[0].user.username)
+    props.setCommentType('reply')
   }
 
-  function handleReplyComment(id, setReplyTo){
+  function handleReplyComment(id){
     const textarea = document.querySelector('textarea');
     textarea.focus();
 
     const replyToComment = props.items.filter(comment => comment.id === id);
-    setReplyTo(replyToComment[0].user.username)
+    props.setReplyTo(replyToComment[0].user.username)
+    props.setCommentType('comment')
   }
 
   return (
@@ -77,7 +79,7 @@ function Comment(props){
                   <div className="content_bottom-social">
                     <button><CiHeart className="social-icon"/><span>{comment.likes}</span></button>
                   </div>
-                  <div className="content_bottom-reply"><button onClick={() => handleReplyComment(comment.id, props.setReplyTo)}><BsReplyAll className="social-icon"/><span>Reply</span></button></div>
+                  <div className="content_bottom-reply"><button onClick={() => handleReplyComment(comment.id)}><BsReplyAll className="social-icon"/><span>Reply</span></button></div>
                 </div>
               </div>
             </div>
@@ -103,7 +105,7 @@ function Comment(props){
                             </div>
                             <div className="content_bottom-reply">
                               <button 
-                                onClick={() => handleReplyReply(reply.id, props.setReplyTo)}
+                                onClick={() => handleReplyReply(reply.id)}
                               >
                                 <BsReplyAll className="social-icon" /><span>Reply</span>
                               </button>
