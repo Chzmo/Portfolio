@@ -71,7 +71,7 @@ function Comment(props){
                           <h3>Chisomo Zaliro Moyo</h3> <p>3 Months ago</p>
                         </div>
                         <div className="comments__main-content_message">
-                          <p>{comment.content}</p>
+                          <p>{reply.content}</p>
                         </div>
                         <div className="comments__main-content_bottom">
                           <div className="content_bottom-social">
