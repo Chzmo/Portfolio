@@ -46,8 +46,9 @@ function Comment(props){
       return acc.concat(comment.replies.filter(reply => reply.id === id));
     }, []);
     
-    props.setReplyTo(replyToReply[0].user.username)
-    props.setCommentType('reply')
+    props.setReplyTo(replyToReply[0].user.username);
+    props.setCommentType('reply');
+    props.setReplyToId(id);
   }
 
   function handleReplyComment(id){
@@ -55,8 +56,9 @@ function Comment(props){
     textarea.focus();
 
     const replyToComment = props.items.filter(comment => comment.id === id);
-    props.setReplyTo(replyToComment[0].user.username)
-    props.setCommentType('comment')
+    props.setReplyTo(replyToComment[0].user.username);
+    props.setCommentType('comment');
+    props.setReplyToId(id);
   }
 
   return (

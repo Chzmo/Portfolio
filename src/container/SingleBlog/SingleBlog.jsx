@@ -28,6 +28,7 @@ function SingleBlog() {
   const [items, setItems] = useState(data.comments);
   const [comment, setComment] = useState('');
   const [replyTo, setReplyTo] = useState(null)
+  const [replyToId, setReplyToId] = useState(null)
   const [commentType, setCommentType] = useState(null);
 
   const addComment = () =>{
@@ -48,13 +49,20 @@ function SingleBlog() {
 
     
     if(comment){
+
       const updatedItems = [...items];
-      if(commentType === 'comment'){
-        updatedItems[0].replies.push(newItem); //reply to a comment
-        
-      }else if( commentType == 'reply'){
-        updatedItems[1].replies.push(newItem); // reply to a reply
-      }else{
+
+      if(commentType === 'comment' && replyToId){
+        const replyToComment = items.filter(comment => comment.id === replyToId);
+        replyToComment[0].replies.push(newItem); //reply to a comment
+      }
+      
+      else if( commentType == 'reply' && replyToId){
+        // const replyToComment = items.filter(comment => comment.id === replyToId);
+        // replyToComment[0].replies.push(newItem); //reply to a reply
+      }
+      
+      else{
         updatedItems.push(newItem); // just a comment
       }
       setItems(updatedItems);
@@ -164,12 +172,14 @@ function SingleBlog() {
                       items={items}
                       setReplyTo={setReplyTo} 
                       setCommentType={setCommentType} 
+                      setReplyToId = {setReplyToId}
                     />
                     <CommentField 
                       addComment={addComment} // function
                       setComment = {setComment} // set comment
                       comment = {comment} // set comment
                       replyTo={replyTo} 
+                      replyToId = {replyToId}
                       setReplyTo={setReplyTo} 
                     />
                   </div>
