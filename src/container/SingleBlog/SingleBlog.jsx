@@ -28,7 +28,7 @@ function SingleBlog() {
   const [items, setItems] = useState(data.comments);
   const [comment, setComment] = useState('');
   const [replyTo, setReplyTo] = useState(null)
-  const [commentType, setCommentType] = useState('comment');
+  const [commentType, setCommentType] = useState(null);
 
   const addComment = () =>{
     const newItem = {
@@ -43,19 +43,24 @@ function SingleBlog() {
         },
         "username": "amyrobson"
       },
-      "replies": null
+      "replies": []
     };
 
+    
     if(comment){
+      const updatedItems = [...items];
       if(commentType === 'comment'){
-
+        updatedItems[0].replies.push(newItem); //reply to a comment
+        
       }else if( commentType == 'reply'){
-        const updatedItems = [...items];
-        updatedItems[0].replies.push(newItem);
-        setItems(updatedItems);
-        setComment('');
-        document.querySelector('textarea').value = '';
+        updatedItems[1].replies.push(newItem); // reply to a reply
+      }else{
+        updatedItems.push(newItem); // just a comment
       }
+      setItems(updatedItems);
+      setComment('');
+      setReplyTo(null)
+      document.querySelector('textarea').value = '';
     }else{
       alert('please type a comment')
     }
