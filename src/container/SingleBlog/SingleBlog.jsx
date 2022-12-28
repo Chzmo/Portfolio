@@ -151,11 +151,17 @@ function SingleBlog() {
                   </div>
                   <div className="comments">
                     <h2>Comments</h2>
-                    <Comment items={items} />
+                    <Comment 
+                      items={items}
+                      setReplyTo={setReplyTo} 
+                      setCommentType={setCommentType} 
+                    />
                     <CommentField 
                       addComment={addComment} // function
                       setComment = {setComment} // set comment
                       comment = {comment} // set comment
+                      replyTo={replyTo} 
+                      setReplyTo={setReplyTo} 
                     />
                   </div>
                 </div>

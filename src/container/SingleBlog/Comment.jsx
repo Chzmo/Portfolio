@@ -6,15 +6,17 @@ import {BsReplyAll} from 'react-icons/bs'
 
 import profileImg from '../../assets/media/zaliro_p.png';
 
-function handleReply(id=5){
-  const textarea = document.querySelector('textarea');
-  textarea.focus();
-}
-
 export function CommentField(props){
+
+  const setReplyToNull = () =>{
+    props.setReplyTo(null)
+  }
 
   return (
     <>
+      {props.replyTo && (
+        <div>Replying to <strong>{props.replyTo}</strong> <button onClick={setReplyToNull}>Cancel</button></div>
+      )}
       <div className="comments__main">
         <div className="comments__main-profile">
           <img src={profileImg} alt="profile" />
@@ -35,68 +37,86 @@ export function CommentField(props){
   );
 }
 
-
-
-
 function Comment(props){
+  function handleReply(id, setReplyTo){
+    const textarea = document.querySelector('textarea');
+    textarea.focus();
+    
+    const replyTo = props.items.reduce((acc, comment) => {
+      return acc.concat(comment.replies.filter(reply => reply.id === id));
+    }, []);
+    
+    setReplyTo(replyTo[0].user.username)
+  }
+
+  function handleComment(id, setReplyTo){
+    const textarea = document.querySelector('textarea');
+    textarea.focus();
+    setReplyTo('zaliro')
+  }
 
   return (
     <>
       {props.items.map((comment) => {
-  return (
-    <div key={comment.id}>
-      <div className="comments__main">
-        <div className="comments__main-profile">
-          <img src={profileImg} alt="profile" />
-        </div>
-        <div className="comments__main-content">
-          <div className="comments__main-content_top">
-            <h3>{comment.user.username}</h3><p>{formatDistanceToNow(new Date(comment.createdAt))} ago</p>
-          </div>
-          <div className="comments__main-content_message">
-            <p>{comment.content}</p>
-          </div>
-          <div className="comments__main-content_bottom">
-            <div className="content_bottom-social">
-              <button><CiHeart className="social-icon"/><span>{comment.likes}</span></button>
-            </div>
-            <div className="content_bottom-reply"><button onClick={handleReply}><BsReplyAll className="social-icon"/><span>Reply</span></button></div>
-          </div>
-        </div>
-      </div>
-      {
-        comment?.replies &&(
-          comment.replies.map((reply) => {
-            return (
-              <div className="reply" key={reply.id}>
-                <div className="comments__main">
-                  <div className="comments__main-profile">
-                    <img src={profileImg} alt="profile" />
+        return (
+          <div key={comment.id}>
+            <div className="comments__main">
+              <div className="comments__main-profile">
+                <img src={profileImg} alt="profile" />
+              </div>
+              <div className="comments__main-content">
+                <div className="comments__main-content_top">
+                  <h3>{comment.user.username}</h3><p>{formatDistanceToNow(new Date(comment.createdAt))} ago</p>
+                </div>
+                <div className="comments__main-content_message">
+                  <p>{comment.content}</p>
+                </div>
+                <div className="comments__main-content_bottom">
+                  <div className="content_bottom-social">
+                    <button><CiHeart className="social-icon"/><span>{comment.likes}</span></button>
                   </div>
-                  <div className="comments__main-content">
-                    <div className="comments__main-content_top">
-                      <h3>{reply.user.username}</h3> <p>{formatDistanceToNow(new Date(reply.createdAt))} ago</p>
-                    </div>
-                    <div className="comments__main-content_message">
-                      <p>{reply.content}</p>
-                    </div>
-                    <div className="comments__main-content_bottom">
-                      <div className="content_bottom-social">
-                        <button><CiHeart className="social-icon"/><span>{reply.likes}</span></button>
-                      </div>
-                      <div className="content_bottom-reply"><button onClick={handleReply}><BsReplyAll className="social-icon" /><span>Reply</span></button></div>
-                    </div>
-                  </div>
+                  <div className="content_bottom-reply"><button onClick={() => handleReply(comment.id)}><BsReplyAll className="social-icon"/><span>Reply</span></button></div>
                 </div>
               </div>
-            )
-          })
-        )
-      }
-    </div>
-  );
-})}
-
+            </div>
+            {
+              comment?.replies &&(
+                comment.replies.map((reply) => {
+                  return (
+                    <div className="reply" key={reply.id}>
+                      <div className="comments__main">
+                        <div className="comments__main-profile">
+                          <img src={profileImg} alt="profile" />
+                        </div>
+                        <div className="comments__main-content">
+                          <div className="comments__main-content_top">
+                            <h3>{reply.user.username}</h3> <p>{formatDistanceToNow(new Date(reply.createdAt))} ago</p>
+                          </div>
+                          <div className="comments__main-content_message">
+                            <p>{reply.content}</p>
+                          </div>
+                          <div className="comments__main-content_bottom">
+                            <div className="content_bottom-social">
+                              <button><CiHeart className="social-icon"/><span>{reply.likes}</span></button>
+                            </div>
+                            <div className="content_bottom-reply">
+                              <button 
+                                onClick={() => handleReply(reply.id, props.setReplyTo)}
+                              >
+                                <BsReplyAll className="social-icon" /><span>Reply</span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )
+                })
+              )
+            }
+          </div>
+        );
+      })}
     </>
   )
 }
