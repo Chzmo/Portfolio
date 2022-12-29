@@ -29,13 +29,16 @@ function Footer() {
                 <HashLink to="/#" className="footer__top-nav-link" smooth>Home</HashLink>
               </li>
               <li className="footer__top-nav-list-item">
-                <HashLink to="/#Testimonials" className="footer__top-nav-link" smooth>Testimonials</HashLink>
+                <HashLink to="/#About" className="footer__top-nav-link" smooth>About Me</HashLink>
               </li>
               <li className="footer__top-nav-list-item">
                 <HashLink to="/Work#" className="footer__top-nav-link" smooth>Recent Work</HashLink>
               </li>
               <li className="footer__top-nav-list-item">
-                <HashLink to="/#About" className="footer__top-nav-link" smooth>About Me</HashLink>
+                <HashLink to="/Blog#" className="footer__top-nav-link" smooth>Blog</HashLink>
+              </li>
+              <li className="footer__top-nav-list-item">
+                <HashLink to="/#Testimonials" className="footer__top-nav-link" smooth>Testimonials</HashLink>
               </li>
               <li className="footer__top-nav-list-item">
                 <HashLink to="/Contact#" className="footer__top-nav-link" smooth>Contact</HashLink>
