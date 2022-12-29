@@ -58,10 +58,12 @@ function SingleBlog() {
       }
       
       else if( commentType == 'reply' && replyToId){
-        // const replyToComment = items.filter(comment => comment.id === replyToId);
-        // replyToComment[0].replies.push(newItem); //reply to a reply
+        const replyToReply = items.filter(comment => {
+          return comment.replies.some(reply => reply.id === replyToId);
+        });
+
+        replyToReply[0].replies.push(newItem); //reply to a reply
       }
-      
       else{
         updatedItems.push(newItem); // just a comment
       }
