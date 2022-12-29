@@ -61,12 +61,17 @@ function Comment(props){
     props.setReplyToId(id);
   }
 
+  const updateLikeScore = (id) =>{
+    // const [score, setScore] = useState(null)
+    
+  }
+
   return (
     <>
       {props.items.map((comment) => {
         return (
           <div key={comment.id}>
-            <div className="comments__main">
+            <div className="comments__main" tabindex="1">
               <div className="comments__main-profile">
                 <img src={profileImg} alt="profile" />
               </div>
@@ -103,7 +108,11 @@ function Comment(props){
                           </div>
                           <div className="comments__main-content_bottom">
                             <div className="content_bottom-social">
-                              <button><CiHeart className="social-icon"/><span>{reply.likes}</span></button>
+                              <button
+                                onClick={() => updateLikeScore(reply.id)}
+                              >
+                                <CiHeart className="social-icon"/><span>{reply.likes}</span>
+                              </button>
                             </div>
                             <div className="content_bottom-reply">
                               <button 

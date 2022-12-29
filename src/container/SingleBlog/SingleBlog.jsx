@@ -69,10 +69,15 @@ function SingleBlog() {
       }
       setItems(updatedItems);
       setComment('');
-      setReplyTo(null)
+      setReplyTo(null);
+      setReplyToId(null);
       document.querySelector('textarea').value = '';
     }else{
-      alert('please type a comment')
+      const textarea = document.querySelector('textarea');
+      textarea.style.border = "1px solid red";
+      setTimeout(()=>{
+        textarea.style.border = "1px solid grey";
+      }, 1000)
     }
   }
 
