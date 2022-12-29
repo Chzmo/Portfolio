@@ -6,6 +6,56 @@ import {BsReplyAll} from 'react-icons/bs'
 
 import profileImg from '../../assets/media/zaliro_p.png';
 
+
+function SingleReply({reply, data}){
+  function handleReplyReply(id){
+    const textarea = document.querySelector('textarea');
+    textarea.focus();
+    
+    const replyToReply = data.reduce((acc, comment) => {
+      return acc.concat(comment.replies.filter(reply => reply.id === id));
+    }, []);
+    
+    props.setReplyTo(replyToReply[0].user.username);
+    props.setCommentType('reply');
+    props.setReplyToId(id);
+  }
+
+  return (
+    <div className="comments__main">
+      <div className="comments__main-profile">
+        <img src={profileImg} alt="profile" />
+      </div>
+      <div className="comments__main-content">
+        <div className="comments__main-content_top">
+          <h3>{reply.user.username}</h3> <p>{formatDistanceToNow(new Date(reply.createdAt))} ago</p>
+        </div>
+        <div className="comments__main-content_message">
+          <p>{reply.content}</p>
+        </div>
+        <div className="comments__main-content_bottom">
+          <div className="content_bottom-social">
+            <button
+              onClick={() => updateLikeScore(reply.id)}
+            >
+              <CiHeart className="social-icon"/><span>{reply.likes}</span>
+            </button>
+          </div>
+          <div className="content_bottom-reply">
+            <button 
+              onClick={() => handleReplyReply(reply.id)}
+            >
+              <BsReplyAll className="social-icon" /><span>Reply</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+
+
 export function CommentField(props){
 
   const setReplyToNull = () =>{
@@ -38,18 +88,6 @@ export function CommentField(props){
 }
 
 function Comment(props){
-  function handleReplyReply(id){
-    const textarea = document.querySelector('textarea');
-    textarea.focus();
-    
-    const replyToReply = props.items.reduce((acc, comment) => {
-      return acc.concat(comment.replies.filter(reply => reply.id === id));
-    }, []);
-    
-    props.setReplyTo(replyToReply[0].user.username);
-    props.setCommentType('reply');
-    props.setReplyToId(id);
-  }
 
   function handleReplyComment(id){
     const textarea = document.querySelector('textarea');
@@ -71,7 +109,7 @@ function Comment(props){
       {props.items.map((comment) => {
         return (
           <div key={comment.id}>
-            <div className="comments__main" tabindex="1">
+            <div className="comments__main" tabIndex="1">
               <div className="comments__main-profile">
                 <img src={profileImg} alt="profile" />
               </div>
@@ -93,39 +131,7 @@ function Comment(props){
             {
               comment?.replies &&(
                 comment.replies.map((reply) => {
-                  return (
-                    <div className="reply" key={reply.id}>
-                      <div className="comments__main">
-                        <div className="comments__main-profile">
-                          <img src={profileImg} alt="profile" />
-                        </div>
-                        <div className="comments__main-content">
-                          <div className="comments__main-content_top">
-                            <h3>{reply.user.username}</h3> <p>{formatDistanceToNow(new Date(reply.createdAt))} ago</p>
-                          </div>
-                          <div className="comments__main-content_message">
-                            <p>{reply.content}</p>
-                          </div>
-                          <div className="comments__main-content_bottom">
-                            <div className="content_bottom-social">
-                              <button
-                                onClick={() => updateLikeScore(reply.id)}
-                              >
-                                <CiHeart className="social-icon"/><span>{reply.likes}</span>
-                              </button>
-                            </div>
-                            <div className="content_bottom-reply">
-                              <button 
-                                onClick={() => handleReplyReply(reply.id)}
-                              >
-                                <BsReplyAll className="social-icon" /><span>Reply</span>
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  )
+                  return <div className="reply" key={reply.id}><SingleReply reply={reply} data={props.items}/></div>
                 })
               )
             }
