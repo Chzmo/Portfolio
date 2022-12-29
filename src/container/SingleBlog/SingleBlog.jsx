@@ -36,7 +36,7 @@ function SingleBlog() {
       "id": crypto.randomUUID(),
       "content": comment,
       "createdAt": new Date(),
-      "likes": 0,
+      "likes": [],
       "user": {
         "image": { 
           "png": "./images/avatars/image-amyrobson.png",

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { formatDistanceToNow } from 'date-fns';
 
 import {CiHeart } from 'react-icons/ci'
@@ -7,12 +7,21 @@ import {BsReplyAll} from 'react-icons/bs'
 import profileImg from '../../assets/media/zaliro_p.png';
 
 
-function SingleReply({reply, data}){
+function SingleReply({reply, props}){
+  
+  const [likeCount, setlikeCount] = useState(reply.likes.length)
+
+  function updateLikeScore(id){
+    if(1 in reply.likes){
+      alert(1)
+    }
+  }
+
   function handleReplyReply(id){
     const textarea = document.querySelector('textarea');
     textarea.focus();
     
-    const replyToReply = data.reduce((acc, comment) => {
+    const replyToReply = props.items.reduce((acc, comment) => {
       return acc.concat(comment.replies.filter(reply => reply.id === id));
     }, []);
     
@@ -38,7 +47,7 @@ function SingleReply({reply, data}){
             <button
               onClick={() => updateLikeScore(reply.id)}
             >
-              <CiHeart className="social-icon"/><span>{reply.likes}</span>
+              <CiHeart className="social-icon"/><span>{likeCount}</span>
             </button>
           </div>
           <div className="content_bottom-reply">
@@ -131,7 +140,8 @@ function Comment(props){
             {
               comment?.replies &&(
                 comment.replies.map((reply) => {
-                  return <div className="reply" key={reply.id}><SingleReply reply={reply} data={props.items}/></div>
+                  //passing props with states
+                  return <div className="reply" key={reply.id}><SingleReply reply={reply} props={props}/></div> 
                 })
               )
             }
