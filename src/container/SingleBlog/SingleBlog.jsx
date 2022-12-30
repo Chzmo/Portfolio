@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 
 import {CiHeart } from 'react-icons/ci'
 import {BsFillHeartFill} from 'react-icons/bs'
@@ -30,6 +31,7 @@ function SingleBlog() {
   const [replyTo, setReplyTo] = useState(null)
   const [replyToId, setReplyToId] = useState(null)
   const [commentType, setCommentType] = useState(null);
+  const {single} = useParams()
 
   const addComment = () =>{
     const newItem = {
@@ -56,13 +58,15 @@ function SingleBlog() {
         const replyToComment = items.filter(comment => comment.id === replyToId);
         replyToComment[0].replies.push(newItem); //reply to a comment
       }
-         else if( commentType == 'reply' && replyToId){
+      
+      else if( commentType == 'reply' && replyToId){
         const replyToReply = items.filter(comment => {
           return comment.replies.some(reply => reply.id === replyToId);
         });
 
         replyToReply[0].replies.push(newItem); //reply to a reply
       }
+
       else{
         updatedItems.push(newItem); // just a comment
       }
@@ -72,12 +76,13 @@ function SingleBlog() {
       setReplyToId(null);
       document.querySelector('textarea').value = '';
 
-      const element = document.getElementById(replyToId);
-      const currentScroll = window.scrollY;
-      const newScroll = currentScroll + element.getBoundingClientRect().bottom;
-      window.scrollTo(0, newScroll);
-      element.focus();
+      if(replyToId){
+        const element = document.getElementById(replyToId);
+        const currentScroll = window.scrollY;
+        const newScroll = currentScroll + element.getBoundingClientRect().top;
+        window.scrollTo(0, newScroll);
 
+      }
     }else{
       const textarea = document.querySelector('textarea');
       textarea.style.border = "1px solid red";
@@ -97,6 +102,10 @@ function SingleBlog() {
 
   }, [])
 
+  useEffect(() => {
+    console.log(single)
+  }, [single])
+  
   return (
     <>
       <NavBar />
