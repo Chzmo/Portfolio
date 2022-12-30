@@ -72,9 +72,9 @@ function SingleBlog() {
       setReplyToId(null);
       document.querySelector('textarea').value = '';
 
-      const element = document.getElementById(replyTo);
+      const element = document.getElementById(replyToId);
       const currentScroll = window.scrollY;
-      const newScroll = currentScroll + element.getBoundingClientRect().top;
+      const newScroll = currentScroll + element.getBoundingClientRect().bottom;
       window.scrollTo(0, newScroll);
       element.focus();
 
