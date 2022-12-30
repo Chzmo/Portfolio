@@ -1,6 +1,9 @@
 
 import React from "react";
 import { BrowserRouter, Routes, Route, useParams} from "react-router-dom";
+import { useAuth0 } from '@auth0/auth0-react';
+import { Auth0Provider } from '@auth0/auth0-react';
+// import { auth0Config } from './auth0-config';
 
 import Login from "./container/Login/Login";
 import Home from "./container/Home/Home";
@@ -12,7 +15,11 @@ import SingleBlog from "./container/SingleBlog/SingleBlog";
 
 const App = () => {
   return (
-    <>
+    <Auth0Provider
+      domain={process.env.}
+      clientId="YOUR_CLIENT_ID"
+      redirectUri={window.location.origin}
+    >
       <BrowserRouter>
         <Routes>
           <Route path="/" element = {<Home />}/>
@@ -24,7 +31,7 @@ const App = () => {
           <Route path="/Login" element = {<Login />}/>
         </Routes>
       </BrowserRouter>
-    </>
+    </Auth0Provider>
   );
 };
 
