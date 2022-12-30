@@ -27,15 +27,13 @@ function SingleBlog() {
   
   const [items, setItems] = useState(data.comments);
   const [comment, setComment] = useState('');
-  const [replyTo, setReplyTo] = useState(null);
-  const [replyToId, setReplyToId] = useState(null);
+  const [replyTo, setReplyTo] = useState(null)
+  const [replyToId, setReplyToId] = useState(null)
   const [commentType, setCommentType] = useState(null);
-  const [elements, setElements] = useState(null);
-  const commentId = crypto.randomUUID();
 
   const addComment = () =>{
     const newItem = {
-      "id": commentId,
+      "id": crypto.randomUUID(),
       "content": comment,
       "createdAt": new Date(),
       "likes": [],
@@ -74,7 +72,7 @@ function SingleBlog() {
       setReplyToId(null);
       document.querySelector('textarea').value = '';
 
-      const element = document.getElementById(replyToId);
+      const element = document.getElementById(replyTo);
       const currentScroll = window.scrollY;
       const newScroll = currentScroll + element.getBoundingClientRect().top;
       window.scrollTo(0, newScroll);
@@ -188,8 +186,6 @@ function SingleBlog() {
                       setReplyTo={setReplyTo} 
                       setCommentType={setCommentType} 
                       setReplyToId = {setReplyToId}
-                      setElements = {setElements}
-                      elements = {elements}
                     />
                     <CommentField 
                       addComment={addComment} // function
