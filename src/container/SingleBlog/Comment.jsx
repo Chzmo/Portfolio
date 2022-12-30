@@ -36,7 +36,7 @@ function SingleComment({comment, props}){
         <div className="comments__main-content_top">
           <h3>{comment.user.username}</h3><p>{formatDistanceToNow(new Date(comment.createdAt))} ago</p>
         </div>
-        <div id={comment.id}  className="comments__main-content_message">
+        <div tabIndex="0" id={comment.id}  className="comments__main-content_message">
           <p>{comment.content}</p>
         </div>
         <div className="comments__main-content_bottom">

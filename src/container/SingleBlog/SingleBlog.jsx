@@ -27,14 +27,15 @@ function SingleBlog() {
   
   const [items, setItems] = useState(data.comments);
   const [comment, setComment] = useState('');
-  const [replyTo, setReplyTo] = useState(null)
-  const [replyToId, setReplyToId] = useState(null)
+  const [replyTo, setReplyTo] = useState(null);
+  const [replyToId, setReplyToId] = useState(null);
   const [commentType, setCommentType] = useState(null);
-  const [elements, setElements] = useState(null)
+  const [elements, setElements] = useState(null);
+  const commentId = crypto.randomUUID();
 
   const addComment = () =>{
     const newItem = {
-      "id": crypto.randomUUID(),
+      "id": commentId,
       "content": comment,
       "createdAt": new Date(),
       "likes": [],
@@ -73,7 +74,7 @@ function SingleBlog() {
       setReplyToId(null);
       document.querySelector('textarea').value = '';
 
-      const element = document.getElementById('1');
+      const element = document.getElementById(replyToId);
       const currentScroll = window.scrollY;
       const newScroll = currentScroll + element.getBoundingClientRect().top;
       window.scrollTo(0, newScroll);
