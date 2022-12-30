@@ -7,6 +7,53 @@ import {BsReplyAll} from 'react-icons/bs'
 import profileImg from '../../assets/media/zaliro_p.png';
 
 
+function SingleComment({comment, props}){
+
+  const [likeCount, setlikeCount] = useState(comment.likes.length)
+
+  function updateLikeScore(id){
+    if(1 in comment.likes){
+      alert(1)
+    }
+  }
+
+  function handleReplyComment(id){
+    const textarea = document.querySelector('textarea');
+    textarea.focus();
+
+    const replyToComment = props.items.filter(comment => comment.id === id);
+    props.setReplyTo(replyToComment[0].user.username);
+    props.setCommentType('comment');
+    props.setReplyToId(id);
+  }
+
+  return (
+    <div className="comments__main" tabIndex="1">
+      <div className="comments__main-profile">
+        <img src={profileImg} alt="profile" />
+      </div>
+      <div className="comments__main-content">
+        <div className="comments__main-content_top">
+          <h3>{comment.user.username}</h3><p>{formatDistanceToNow(new Date(comment.createdAt))} ago</p>
+        </div>
+        <div id={comment.id}  className="comments__main-content_message">
+          <p>{comment.content}</p>
+        </div>
+        <div className="comments__main-content_bottom">
+          <div className="content_bottom-social">
+            <button onClick={()=>updateLikeScore(comment.id)}><CiHeart className="social-icon"/><span>{likeCount}</span></button>
+          </div>
+          <div className="content_bottom-reply">
+            <button onClick={() => handleReplyComment(comment.id)}>
+              <BsReplyAll className="social-icon"/><span>Reply</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 function SingleReply({reply, props}){
   
   const [likeCount, setlikeCount] = useState(reply.likes.length)
@@ -39,7 +86,7 @@ function SingleReply({reply, props}){
         <div className="comments__main-content_top">
           <h3>{reply.user.username}</h3> <p>{formatDistanceToNow(new Date(reply.createdAt))} ago</p>
         </div>
-        <div className="comments__main-content_message">
+        <div id={reply.id} tabIndex="0" className="comments__main-content_message">
           <p>{reply.content}</p>
         </div>
         <div className="comments__main-content_bottom">
@@ -98,16 +145,6 @@ export function CommentField(props){
 
 function Comment(props){
 
-  function handleReplyComment(id){
-    const textarea = document.querySelector('textarea');
-    textarea.focus();
-
-    const replyToComment = props.items.filter(comment => comment.id === id);
-    props.setReplyTo(replyToComment[0].user.username);
-    props.setCommentType('comment');
-    props.setReplyToId(id);
-  }
-
   const updateLikeScore = (id) =>{
     // const [score, setScore] = useState(null)
     
@@ -118,25 +155,7 @@ function Comment(props){
       {props.items.map((comment) => {
         return (
           <div key={comment.id}>
-            <div className="comments__main" tabIndex="1">
-              <div className="comments__main-profile">
-                <img src={profileImg} alt="profile" />
-              </div>
-              <div className="comments__main-content">
-                <div className="comments__main-content_top">
-                  <h3>{comment.user.username}</h3><p>{formatDistanceToNow(new Date(comment.createdAt))} ago</p>
-                </div>
-                <div className="comments__main-content_message">
-                  <p>{comment.content}</p>
-                </div>
-                <div className="comments__main-content_bottom">
-                  <div className="content_bottom-social">
-                    <button><CiHeart className="social-icon"/><span>{comment.likes}</span></button>
-                  </div>
-                  <div className="content_bottom-reply"><button onClick={() => handleReplyComment(comment.id)}><BsReplyAll className="social-icon"/><span>Reply</span></button></div>
-                </div>
-              </div>
-            </div>
+            <SingleComment comment={comment} props={props}/>
             {
               comment?.replies &&(
                 comment.replies.map((reply) => {

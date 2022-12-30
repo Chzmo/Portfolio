@@ -30,6 +30,7 @@ function SingleBlog() {
   const [replyTo, setReplyTo] = useState(null)
   const [replyToId, setReplyToId] = useState(null)
   const [commentType, setCommentType] = useState(null);
+  const [elements, setElements] = useState(null)
 
   const addComment = () =>{
     const newItem = {
@@ -56,8 +57,7 @@ function SingleBlog() {
         const replyToComment = items.filter(comment => comment.id === replyToId);
         replyToComment[0].replies.push(newItem); //reply to a comment
       }
-      
-      else if( commentType == 'reply' && replyToId){
+         else if( commentType == 'reply' && replyToId){
         const replyToReply = items.filter(comment => {
           return comment.replies.some(reply => reply.id === replyToId);
         });
@@ -72,6 +72,13 @@ function SingleBlog() {
       setReplyTo(null);
       setReplyToId(null);
       document.querySelector('textarea').value = '';
+
+      const element = document.getElementById('1');
+      const currentScroll = window.scrollY;
+      const newScroll = currentScroll + element.getBoundingClientRect().top;
+      window.scrollTo(0, newScroll);
+      element.focus();
+
     }else{
       const textarea = document.querySelector('textarea');
       textarea.style.border = "1px solid red";
@@ -180,6 +187,8 @@ function SingleBlog() {
                       setReplyTo={setReplyTo} 
                       setCommentType={setCommentType} 
                       setReplyToId = {setReplyToId}
+                      setElements = {setElements}
+                      elements = {elements}
                     />
                     <CommentField 
                       addComment={addComment} // function
