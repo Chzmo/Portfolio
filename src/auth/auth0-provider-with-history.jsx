@@ -1,17 +1,16 @@
 import React from "react";
 import { Auth0Provider } from "@auth0/auth0-react";
-//import { useHistory } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
+import {REACT_APP_AUTH0_DOMAIN, REACT_APP_AUTH0_CLIENT_ID} from './../../vars'
 
 export const Auth0ProviderWithHistory = ({ children }) => {
-  //const history = useHistory();
 
-  
-  const domain = process.env.REACT_APP_AUTH0_DOMAIN;
-  const clientId = process.env.REACT_APP_AUTH0_CLIENT_ID;
+  const domain = REACT_APP_AUTH0_DOMAIN;
+  const clientId = REACT_APP_AUTH0_CLIENT_ID;
   const redirectUri = window.location.redirectUri;
 
   const onRedirectCallback = (appState) => {
-    history.push(appState?.returnTo || window.location.pathname);
+    useNavigate().push(appState?.returnTo || window.location.pathname);
   };
 
   if (!(domain && clientId)) {
