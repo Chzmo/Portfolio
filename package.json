@@ -3,10 +3,14 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "resolutions": {
+    "react-error-overlay": "6.0.9"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "preinstall": "npx npm-force-resolutions"
   },
   "dependencies": {
     "@auth0/auth0-react": "^1.12.0",
@@ -14,7 +18,9 @@
     "@sanity/client": "^3.4.1",
     "@sanity/image-url": "^1.0.1",
     "auth0-js": "^9.20.0",
+    "babel-plugin-transform-inline-environment-variables": "^0.4.4",
     "date-fns": "^2.29.3",
+    "dotenv": "^16.0.3",
     "jwt-decode": "^3.1.2",
     "react": "^18.2.0",
     "react-anchor-link-smooth-scroll": "^1.0.12",
@@ -22,14 +28,13 @@
     "react-icons": "^4.6.0",
     "react-loader-spinner": "^5.3.4",
     "react-router-dom": "^6.4.3",
-    "react-router-hash-link": "^2.4.3",
-    "uuid": "^9.0.0",
-    "uuidv4": "^6.2.13"
+    "react-router-hash-link": "^2.4.3"
   },
   "devDependencies": {
     "@types/react": "^18.0.24",
     "@types/react-dom": "^18.0.8",
     "@vitejs/plugin-react": "^2.2.0",
+    "react-error-overlay": "^6.0.9",
     "vite": "^3.2.3"
   }
 }
