@@ -9,6 +9,7 @@ import Work from "./container/Work/Work";
 import Contact from "./container/Contact/Contact";
 import SingleWork from "./container/SingleWork/SingleWork";
 import SingleBlog from "./container/SingleBlog/SingleBlog";
+import Profile from "./auth/Profile";
 
 const App = () => {
   
@@ -23,6 +24,7 @@ const App = () => {
           <Route path="/Blog" element = {<Blog />}/>
           <Route path="/Contact" element = {<Contact />}/>
           <Route path="/Login" element = {<Login />}/>
+          <Route path="/Profile" element = {<Profile />}/>
         </Routes>
       </BrowserRouter>
     </Auth0ProviderWithHistory>
