@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link} from 'react-router-dom';
 import { HashLink} from 'react-router-hash-link';
+import {MobileNavBarButtons} from '../../auth/auth-nav'
 
 import './NavBar.css'
 
@@ -42,6 +43,7 @@ function NavBar() {
         <div onClick={responsiveNav} className='button'>
           <div></div><div></div><div></div>
         </div>
+        <MobileNavBarButtons />
       </div>
     </nav>
   )
