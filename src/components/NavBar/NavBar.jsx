@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link} from 'react-router-dom';
 import { HashLink} from 'react-router-hash-link';
-import {MobileNavBarButtons} from '../../auth/auth-nav'
 
 import './NavBar.css'
 
@@ -39,7 +38,6 @@ function NavBar() {
           <li className="navbar__links-ul_li"><HashLink className="navbar__links-ul_li-a" to="/#Testimonials">Testimonials</HashLink></li>
           <li className="navbar__links-ul_li"><Link className="navbar__links-ul_li-a" to="/Contact">Contact</Link></li>
           <li className="navbar__links-ul_li"><Link className="navbar__links-ul_li-a" to="/Login">Login</Link></li>
-          <li className="navbar__links-ul_li"><div className="navbar__links-ul_li-a" ><MobileNavBarButtons /></div></li>
         </ul>
         <div onClick={responsiveNav} className='button'>
           <div></div><div></div><div></div>
