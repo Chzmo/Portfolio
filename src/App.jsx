@@ -14,7 +14,7 @@ const App = () => {
     
   return (
     <GoogleOAuthProvider 
-      clientId={import.meta.env.VITE_OUTH_CLIENT_ID}
+      clientId={import.meta.env.VITE_OAUTH_CLIENT_ID}
     >
       <BrowserRouter>
         <Routes>
