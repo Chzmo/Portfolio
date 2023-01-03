@@ -43,10 +43,13 @@ function NavBar() {
           {User ? (
             console.log(User)
           ):(
+          <li className="navbar__links-ul_li">
             <GoogleLogin 
+              className="navbar__links-ul_li-a"
               onSuccess={respose => console.log(respose)}
               onError={()=> console.error()}
             />
+          </li>
           )}
         </ul>
         <div onClick={responsiveNav} className='button'>

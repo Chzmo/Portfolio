@@ -32,9 +32,11 @@
 .navbar .navbar__links .navbar__links-ul {
   display: flex;
   gap: 2.5rem;
+  align-items: center;
 }
 .navbar .navbar__links .navbar__links-ul .navbar__links-ul_li-a {
   color: #222;
+  align-items: center;
 }
 .navbar .navbar__links .button {
   height: 1.6rem;

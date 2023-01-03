@@ -32,9 +32,11 @@
         .navbar__links-ul{
             display: flex;
             gap: 2.5rem;
+            align-items: center;
 
             .navbar__links-ul_li-a{
                 color: #222;
+                align-items: center;
             }
         }
         .button{
