@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@auth0/auth0-react": "^1.12.0",
-    "@react-oauth/google": "^0.5.0",
+    "@react-oauth/google": "^0.5.1",
     "@sanity/client": "^3.4.1",
     "@sanity/image-url": "^1.0.1",
     "auth0-js": "^9.20.0",

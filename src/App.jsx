@@ -1,4 +1,5 @@
 import React from "react";
+import { GoogleOAuthProvider } from "@react-oauth/google";
 import { BrowserRouter, Routes, Route} from "react-router-dom";
 
 import Login from "./container/Login/Login";
@@ -12,6 +13,9 @@ import SingleBlog from "./container/SingleBlog/SingleBlog";
 const App = () => {
   
   return (
+    <GoogleOAuthProvider 
+      clientId={import.meta.env.VITE_OUTH_CLIENT_ID}
+    >
       <BrowserRouter>
         <Routes>
           <Route path="/" element = {<Home />}/>
@@ -23,6 +27,7 @@ const App = () => {
           <Route path="/Login" element = {<Login />}/>
         </Routes>
       </BrowserRouter>
+    </GoogleOAuthProvider>
   );
 };
 
