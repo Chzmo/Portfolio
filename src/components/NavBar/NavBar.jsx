@@ -1,3 +1,5 @@
+
+import { GoogleLogin, googleLogout } from '@react-oauth/google';
 import React, { useEffect, useState } from 'react'
 import { Link} from 'react-router-dom';
 import { HashLink} from 'react-router-hash-link';
@@ -9,6 +11,7 @@ import './NavBar.css'
 function NavBar() {
   
   const [mobileNav, setMobileNav] = useState(false);
+  const User = false;
 
   const responsiveNav = ()=>{
     !mobileNav ? setMobileNav(true): setMobileNav(false) ;
@@ -37,7 +40,14 @@ function NavBar() {
           <li className="navbar__links-ul_li"><Link className="navbar__links-ul_li-a" to="/Blog">Blog</Link></li>
           <li className="navbar__links-ul_li"><HashLink className="navbar__links-ul_li-a" to="/#Testimonials">Testimonials</HashLink></li>
           <li className="navbar__links-ul_li"><Link className="navbar__links-ul_li-a" to="/Contact">Contact</Link></li>
-          <li className="navbar__links-ul_li"><Link className="navbar__links-ul_li-a" to="/Login">Login</Link></li>
+          {User ? (
+            console.log(User)
+          ):(
+            <GoogleLogin 
+              onSuccess={respose => console.log(respose)}
+              onError={()=> console.error()}
+            />
+          )}
         </ul>
         <div onClick={responsiveNav} className='button'>
           <div></div><div></div><div></div>

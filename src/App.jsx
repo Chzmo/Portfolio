@@ -11,7 +11,7 @@ import SingleWork from "./container/SingleWork/SingleWork";
 import SingleBlog from "./container/SingleBlog/SingleBlog";
 
 const App = () => {
-  
+    
   return (
     <GoogleOAuthProvider 
       clientId={import.meta.env.VITE_OUTH_CLIENT_ID}
