@@ -44,11 +44,12 @@ function NavBar() {
             console.log(User)
           ):(
           <li className="navbar__links-ul_li">
-            <GoogleLogin 
-              className="navbar__links-ul_li-a"
-              onSuccess={respose => console.log(respose)}
-              onError={()=> console.error()}
-            />
+            <div className="navbar__links-ul_li-a">
+              <GoogleLogin 
+                onSuccess={respose => console.log(respose)}
+                onError={()=> console.error()}
+              />
+            </div>
           </li>
           )}
         </ul>
