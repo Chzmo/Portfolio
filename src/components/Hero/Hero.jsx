@@ -27,7 +27,7 @@ export const Intro = () =>{
     );
 }
 
-function Hero() {
+function Hero() { 
   return (
     <div className='hero'>
         <div className="hero__main">
