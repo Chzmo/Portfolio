@@ -36,7 +36,7 @@ function Footer() {
                 <HashLink to="/Work#" className="footer__top-nav-link" smooth>Recent Work</HashLink>
               </li>
               <li className="footer__top-nav-list-item">
-                <Link to="/Blog" className="footer__top-nav-link" smooth>Blog</Link>
+                <Link to="/Blog" className="footer__top-nav-link" >Blog</Link>
               </li>
               <li className="footer__top-nav-list-item">
                 <HashLink to="/#Testimonials" className="footer__top-nav-link" smooth>Testimonials</HashLink>
