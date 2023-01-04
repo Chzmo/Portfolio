@@ -3,6 +3,7 @@ import { GoogleLogin, googleLogout } from '@react-oauth/google';
 import React, { useEffect, useState } from 'react'
 import { Link} from 'react-router-dom';
 import { HashLink} from 'react-router-hash-link';
+import jwtDecode from 'jwt-decode';
 
 import './NavBar.css'
 
@@ -11,15 +12,11 @@ import './NavBar.css'
 function NavBar() {
   
   const [mobileNav, setMobileNav] = useState(false);
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState(localStorage.getItem('user') !== 'undefined' ? JSON.parse(localStorage.getItem('user')) : localStorage.clear())
 
   const responsiveNav = ()=>{
     !mobileNav ? setMobileNav(true): setMobileNav(false) ;
   }
-  
-  useEffect(()=> {
-    setUser()
-  }, [user])
 
   useEffect(() => {
     const closeNav = () =>{
@@ -32,6 +29,28 @@ function NavBar() {
     }
   }, []);
   
+  const responseGoogle = (response)=>{    
+    const decode = jwtDecode(response.credential);
+    localStorage.setItem('user', JSON.stringify(decode));
+    setUser(localStorage.getItem('user'));
+    const {name, sub, picture} = decode; 
+   
+    const doc = {
+        _id: sub,
+        _type: 'user',
+        userName:name,
+        image: picture,
+    }
+    // client.createIfNotExists(doc)
+    // .then(() => {
+    //         client.fetch(
+    //             `*[_type == "user"]`
+    //         )
+    //         navigate('/', {replace:true})
+    //     })
+    // .catch(console.error);
+  }
+
   return (
     <nav className='navbar'>
       <div className="navbar__logo">
@@ -44,15 +63,18 @@ function NavBar() {
           <li className="navbar__links-ul_li"><Link className="navbar__links-ul_li-a" to="/Blog">Blog</Link></li>
           <li className="navbar__links-ul_li"><HashLink className="navbar__links-ul_li-a" to="/#Testimonials">Testimonials</HashLink></li>
           <li className="navbar__links-ul_li"><Link className="navbar__links-ul_li-a" to="/Contact">Contact</Link></li>
-          {User ? (
-            console.log(User)
+          {!user ? (
+            <div className="navbar__links-ul_li-a">
+            <GoogleLogin 
+              onSuccess={respose => responseGoogle(respose)}
+              onError={()=> console.error()}
+              cookiePolicy="single_host_origin"
+            />
+          </div>
           ):(
           <li className="navbar__links-ul_li">
             <div className="navbar__links-ul_li-a">
-              <GoogleLogin 
-                onSuccess={respose => console.log(respose)}
-                onError={()=> console.error()}
-              />
+              {user?.email}
             </div>
           </li>
           )}
