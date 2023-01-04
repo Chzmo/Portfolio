@@ -11,12 +11,16 @@ import './NavBar.css'
 function NavBar() {
   
   const [mobileNav, setMobileNav] = useState(false);
-  const User = false;
+  const [user, setUser] = useState(null)
 
   const responsiveNav = ()=>{
     !mobileNav ? setMobileNav(true): setMobileNav(false) ;
   }
   
+  useEffect(()=> {
+    setUser()
+  }, [user])
+
   useEffect(() => {
     const closeNav = () =>{
       setMobileNav(false);
