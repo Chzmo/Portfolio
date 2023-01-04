@@ -8,6 +8,11 @@ import t5 from './../../assets/media/t5.png'
 
 import './Testimonial.css'
 
+function moveBallsWithTouch(e){
+    const {clientX, clientY} = e.changedTouches[0];
+    moveBalls(e.changedTouches[0]);
+}
+
 function moveBalls(e){
     const {clientX, clientY} = e;
     const redCube = document.querySelector('.testimonial__content-t1');
@@ -41,7 +46,7 @@ const Testimonial = () => {
         id='Testimonials' 
         className='testimonial'
         onMouseMove={moveBalls}
-        onTouchMove={moveBalls}
+        onTouchMove={moveBallsWithTouch}
     >
         <div className="testimonial__content">
             <div className="testimonial__content-t1"><img src={t1} alt="" /></div>
