@@ -224,7 +224,7 @@
 }
 @media screen and (max-width: 560px) {
   .header {
-    margin: 7rem 6.5% -3rem;
+    margin: 0 6.5% -3rem;
   }
   .header .header__heading {
     height: 7rem;
