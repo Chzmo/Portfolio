@@ -1,6 +1,7 @@
 import React from 'react'
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { HashLink } from 'react-router-hash-link';
+import { Link } from 'react-router-dom';
 
 import './Footer.css'
 
@@ -35,7 +36,7 @@ function Footer() {
                 <HashLink to="/Work#" className="footer__top-nav-link" smooth>Recent Work</HashLink>
               </li>
               <li className="footer__top-nav-list-item">
-                <HashLink to="/Blog#" className="footer__top-nav-link" smooth>Blog</HashLink>
+                <Link to="/Blog#" className="footer__top-nav-link" smooth>Blog</Link>
               </li>
               <li className="footer__top-nav-list-item">
                 <HashLink to="/#Testimonials" className="footer__top-nav-link" smooth>Testimonials</HashLink>
