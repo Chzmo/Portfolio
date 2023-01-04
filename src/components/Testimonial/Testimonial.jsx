@@ -41,6 +41,7 @@ const Testimonial = () => {
         id='Testimonials' 
         className='testimonial'
         onMouseMove={moveBalls}
+        onTouchMove={moveBalls}
     >
         <div className="testimonial__content">
             <div className="testimonial__content-t1"><img src={t1} alt="" /></div>
