@@ -5,6 +5,7 @@ import { Link} from 'react-router-dom';
 import { HashLink} from 'react-router-hash-link';
 import jwtDecode from 'jwt-decode';
 
+import { fetchUser } from '../../utils/utils';
 import './NavBar.css'
 
 
@@ -12,7 +13,7 @@ import './NavBar.css'
 function NavBar() {
   
   const [mobileNav, setMobileNav] = useState(false);
-  const [user, setUser] = useState(localStorage.getItem('user') !== 'undefined' ? JSON.parse(localStorage.getItem('user')) : localStorage.clear())
+  const [user, setUser] = useState(fetchUser)
 
   const responsiveNav = ()=>{
     !mobileNav ? setMobileNav(true): setMobileNav(false) ;
