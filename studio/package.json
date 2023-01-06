@@ -15,7 +15,7 @@
   ],
   "dependencies": {
     "@sanity/base": "^2.35.2",
-    "@sanity/core": "^0.139.3",
+    "@sanity/core": "^2.35.0",
     "@sanity/default-layout": "^2.35.2",
     "@sanity/default-login": "^2.35.2",
     "@sanity/desk-tool": "^2.35.2",
@@ -23,7 +23,7 @@
     "@sanity/vision": "^3.1.4",
     "eslint": "^8.6.0",
     "prop-types": "^15.7",
-    "react": "^17.0",
+    "react": "^18.2.0",
     "react-dom": "^17.0",
     "styled-components": "^5.2.0"
   }
