@@ -1,11 +1,11 @@
 {
   "root": true,
-  "project": {
-    "name": "CHZMO"
-  },
   "api": {
     "projectId": "tv4z50ix",
-    "dataset": "production"
+    "dataset": "chzmo"
+  },
+  "project": {
+    "name": "CHZMO"
   },
   "plugins": [
     "@sanity/base",
