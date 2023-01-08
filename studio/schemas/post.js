@@ -42,6 +42,14 @@ export default {
             type: 'string'
         },
         {
+            name: 'technologies',
+            title: 'Technologies',
+            type: 'array',
+            of: [{
+              type: 'string'
+            }]
+        },
+        {
             name: 'postedBy',
             title: 'PostedBy',
             type: 'postedBy'
