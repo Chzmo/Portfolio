@@ -7,6 +7,9 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 // We import object and document schemas
 import user from './user'
 import post from './post'
+import like from './like'
+import postedBy from './postedBy'
+import comment from './comment'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -19,5 +22,8 @@ export default createSchema({
     // in the studio.
     user,
     post,
+    comment,
+    like,
+    postedBy,
   ]),
 })

@@ -41,22 +41,22 @@ export default {
             title: 'UserID',
             type: 'string'
         },
-        // {
-        //     name: 'postedBy',
-        //     title: 'PostedBy',
-        //     type: 'postedBy'
-        // },
-        // {
-        //     name: 'likebBy',
-        //     title: 'likebBy',
-        //     type: 'array',
-        //     of:[{type: 'like'}]
-        // },
-        // {
-        //     name: 'comment',
-        //     title: 'Comments',
-        //     type: 'array',
-        //     of:[{type: 'comment'}]
-        // }
+        {
+            name: 'postedBy',
+            title: 'PostedBy',
+            type: 'postedBy'
+        },
+        {
+            name: 'likebBy',
+            title: 'likebBy',
+            type: 'array',
+            of:[{type: 'like'}]
+        },
+        {
+            name: 'comment',
+            title: 'Comments',
+            type: 'array',
+            of:[{type: 'comment'}]
+        }
     ]
 }
