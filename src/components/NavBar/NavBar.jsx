@@ -6,6 +6,7 @@ import { HashLink} from 'react-router-hash-link';
 import jwtDecode from 'jwt-decode';
 
 import { fetchUser } from '../../utils/utils';
+import { client } from '../../client';
 import './NavBar.css'
 
 
@@ -42,14 +43,11 @@ function NavBar() {
         userName:name,
         image: picture,
     }
-    // client.createIfNotExists(doc)
-    // .then(() => {
-    //         client.fetch(
-    //             `*[_type == "user"]`
-    //         )
-    //         navigate('/', {replace:true})
-    //     })
-    // .catch(console.error);
+    
+    client.createIfNotExists(doc)
+    .then(console.log(11111111111111))
+    .catch(console.error);
+    localStorage.clear();
   }
 
   return (

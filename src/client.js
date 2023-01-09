@@ -6,7 +6,7 @@ export const client = sanityClient({
     dataset:'production',
     apiVersion: '2021-10-21',
     useCdn:false,
-    token: import.meta.env.VITE_APP_SANITY_API_TOKEN,
+    token: import.meta.env.VITE_APP_SANITY_API_TOKEN, 
     ignoreBrowserTokenWarning: true
 });
 
