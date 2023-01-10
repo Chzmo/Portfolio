@@ -33,14 +33,22 @@ function NavBar() {
   
   const responseGoogle = (response)=>{    
     const decode = jwtDecode(response.credential);
-    localStorage.setItem('user', JSON.stringify(decode));
-    const {name, sub, picture} = decode; 
+    localStorage.setItem('user', JSON.stringify({
+      sub:decode.sub,
+      name:decode.name,
+      given_name:decode.given_name,
+      picture:decode.picture,
+      email:decode.email
+    }));
+    console.log(decode)
+    const {name, sub, picture, email} = decode; 
    
     const doc = {
         _id: sub,
         _type: 'user',
         userName:name,
         image: picture,
+        email: email,
     }
   
     client.createIfNotExists(doc)
@@ -73,7 +81,7 @@ function NavBar() {
           ):(
           <li className="navbar__links-ul_li">
             <div className="navbar__links-ul_li-a">
-              {user?.email}
+              {user?.given_name}
             </div>
           </li>
           )}
