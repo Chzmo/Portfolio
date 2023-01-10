@@ -5,6 +5,7 @@ import { FiArrowUpRight } from 'react-icons/fi';
 import { client } from '../../client';
 import { postQuery } from '../../utils/query';
 import { urlFor } from '../../client';
+import Spinner from '../../components/Spinner/Spinner';
 
 import NavBar from '../../components/NavBar/NavBar';
 import Footer from '../../components/Footer/Footer';
@@ -59,8 +60,7 @@ function Work() {
     client.fetch(query)
         .then((data)=> {
           setPostData(data)
-          console.log(data)
-          setLoading(false)
+          // setLoading(false)
         }) 
   }, [])
 
@@ -116,7 +116,7 @@ function Work() {
           <Heading/>
         )}
         <div className="work__portfolio container">
-          { postData?.map((post, key) =>{
+          {loading ? < Spinner /> : postData?.map((post, key) =>{
             return (
               <div key={key} className="work__portfolio-item">
                 <a href={ 'Work/' + post?._id} className="work__portfolio-item_img">
