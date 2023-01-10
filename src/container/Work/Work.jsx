@@ -15,6 +15,7 @@ import image3 from '../../assets/media/thumbs_freelancer-landing-page-minimal-de
 import image4 from '../../assets/media/thumbs_real-estate-landing-page-ui-freebie.jpg'
 
 import './Work.css'
+import { HashLink } from 'react-router-hash-link';
 
 const websites = [
   {
@@ -152,7 +153,7 @@ function Work() {
           currntUrl?.toLowerCase() === "http://localhost:5173/blog" |
           currntUrl?.toLowerCase() === "https://inquisitive-croissant-516f39.netlify.app/work" |
           currntUrl?.toLowerCase() === "http://localhost:5173/work/single")?(<></>):(
-          <a href="/Work" className='work__cta'><span>View all Work</span> <FiArrowUpRight /></a>
+          <HashLink to="/Work#" className='work__cta'><span>View all Work</span> <FiArrowUpRight /></HashLink>
         )}
       </div>
       {(currntUrl === "http://localhost:5173/Work" | currntUrl === "https://inquisitive-croissant-516f39.netlify.app/Work")?(
