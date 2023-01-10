@@ -13,8 +13,8 @@ function Spinner({message}) {
         className="spinner" 
         style={{
             display:"flex", 
-            justifyContent:'center', 
-            alignItems:"center",
+            justifyContent:"flex-end", 
+            alignItems:"flex-end",
             flexDirection:"column",
             gap:"2rem"
             }}
