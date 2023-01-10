@@ -120,9 +120,10 @@ function Work() {
           {loading ? < Spinner message={"Loading..."}/> : postData?.map((post, key) =>{
             return (
               <div key={key} className="work__portfolio-item">
-                <a href={ 'Work/' + post?._id} className="work__portfolio-item_img">
-                  <img src={ urlFor(post?.image) } alt="" />
-                </a>
+                <Link to={ 'Work/' + post?._id} className="work__portfolio-item_img">
+                  <img src={ urlFor(post?.thumbnail) } alt={ post?.title } />
+                  { console.log(post?.thumbnail) }
+                </Link>
                 <div className="work__portfolio-item_links">
                   <a href={post?.gitHubUrl}>GitHub</a>
                   <a href={post?.liveUrl}>View Site</a>

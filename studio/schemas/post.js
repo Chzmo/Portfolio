@@ -9,8 +9,8 @@ export default {
             type: 'string'
         },
         {
-            name: 'image',
-            title: 'LiveImageUrl',
+            name: 'thumbnail',
+            title: 'Thumbnail',
             type: 'image',
             options: {
                 hotspot: true,
@@ -42,17 +42,17 @@ export default {
             type: 'string'
         },
         {
+            name: 'postedBy',
+            title: 'PostedBy',
+            type: 'postedBy'
+        },
+        {
             name: 'technologies',
             title: 'Technologies',
             type: 'array',
             of: [{
               type: 'string'
             }]
-        },
-        {
-            name: 'postedBy',
-            title: 'PostedBy',
-            type: 'postedBy'
         },
         {
             name: 'likebBy',

@@ -52,6 +52,7 @@
   overflow-x: scroll;
   padding: 1rem 0;
   margin: 3rem 0;
+  margin-bottom: 5rem;
 }
 .header .header__categories button {
   padding: 0.7rem 1rem;

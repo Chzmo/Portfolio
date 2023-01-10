@@ -1,6 +1,6 @@
 export const postQuery = `*[_type == "post"] | order(_createdAt desc)
 {
-    image{
+  thumbnail{
       asset->{
         url
       }
