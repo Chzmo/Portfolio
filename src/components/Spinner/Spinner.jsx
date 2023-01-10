@@ -9,17 +9,26 @@ import { GridLoader   } from 'react-spinners';
 
 function Spinner({message}) {
   return (
-    <div className="spinner" style={{display:"flex", position:"absolute"}}>
-      <GridLoader 
+    <div 
+        className="spinner" 
+        style={{
+            display:"flex", 
+            justifyContent:'center', 
+            alignItems:"center",
+            flexDirection:"column",
+            gap:"2rem"
+            }}
+    >
+        <GridLoader 
         color='#36d7b7'
         loading={true}
         size={15}
         aria-label="Loading Spinner"
         data-testid="loader"
-      />
-      <p className='text-lg text-center px-2'>
-        {message}
-      </p>
+        />
+        <p className='text-lg text-center px-2'>
+            {message}
+        </p>
     </div>
   )
 }

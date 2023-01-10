@@ -60,7 +60,7 @@ function Work() {
     client.fetch(query)
         .then((data)=> {
           setPostData(data)
-          // setLoading(false)
+          setLoading(false)
         }) 
   }, [])
 
@@ -116,7 +116,7 @@ function Work() {
           <Heading/>
         )}
         <div className="work__portfolio container">
-          {loading ? < Spinner /> : postData?.map((post, key) =>{
+          {loading ? < Spinner message={"Loading..."}/> : postData?.map((post, key) =>{
             return (
               <div key={key} className="work__portfolio-item">
                 <a href={ 'Work/' + post?._id} className="work__portfolio-item_img">
