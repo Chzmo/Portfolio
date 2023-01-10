@@ -17,29 +17,6 @@ import image4 from '../../assets/media/thumbs_real-estate-landing-page-ui-freebi
 
 import './Work.css'
 
-const websites = [
-  {
-    image:image1,
-    url:"/Work/single",
-    gitHub:"https://www.github.com/Chzmo"
-  },
-  {
-    image:image2,
-    url:"/blog/single",
-    gitHub:"https://www.github.com/Chzmo"
-  },
-  {
-    image:image3,
-    url:"/blog/single",
-    gitHub:"https://www.github.com/Chzmo"
-  },
-  {
-    image:image4,
-    url:"/blog/single",
-    gitHub:"https://www.github.com/Chzmo"
-  }
-]
-
 function Heading(){
   return (
     <>
@@ -120,9 +97,8 @@ function Work() {
           {loading ? < Spinner message={"Loading..."}/> : postData?.map((post, key) =>{
             return (
               <div key={key} className="work__portfolio-item">
-                <Link to={ 'Work/' + post?._id} className="work__portfolio-item_img">
+                <Link to={ '/Work/' + post?._id} className="work__portfolio-item_img">
                   <img src={ urlFor(post?.thumbnail) } alt={ post?.title } />
-                  { console.log(post?.thumbnail) }
                 </Link>
                 <div className="work__portfolio-item_links">
                   <a href={post?.gitHubUrl}>GitHub</a>
