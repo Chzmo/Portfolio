@@ -36,10 +36,10 @@ function Work() {
     setLoading(true);
     const query = postQuery;
     client.fetch(query)
-        .then((data)=> {
-          setPostData(data)
-          setLoading(false)
-        }) 
+      .then((data)=> {
+        setPostData(data)
+        setLoading(false)
+      }) 
   }, [])
 
   useEffect(() => {
