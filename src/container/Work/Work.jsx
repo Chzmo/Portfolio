@@ -61,7 +61,7 @@ function Work() {
     client.fetch(query)
         .then((data)=> {
           setPostData(data)
-          // setLoading(false)
+          setLoading(false)
         }) 
   }, [])
 
