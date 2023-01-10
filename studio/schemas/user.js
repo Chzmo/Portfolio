@@ -1,18 +1,17 @@
-export default {
+export default  {
     name: 'user',
     title: 'User',
     type: 'document',
     fields: [
         {
-            name: 'userName',
+            name:'userName',
             title: 'UserName',
-            type: 'string',
+            type: 'string'
         },
         {
-            name: 'image',
+            name:'image',
             title: 'Image',
-            type: 'string',
+            type: 'string'
         }
     ]
-
 }

@@ -45,7 +45,7 @@ function NavBar() {
     }
     
     client.createIfNotExists(doc)
-    .then(console.log(11111111111111))
+    .then(console.log(doc))
     .catch(console.error);
     localStorage.clear();
   }

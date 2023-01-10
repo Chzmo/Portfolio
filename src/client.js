@@ -9,6 +9,6 @@ export const client = sanityClient({
     token: import.meta.env.VITE_APP_SANITY_API_TOKEN, 
     ignoreBrowserTokenWarning: true
 });
-
+console.log(import.meta.env.VITE_APP_SANITY_PROJECT_ID, import.meta.env.VITE_APP_SANITY_API_TOKEN)
 const builder = imageUrlBulder(client);
 export const urlFor = (source) => builder.image(source);
