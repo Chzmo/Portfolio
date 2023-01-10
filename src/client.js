@@ -2,7 +2,7 @@ import sanityClient from '@sanity/client';
 import imageUrlBulder from '@sanity/image-url';
 
 export const client = sanityClient({
-    projectId: import.meta.env.VITE_APP_SANITY_PROJECT_ID,
+    projectId: "tv4z50ix",
     dataset:'production',
     apiVersion: '2021-10-21',
     useCdn:false,
