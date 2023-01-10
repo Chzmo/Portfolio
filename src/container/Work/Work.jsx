@@ -4,6 +4,7 @@ import { FiArrowUpRight } from 'react-icons/fi';
 
 import { client } from '../../client';
 import { postQuery } from '../../utils/query';
+import { urlFor } from '../../client';
 
 import NavBar from '../../components/NavBar/NavBar';
 import Footer from '../../components/Footer/Footer';
@@ -115,25 +116,25 @@ function Work() {
           <Heading/>
         )}
         <div className="work__portfolio container">
-          { websites.map((website, key) =>{
+          {postData?.map(post => console.log(post))}
+          { postData?.map((post, key) =>{
             return (
               <div key={key} className="work__portfolio-item">
-                <a href={website.url} className="work__portfolio-item_img">
-                  <img src={website.image} alt="" />
+                <a href={post?.gitHubUrl} className="work__portfolio-item_img">
+                  <img src={ urlFor(post?.image) } alt="" />
                 </a>
                 <div className="work__portfolio-item_links">
-                  <a href={website.gitHub}>GitHub</a>
-                  {console.log(postData)}
-                  <a href={website.url}>View Site</a>
+                  <a href={post?.gitHubUrl}>GitHub</a>
+                  <a href={post?.liveUrl}>View Site</a>
                 </div>
                 <div className="work__portfolio-item-heading">
-                  <h3>Landing Page Design for Bee Honey</h3>
+                  <h3>{post?.title}</h3>
                   <hr />
                 </div>
                 <div className="work__portfolio-item_details">
                   <div className="work__portfolio-item_details-time">
                       <p>COMPLETION TIME</p>          
-                      <p>10 WEEKS</p>          
+                      <p>{post?.completionTime} WEEKS</p>          
                   </div>
                   <div className="work__portfolio-item_details-charges">
                     <p>FEE  CHARGED</p>

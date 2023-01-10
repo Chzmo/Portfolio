@@ -9,7 +9,6 @@ import Hero from '../../components/Hero/Hero'
 import Contact from '../Contact/Contact';
 import Work from '../Work/Work';
 
-
 import './Home.css'
 
 function Home() {
