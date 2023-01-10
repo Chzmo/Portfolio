@@ -34,7 +34,6 @@ function NavBar() {
   const responseGoogle = (response)=>{    
     const decode = jwtDecode(response.credential);
     localStorage.setItem('user', JSON.stringify(decode));
-    setUser(localStorage.getItem('user'));
     const {name, sub, picture} = decode; 
    
     const doc = {
@@ -45,9 +44,10 @@ function NavBar() {
     }
   
     client.createIfNotExists(doc)
-    .then(console.log(doc))
+    .then(()=>{
+      setUser(doc)
+    })
     .catch(console.error);
-    localStorage.clear();
   }
 
   return (

@@ -3,7 +3,7 @@ import imageUrlBulder from '@sanity/image-url';
 
 export const client = sanityClient({
     projectId: import.meta.env.VITE_APP_SANITY_PROJECT_ID,
-    dataset:'production',
+    dataset:'chzmo',
     apiVersion: '2021-10-21',
     useCdn:false,
     token: import.meta.env.VITE_APP_SANITY_API_TOKEN, 
