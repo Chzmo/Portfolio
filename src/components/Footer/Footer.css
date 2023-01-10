@@ -76,6 +76,7 @@
 .footer .footer__bottom {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 3rem 0 1rem;
 }
 .footer .footer__bottom p {
