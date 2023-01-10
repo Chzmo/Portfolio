@@ -2,6 +2,9 @@ import { Link } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import { FiArrowUpRight } from 'react-icons/fi';
 
+import { client } from '../../client';
+import { postQuery } from '../../utils/query';
+
 import NavBar from '../../components/NavBar/NavBar';
 import Footer from '../../components/Footer/Footer';
 import image1 from '../../assets/media/thumbs_freebie-gpt-3-landing-page.jpg'
@@ -45,6 +48,20 @@ function Heading(){
 
 function Work() {
   const [currntUrl, setCurrntUrl] = useState(null)
+
+  const [postData, setPostData] = useState(null);
+  const [loading, setLoading ] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    const query = postQuery;
+    client.fetch(query)
+        .then((data)=> {
+          setPostData(data)
+          console.log(data)
+          setLoading(false)
+        }) 
+  }, [])
 
   useEffect(() => {
     setCurrntUrl(window.location.href)
@@ -106,6 +123,7 @@ function Work() {
                 </a>
                 <div className="work__portfolio-item_links">
                   <a href={website.gitHub}>GitHub</a>
+                  {console.log(postData)}
                   <a href={website.url}>View Site</a>
                 </div>
                 <div className="work__portfolio-item-heading">
