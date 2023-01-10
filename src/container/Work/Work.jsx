@@ -1,5 +1,6 @@
-import { Link } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import { FiArrowUpRight } from 'react-icons/fi';
 
 import { client } from '../../client';
@@ -15,7 +16,6 @@ import image3 from '../../assets/media/thumbs_freelancer-landing-page-minimal-de
 import image4 from '../../assets/media/thumbs_real-estate-landing-page-ui-freebie.jpg'
 
 import './Work.css'
-import { HashLink } from 'react-router-hash-link';
 
 const websites = [
   {
