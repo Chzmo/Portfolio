@@ -69,6 +69,7 @@
   justify-content: center;
   margin: 3rem 3.5%;
   max-width: 100%;
+  max-height: 100%;
 }
 .work .heading, .work .paragraph {
   margin-left: 3.5%;
@@ -77,6 +78,7 @@
 }
 .work .heading {
   font-size: 2.7rem;
+  height: 100%;
 }
 .work .work__portfolio {
   display: grid;
@@ -84,6 +86,7 @@
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  padding-top: 2rem;
 }
 .work .work__portfolio .work__portfolio-item {
   display: flex;

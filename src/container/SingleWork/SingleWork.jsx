@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
 import { singleWorkQuery } from '../../utils/query'
-import { client } from '../../client'
+import { client, urlFor } from '../../client'
 
 import NavBar from '../../components/NavBar/NavBar'
 import Work from '../Work/Work'
@@ -14,7 +14,6 @@ import './Single.css'
 function SingleWork() {
   
   const [viewFull, setViewFull] = useState(false);
-  const [singleWork, setSingleWork] = useState(null);
   const [singleWorkData, setSingleWorkData] = useState(null);
   const [loading, setLoading] = useState(false);
   const params = useParams()
@@ -24,26 +23,25 @@ function SingleWork() {
   }
 
   useEffect(() => {
+    setLoading(true)
     const query = singleWorkQuery(params?._id);
     client.fetch(query)
       .then((data)=> {
-        setSingleWorkData(data);
-        console.log(data);
+        setSingleWorkData(data[0]);
         setLoading(false)
       })
 
 
   }, [params])
   
-
   return (
     <>
     <NavBar />
     <div className='singleWork'>
       <div className="singleWork__header">
-        {singleWorkData.length && (
+        {singleWorkData && (
           <>
-            <h2>Shopify Website Design and Development for Organic Products</h2>
+            <h2>{singleWorkData?.title}</h2>
             <div className="singleWork__header-related">
               <button>Landing Page</button>
               <button>Shopify</button>
@@ -55,11 +53,11 @@ function SingleWork() {
       <div className="singleWork__details">
         <div className="singleWork__details-time">
             <p>COMPLETION TIME</p>          
-            <p>10 WEEKS</p>          
+            <p>{singleWorkData?.completionTime} WEEKS</p>         
         </div>
         <div className="singleWork__details-charges">
           <p>FEE  CHARGED</p>          
-          <p>$0.00</p>  
+          <p>$ 0.00</p>  
         </div>
         <div className="singleWork__details-feedback">
           <p>Client Feedback:</p>          
@@ -68,7 +66,7 @@ function SingleWork() {
       </div> 
       <div className="singleWork__main">
         <div className={ !viewFull ? "singleWork__main-img" : "preview"}>
-          
+          <div><img src={singleWorkData && urlFor(singleWorkData?.thumbnail) } /></div>
           { !viewFull &&
             <button onClick={ fullPreview }>Click To View Full Preview</button>
           }

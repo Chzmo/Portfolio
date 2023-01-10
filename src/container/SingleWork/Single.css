@@ -65,6 +65,12 @@
   display: flex;
   justify-content: center;
 }
+.singleWork .singleWork__main .singleWork__main-img div, .singleWork .singleWork__main .preview div {
+  margin: 4rem 6.5%;
+}
+.singleWork .singleWork__main .singleWork__main-img div img, .singleWork .singleWork__main .preview div img {
+  max-width: 100%;
+}
 .singleWork .singleWork__main .singleWork__main-img button, .singleWork .singleWork__main .preview button {
   background: #673ab7;
   color: #fff;

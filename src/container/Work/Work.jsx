@@ -26,21 +26,18 @@ function Heading(){
   )
 }
 
-function Work() {
+function Work({props}) {
   const [currntUrl, setCurrntUrl] = useState(null)
 
-  const [postData, setPostData] = useState(null);
-  const [loading, setLoading ] = useState(false);
-
-  useEffect(() => {
-    setLoading(true);
-    const query = postQuery;
-    client.fetch(query)
-      .then((data)=> {
-        setPostData(data)
-        setLoading(false)
-      }) 
-  }, [])
+  // useEffect(() => {
+  //   props?.setLoading(true);
+  //   const query = postQuery;
+  //   client.fetch(query)
+  //     .then((data)=> {
+  //       props?.setPostData(data)
+  //       props?.setLoading(false)
+  //     }) 
+  // }, [])
 
   useEffect(() => {
     setCurrntUrl(window.location.href)
@@ -94,7 +91,7 @@ function Work() {
           <Heading/>
         )}
         <div className="work__portfolio container">
-          {loading ? < Spinner message={"Loading..."}/> : postData?.map((post, key) =>{
+          {props?.loading ? < Spinner message={"Loading..."}/> : props?.postData?.map((post, key) =>{
             return (
               <div key={key} className="work__portfolio-item">
                 <Link to={ '/Work/' + post?._id} className="work__portfolio-item_img">

@@ -75,15 +75,18 @@
     justify-content: center;
     margin: 3rem 3.5%;
     max-width: 100%;
+    max-height: 100%;
 
     .heading, .paragraph{
         margin-left: 3.5%;
         margin-bottom: 2rem;
         font-size: 1.1rem;
+        
     }
     
     .heading{
         font-size: 2.7rem;
+        height: 100%;
     }
     .work__portfolio{
         display: grid;
@@ -91,6 +94,7 @@
         align-items: center;
         justify-content: center;
         gap: 1rem;
+        padding-top: 2rem;
 
         .work__portfolio-item{
             display: flex;
