@@ -116,11 +116,10 @@ function Work() {
           <Heading/>
         )}
         <div className="work__portfolio container">
-          {postData?.map(post => console.log(post))}
           { postData?.map((post, key) =>{
             return (
               <div key={key} className="work__portfolio-item">
-                <a href={post?.gitHubUrl} className="work__portfolio-item_img">
+                <a href={ 'Work/' + post?._id} className="work__portfolio-item_img">
                   <img src={ urlFor(post?.image) } alt="" />
                 </a>
                 <div className="work__portfolio-item_links">
