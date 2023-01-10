@@ -43,7 +43,7 @@ function NavBar() {
         userName:name,
         image: picture,
     }
-    
+  
     client.createIfNotExists(doc)
     .then(console.log(doc))
     .catch(console.error);
