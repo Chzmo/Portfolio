@@ -81,7 +81,6 @@
         margin-left: 3.5%;
         margin-bottom: 2rem;
         font-size: 1.1rem;
-        
     }
     
     .heading{
@@ -89,7 +88,7 @@
         height: 100%;
     }
     .work__portfolio{
-        display: grid;
+        display: grid ;
         grid-template-columns: 1fr 1fr;
         align-items: center;
         justify-content: center;
@@ -275,8 +274,6 @@
 }
 
 @media screen and (max-width:560px){
-    
-
 
     .header{
         margin: 0 6.5% -3rem;

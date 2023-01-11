@@ -22,7 +22,7 @@ function SingleWork() {
   const fullPreview = () =>{
     setViewFull(true)
   }
-
+  
   useEffect(() => {
     setLoading(true)
     const query = singleWorkQuery(params?._id);
@@ -51,7 +51,7 @@ function SingleWork() {
       </div>
       <div className="singleWork__details">
         <div className="singleWork__details-time">
-            <p>COMPLETION TIME</p>          
+            <p>COMPLETION TIME</p>           
             <p>{singleWorkData?.completionTime} WEEKS</p>         
         </div>
         <div className="singleWork__details-charges">

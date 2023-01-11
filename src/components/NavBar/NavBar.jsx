@@ -15,7 +15,7 @@ function NavBar() {
   
   const [mobileNav, setMobileNav] = useState(false);
   const [user, setUser] = useState(fetchUser)
-
+  console.log(window.location.origin)
   const responsiveNav = ()=>{
     !mobileNav ? setMobileNav(true): setMobileNav(false) ;
   }

@@ -1,10 +1,71 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { HashLink } from 'react-router-hash-link'
+import { Link } from 'react-router-dom'
 
-import Work from '../Work/Work'
+import { blogQuery} from '../../utils/query'
+import { client, urlFor } from '../../client'
+
 import Footer from '../../components/Footer/Footer'
 import NavBar from '../../components/NavBar/NavBar'
+import Spinner from '../../components/Spinner/Spinner'
+import './Blog.css'
+
+
+function BlogPosts(props){
+  
+  const [loading, setLoading] = useState(false);
+  const [blogData, setBlogData] = useState(null)
+
+  useEffect(() => {
+    setLoading(true);
+    const query = props?.query;
+    client.fetch(query)
+      .then((data)=> {
+        setBlogData(data)
+        setLoading(false)
+      }) 
+  }, [props?.query])
+
+  return (
+    <div className="work__portfolio ">
+      {loading ? < Spinner message={"Loading..."}/> : blogData?.map((post, key) =>{
+        return (
+          <div key={key} className="work__portfolio-item">
+            <HashLink to={ '/Work/' + post?._id + '#'}  className="work__portfolio-item_img">
+              <img src={ urlFor(post?.thumbnail) } alt={ post?.title } />
+            </HashLink>
+            <div className="work__portfolio-item_links">
+              <a href={post?.gitHubUrl}>GitHub</a>
+              <a href={post?.liveUrl}>View Site</a>
+            </div>
+            <div className="work__portfolio-item-heading">
+              <h3>{post?.title}</h3>
+              <hr />
+            </div>
+            <div className="work__portfolio-item_details">
+              <div className="work__portfolio-item_details-time">
+                  <p>COMPLETION TIME</p>          
+                  <p>{post?.completionTime} WEEKS</p>          
+              </div>
+              <div className="work__portfolio-item_details-charges">
+                <p>FEE  CHARGED</p>
+                <p>$0.00</p>  
+              </div>
+              <Link href='' className="work__portfolio-item_details-view">
+                <p>VIEW</p>          
+                <p>FULL DETAILS</p>               
+              </Link>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  )
+  
+}
 
 function Blog() {
+  const query = blogQuery;
   return (
     <>
       <NavBar />
@@ -39,7 +100,7 @@ function Blog() {
             <button>Ecommerce</button>
         </div>
       </div>
-      <Work />
+      <BlogPosts query={query}/>
       <div className="footer__wrapper">
         <Footer />
       </div>
