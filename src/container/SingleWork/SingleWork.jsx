@@ -10,6 +10,7 @@ import Footer from '../../components/Footer/Footer'
 import srarRating from '../../assets/media/star-rating.svg'
 
 import './Single.css'
+import Spinner from '../../components/Spinner/Spinner'
 
 function SingleWork() {
   
@@ -63,12 +64,14 @@ function SingleWork() {
         </div> 
       </div> 
       <div className="singleWork__main">
-        <div className={ !viewFull ? "singleWork__main-img" : "preview"}>
-          <div id='singleWork'><img src={singleWorkData && urlFor(singleWorkData?.thumbnail) } /></div>
-          { !viewFull &&
-            <button onClick={ fullPreview }>Click To View Full Preview</button>
-          }
-        </div>
+        {loading ? <Spinner /> : 
+          <div className={ !viewFull ? "singleWork__main-img" : "preview"}>
+            <div id='singleWork'><img src={singleWorkData && urlFor(singleWorkData?.thumbnail) } /></div>
+            { !viewFull &&
+              <button onClick={ fullPreview }>Click To View Full Preview</button>
+            }
+          </div>
+        }
         <div className="singleWork__main-quote">
           <h2>Get Started With Chzmo</h2>
           <p>Please provide some information about your 
