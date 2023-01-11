@@ -34,7 +34,7 @@ function Work(props) {
   
   useEffect(() => {
     setLoading(true);
-    const query = props?.query;
+    const query = props?.query || postQuery;
     client.fetch(query)
       .then((data)=> {
         setPostData(data)

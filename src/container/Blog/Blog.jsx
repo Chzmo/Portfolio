@@ -31,7 +31,7 @@ function BlogPosts(props){
       {loading ? < Spinner message={"Loading..."}/> : blogData?.map((post, key) =>{
         return (
           <div key={key} className="work__portfolio-item">
-            <HashLink to={ '/Work/' + post?._id + '#'}  className="work__portfolio-item_img">
+            <HashLink to={ '/Blog/' + post?._id + '#'}  className="work__portfolio-item_img">
               <img src={ urlFor(post?.thumbnail) } alt={ post?.title } />
             </HashLink>
             <div className="work__portfolio-item_links">

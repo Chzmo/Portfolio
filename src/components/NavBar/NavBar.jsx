@@ -1,7 +1,6 @@
 
 import { GoogleLogin, googleLogout } from '@react-oauth/google';
 import React, { useEffect, useState } from 'react'
-import { Link} from 'react-router-dom';
 import { HashLink} from 'react-router-hash-link';
 import jwtDecode from 'jwt-decode';
 
@@ -15,7 +14,6 @@ function NavBar() {
   
   const [mobileNav, setMobileNav] = useState(false);
   const [user, setUser] = useState(fetchUser)
-  console.log(window.location.origin)
   const responsiveNav = ()=>{
     !mobileNav ? setMobileNav(true): setMobileNav(false) ;
   }
