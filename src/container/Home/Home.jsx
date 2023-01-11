@@ -25,6 +25,7 @@ function Home() {
       .then((data)=> {
         setPostData(data)
         setLoading(false)
+        console.log(data);
       }) 
   }, [])
   

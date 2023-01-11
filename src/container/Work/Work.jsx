@@ -26,9 +26,10 @@ function Heading(){
   )
 }
 
-function Work({props}) {
+function Work(props) {
   const [currntUrl, setCurrntUrl] = useState(null)
 
+  console.log(props?.postData)
   // useEffect(() => {
   //   props?.setLoading(true);
   //   const query = postQuery;
@@ -38,7 +39,7 @@ function Work({props}) {
   //       props?.setLoading(false)
   //     }) 
   // }, [])
-
+ 
   useEffect(() => {
     setCurrntUrl(window.location.href)
   }, [])
