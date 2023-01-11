@@ -34,22 +34,17 @@
   margin-top: 3rem;
   margin-bottom: 5rem;
 }
-.singleBlog .singleBlog__main .singleBlog__main-img, .singleBlog .singleBlog__main .preview {
+.singleBlog .singleBlog__main .singleBlog__main-img {
   box-shadow: 0 0 100px var(--grey);
   position: relative;
   max-width: 100%;
-  height: 40rem;
-  overflow-y: hidden;
-  background-image: url(../../assets/media/full-preview-landing-page-design-for-shopify-products.png);
-  background-repeat: no-repeat;
-  background-size: cover;
   position: relative;
   display: flex;
   justify-content: center;
   transition: 7000ms ease-in-out;
 }
-.singleBlog .singleBlog__main .singleBlog__main-img:hover, .singleBlog .singleBlog__main .preview:hover {
-  background-position: bottom;
+.singleBlog .singleBlog__main .singleBlog__main-img img {
+  width: 100%;
 }
 .singleBlog .singleBlog__main .singleBlog__blog {
   display: flex;

@@ -20,6 +20,8 @@ import image4 from '../../assets/media/thumbs_real-estate-landing-page-ui-freebi
 
 import './SingleBlog.css'
 import data from './data'
+import { singleWorkQuery } from '../../utils/query'
+import { client, urlFor } from '../../client'
 
 const blogs = [{ image:image1 }, { image:image2,}, {image:image3}, {image:image4}];
 
@@ -31,7 +33,10 @@ function SingleBlog() {
   const [replyTo, setReplyTo] = useState(null)
   const [replyToId, setReplyToId] = useState(null)
   const [commentType, setCommentType] = useState(null);
-  const {single} = useParams()
+  const [loading, setLoading] = useState(false);
+  const [singleBlogData, setSingleBlogData] = useState(null)
+
+  const {_id} = useParams()
 
   const addComment = () =>{
     const newItem = {
@@ -47,9 +52,8 @@ function SingleBlog() {
         "username": "amyrobson"
       },
       "replies": []
-    };
+    };    
 
-    
     if(comment){
 
       const updatedItems = [...items];
@@ -103,15 +107,23 @@ function SingleBlog() {
   }, [])
 
   useEffect(() => {
-    console.log(single)
-  }, [single])
+    const query = singleWorkQuery(_id);
+    setLoading(true);
+    client.fetch(query)
+    .then((data)=> {
+      setSingleBlogData(data[0]);
+      setLoading(false);
+      console.log(data[0]);
+    }) 
+  }, [_id])
   
   return (
     <>
       <NavBar />
+      
       <div className='singleBlog'>
         <div className="singleBlog__header">
-          <h2>Shopify Website Design and Development for Organic Products</h2>
+          <h2>{singleBlogData?.title}</h2>
           <div className="singleBlog__header-related">
             <button>LandingPage</button>
             <button>Shopify</button>
@@ -121,7 +133,7 @@ function SingleBlog() {
         <p>Home {'/'} Blog {'/'} Post</p>
         <div className="singleBlog__main">
           <div className= "singleBlog__main-img">
-            {/* background image */}
+            <img src={singleBlogData && urlFor(singleBlogData?.thumbnail)} alt="" />
           </div>
           <div className="singleBlog__blog">
             <div className="socials">
@@ -144,14 +156,7 @@ function SingleBlog() {
                   </div>
                 </div>
                 <div className="blog__post-content">
-                  <summary> <strong>ShareMe</strong>  is a photo sharing web application, inspired by Pinterest. ShareMe 
-                    is a social media platform that allows users to save and 
-                    share images that they find online.
-                    Users can create boards to organize their pins and follow 
-                    other users to discover new content. ShareMe is often used 
-                    as a source of inspiration for various activities, including 
-                    crafting, DIY projects, fashion, home decor, and more.
-                  </summary>
+                  <summary>{singleBlogData?.about}</summary>
                   <div className="blog__post-content_technologies">
                     <h2>Technologies used</h2>
                     <div className="blog__post-content_technologies-items">
