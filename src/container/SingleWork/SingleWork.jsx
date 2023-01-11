@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
-import { singleWorkQuery } from '../../utils/query'
+import { relatedWorkQuery, singleWorkQuery } from '../../utils/query'
 import { client, urlFor } from '../../client'
 
 import NavBar from '../../components/NavBar/NavBar'
@@ -30,8 +30,6 @@ function SingleWork() {
         setSingleWorkData(data[0]);
         setLoading(false)
       })
-
-
   }, [params])
   
   return (
@@ -66,7 +64,7 @@ function SingleWork() {
       </div> 
       <div className="singleWork__main">
         <div className={ !viewFull ? "singleWork__main-img" : "preview"}>
-          <div><img src={singleWorkData && urlFor(singleWorkData?.thumbnail) } /></div>
+          <div id='singleWork'><img src={singleWorkData && urlFor(singleWorkData?.thumbnail) } /></div>
           { !viewFull &&
             <button onClick={ fullPreview }>Click To View Full Preview</button>
           }
@@ -84,7 +82,9 @@ function SingleWork() {
         </div>
       </div>
     </div>
-    < Work />
+    < Work 
+      query={relatedWorkQuery(params._id)}
+    />
     <div className="footer__wrapper">
       <Footer />
     </div>

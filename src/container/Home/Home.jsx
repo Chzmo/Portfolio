@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { postQuery } from '../../utils/query';
-import { client } from '../../client';
 
 import Testimonial from '../../components/Testimonial/Testimonial';
 import Mission from '../../components/Mission/Mission';
@@ -15,20 +14,8 @@ import './Home.css'
 
 function Home() {
 
-  const [postData, setPostData] = useState(null);
-  const [loading, setLoading ] = useState(false);
+  const query =  postQuery;
 
-  useEffect(() => {
-    setLoading(true);
-    const query = postQuery;
-    client.fetch(query)
-      .then((data)=> {
-        setPostData(data)
-        setLoading(false)
-        console.log(data);
-      }) 
-  }, [])
-  
   return (
     <>
       <NavBar />
@@ -39,10 +26,7 @@ function Home() {
       </div>
       <section>
         <Work
-          loading = {loading}
-          setLoading = {setLoading}
-          postData = {postData}
-          setPostData = {setPostData}
+          query = {query}
         />
       </section>
       <Testimonial />

@@ -28,17 +28,19 @@ function Heading(){
 
 function Work(props) {
   const [currntUrl, setCurrntUrl] = useState(null)
-
-  console.log(props?.postData)
-  // useEffect(() => {
-  //   props?.setLoading(true);
-  //   const query = postQuery;
-  //   client.fetch(query)
-  //     .then((data)=> {
-  //       props?.setPostData(data)
-  //       props?.setLoading(false)
-  //     }) 
-  // }, [])
+  const [loading, setLoading] = useState(false);
+  const [postData, setPostData] = useState(null)
+  
+  
+  useEffect(() => {
+    setLoading(true);
+    const query = props?.query;
+    client.fetch(query)
+      .then((data)=> {
+        setPostData(data)
+        setLoading(false)
+      }) 
+  }, [props?.query])
  
   useEffect(() => {
     setCurrntUrl(window.location.href)
@@ -92,12 +94,12 @@ function Work(props) {
           <Heading/>
         )}
         <div className="work__portfolio container">
-          {props?.loading ? < Spinner message={"Loading..."}/> : props?.postData?.map((post, key) =>{
+          {loading ? < Spinner message={"Loading..."}/> : postData?.map((post, key) =>{
             return (
               <div key={key} className="work__portfolio-item">
-                <Link to={ '/Work/' + post?._id} className="work__portfolio-item_img">
+                <HashLink to={ '/Work/' + post?._id + '#singleWork'}  className="work__portfolio-item_img">
                   <img src={ urlFor(post?.thumbnail) } alt={ post?.title } />
-                </Link>
+                </HashLink>
                 <div className="work__portfolio-item_links">
                   <a href={post?.gitHubUrl}>GitHub</a>
                   <a href={post?.liveUrl}>View Site</a>

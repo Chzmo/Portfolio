@@ -21,3 +21,8 @@ export const postQuery = `*[_type == "post"] | order(_createdAt desc)
 export const singleWorkQuery = (_id) =>{
   return `*[_type == "post" && _id == '${_id}']`;
 }
+
+export const relatedWorkQuery = (_id) =>{
+  return `*[_type == "post" && _id != '${_id}']`;
+}
+
