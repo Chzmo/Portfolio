@@ -6,6 +6,7 @@ export const postQuery = `*[_type == "post"] | order(_createdAt desc)
       }
     },
     _id,
+    title,
     about,
     liveUrl,
     gitHubUrl,

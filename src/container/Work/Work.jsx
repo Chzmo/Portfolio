@@ -97,7 +97,7 @@ function Work(props) {
           {loading ? < Spinner message={"Loading..."}/> : postData?.map((post, key) =>{
             return (
               <div key={key} className="work__portfolio-item">
-                <HashLink to={ '/Work/' + post?._id + '#singleWork'}  className="work__portfolio-item_img">
+                <HashLink to={ '/Work/' + post?._id + '#'}  className="work__portfolio-item_img">
                   <img src={ urlFor(post?.thumbnail) } alt={ post?.title } />
                 </HashLink>
                 <div className="work__portfolio-item_links">

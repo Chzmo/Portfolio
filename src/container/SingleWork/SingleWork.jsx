@@ -64,7 +64,7 @@ function SingleWork() {
         </div> 
       </div> 
       <div className="singleWork__main">
-        {loading ? <Spinner /> : 
+        {loading ? <Spinner  message={"Loading..."}/> : 
           <div className={ !viewFull ? "singleWork__main-img" : "preview"}>
             <div id='singleWork'><img src={singleWorkData && urlFor(singleWorkData?.thumbnail) } /></div>
             { !viewFull &&
