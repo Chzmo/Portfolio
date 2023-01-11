@@ -55,8 +55,8 @@ export default {
             }]
         },
         {
-            name: 'likebBy',
-            title: 'likebBy',
+            name: 'likedBy',
+            title: 'likedBy',
             type: 'array',
             of:[{type: 'like'}]
         },

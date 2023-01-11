@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import React, { useEffect, useState } from 'react'
+import { formatDistanceToNow } from 'date-fns';
 import { useParams } from 'react-router-dom'
 
 import {CiHeart } from 'react-icons/ci'
@@ -137,11 +138,11 @@ function SingleBlog() {
           </div>
           <div className="singleBlog__blog">
             <div className="socials">
-              <div className="socials__date"><p>2 years ago</p></div>
+              <div className="socials__date"><p>{singleBlogData && formatDistanceToNow(new Date(singleBlogData?._createdAt))} ago</p></div>
               <div className="socials__links">
-                <div className="socials__links-like"><a href=""><CiHeart className="social-icon"/> <span>30K</span></a></div>
-                <div className="socials__links-comment"><a href=""><BiMessageRoundedDetail className="social-icon"/> <span>390</span></a></div>
-                <div className="socials__links-share"><a href=""><HiOutlineShare className="social-icon"/> <span>Share</span></a></div>
+                <div className="socials__links-like"><a href="#"><CiHeart className="social-icon"/> <span>{singleBlogData?.likedBy?.length || 0}</span></a></div>
+                <div className="socials__links-comment"><a href="#"><BiMessageRoundedDetail className="social-icon"/> <span>{singleBlogData?.comment?.length || 0}</span></a></div>
+                <div className="socials__links-share"><a href="#"><HiOutlineShare className="social-icon"/> <span>Share</span></a></div>
               </div>
             </div>
             <div className="blog">
@@ -161,15 +162,11 @@ function SingleBlog() {
                     <h2>Technologies used</h2>
                     <div className="blog__post-content_technologies-items">
                       <ul>
-                        <li>ReactJs</li>
-                        <li>Google oauth2</li>
-                        <li>Mansonry-Layout</li>
-                        <li>Tailwind CSS</li>
-                        <li>Sanity io</li>
-                        <li>jwt-decode</li>
-                        <li>uuId</li>
-                        <li>Custom CSS</li>
-                        <li>Sanity io</li>
+                        {singleBlogData?.technologies && (
+                          singleBlogData?.technologies.map((technology, key) => {
+                            return <li key={key+ 376437643}>{technology}</li>;
+                          })
+                        )}
                       </ul>
                     </div>
                   </div>
