@@ -62,15 +62,15 @@
 .singleWork .singleWork__main .singleWork__main-img, .singleWork .singleWork__main .preview {
   box-shadow: 0 0 100px rgb(187, 185, 185);
   position: relative;
-  width: 100%;
+  max-width: 100%;
   display: flex;
   justify-content: center;
 }
 .singleWork .singleWork__main .singleWork__main-img div, .singleWork .singleWork__main .preview div {
-  margin: 4rem 6.5%;
+  width: 100%;
 }
 .singleWork .singleWork__main .singleWork__main-img div img, .singleWork .singleWork__main .preview div img {
-  max-width: 100%;
+  width: 100%;
 }
 .singleWork .singleWork__main .singleWork__main-img button, .singleWork .singleWork__main .preview button {
   background: #673ab7;
@@ -86,7 +86,7 @@
   cursor: pointer;
 }
 .singleWork .singleWork__main .preview {
-  max-height: 140rem;
+  max-height: 100%;
   box-shadow: 0 0 100px rgb(187, 185, 185);
   position: relative;
   width: 100%;

@@ -141,7 +141,7 @@ function SingleBlog() {
               <div className="socials__date"><p>{singleBlogData && formatDistanceToNow(new Date(singleBlogData?._createdAt))} ago</p></div>
               <div className="socials__links">
                 <div className="socials__links-like"><a href="#"><CiHeart className="social-icon"/> <span>{singleBlogData?.likedBy?.length || 0}</span></a></div>
-                <div className="socials__links-comment"><a href="#"><BiMessageRoundedDetail className="social-icon"/> <span>{singleBlogData?.comment?.length || 0}</span></a></div>
+                <div className="socials__links-comment"><a href="#"><BiMessageRoundedDetail className="social-icon"/> <span>{singleBlogData?.comments?.length || 0}</span></a></div>
                 <div className="socials__links-share"><a href="#"><HiOutlineShare className="social-icon"/> <span>Share</span></a></div>
               </div>
             </div>

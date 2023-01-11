@@ -61,7 +61,7 @@ export default {
             of:[{type: 'like'}]
         },
         {
-            name: 'comment',
+            name: 'comments',
             title: 'Comments',
             type: 'array',
             of:[{type: 'comment'}]

@@ -68,15 +68,15 @@
         .singleWork__main-img, .preview{
             box-shadow: 0 0 100px rgb(187, 185, 185);
             position: relative;
-            width: 100%;
+            max-width: 100%;
             display: flex;
             justify-content: center;
 
             div{
-                margin: 4rem 6.5%;
+                width: 100%;
 
                 img{
-                    max-width: 100%;
+                    width: 100%;
                 }
             }
             
@@ -97,7 +97,7 @@
         }
 
         .preview{
-            max-height: 140rem;
+            max-height: 100%;
             box-shadow: 0 0 100px rgb(187, 185, 185);
             position: relative;
             width: 100%;

@@ -12,6 +12,12 @@ export default {
             name: 'comment',
             title: 'Comment',
             type: 'string'
+        },
+        {
+            name: 'replies',
+            title: 'Replies',
+            type: 'array',
+            of:[{type: 'reply'}]
         }
     ],
 }
