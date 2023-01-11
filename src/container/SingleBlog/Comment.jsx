@@ -1,11 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { CiHeart } from 'react-icons/ci';
+import { useParams } from 'react-router-dom';
+import { BsReplyAll } from 'react-icons/bs';
 import { formatDistanceToNow } from 'date-fns';
 
-import {CiHeart } from 'react-icons/ci'
-import {BsReplyAll} from 'react-icons/bs'
+import { client } from '../../client';
+import { commentQuery } from '../../utils/query'
 
 import profileImg from '../../assets/media/zaliro_p.png';
-
 
 function SingleComment({comment, props}){
 
@@ -110,8 +112,6 @@ function SingleReply({reply, props}){
   )
 }
 
-
-
 export function CommentField(props){
 
   const setReplyToNull = () =>{
@@ -144,11 +144,28 @@ export function CommentField(props){
 }
 
 function Comment(props){
+  
+  const [loading, setLoading] = useState(false);
+  const [commentData, setCommentData] = useState(null)
+  const {_id} = useParams()
 
   const updateLikeScore = (id) =>{
     // const [score, setScore] = useState(null)
     
   }
+
+  useEffect(() => {
+    setLoading(true);
+    const query = commentQuery(_id);
+    client.fetch(query)
+      .then((data)=> {
+        setCommentData(data)
+        setLoading(false)
+        console.log(data)
+      }) 
+
+  }, [_id])
+  
 
   return (
     <>

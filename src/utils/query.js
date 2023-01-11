@@ -44,7 +44,29 @@ export const singleWorkQuery = (_id) =>{
   return `*[_type == "post" && _id == '${_id}']`;
 }
 
+export const singleBlogkQuery = (_id) => {
+  return `*[_type == "post" && _id == '${_id}']{
+    title,
+    thumbnail{
+      asset->{
+        url
+      }
+    },
+    technologies,
+    comments,
+    likedBy,
+    liveUrl,
+    _createdAt,
+  }`;
+}
+
 export const relatedWorkQuery = (_id) =>{
   return `*[_type == "post" && _id != '${_id}']`;
+}
+
+export const commentQuery = (_id) =>{
+  return `*[_type == 'post' && _id == '${_id}']{
+    comments,
+  }`;
 }
 

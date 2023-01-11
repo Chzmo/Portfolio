@@ -21,7 +21,7 @@ import image4 from '../../assets/media/thumbs_real-estate-landing-page-ui-freebi
 
 import './SingleBlog.css'
 import data from './data'
-import { singleWorkQuery } from '../../utils/query'
+import { singleBlogkQuery } from '../../utils/query'
 import { client, urlFor } from '../../client'
 
 const blogs = [{ image:image1 }, { image:image2,}, {image:image3}, {image:image4}];
@@ -108,7 +108,7 @@ function SingleBlog() {
   }, [])
 
   useEffect(() => {
-    const query = singleWorkQuery(_id);
+    const query = singleBlogkQuery(_id);
     setLoading(true);
     client.fetch(query)
     .then((data)=> {
