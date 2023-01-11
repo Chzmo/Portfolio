@@ -10,6 +10,7 @@ import post from './post'
 import like from './like'
 import postedBy from './postedBy'
 import comment from './comment'
+import reply from './reply'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -25,5 +26,6 @@ export default createSchema({
     comment,
     like,
     postedBy,
+    reply,
   ]),
 })

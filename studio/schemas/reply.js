@@ -11,7 +11,7 @@ export default {
         {
             name: 'likes',
             title: 'Likes',
-            type: 'arry',
+            type: 'array',
             of:[{type:'like'}]
         },
         {
@@ -22,11 +22,11 @@ export default {
         {
             name: 'userImage',
             title: 'User Image',
-            type: 'string'
+            type: 'url'
         },
         {
             name: 'userName',
-            title: 'User Image',
+            title: 'User Name',
             type: 'string'
         },
     ],
