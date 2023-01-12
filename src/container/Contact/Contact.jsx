@@ -20,7 +20,7 @@ const Accordion = () => {
     <div className='accordion '>
       <div className='accordion__header'><h2>Frequently Asked Questions</h2></div>
       {items.map((item, index) => (
-        <div key={item.title} className="accordion__item">
+        <div key={item.title} className="accordion__items">
           <div onClick={() => handleClick(index)}>
             <h3>{item.title}</h3>
           </div>

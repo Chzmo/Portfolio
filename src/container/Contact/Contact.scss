@@ -101,7 +101,7 @@
                     color: #FFFFFF;
                     width: 24rem;
                     font-weight: 300;
-                    margin: 2rem 0 5rem;
+                    margin: 2rem 0 2rem;
                 }
             }
         }
@@ -112,7 +112,22 @@
     margin: auto;
     width: 80%;
     padding: 1rem 3rem;
-    
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    .accordion__header{
+        h2{
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+    }
+
+    .accordion__items{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
 }
 
 
@@ -181,6 +196,6 @@
     .accordion{
         margin: auto;
         width: 100%;
-        margin-left: -1.1rem;
+        margin-left: -1.2rem;
     }
 }
