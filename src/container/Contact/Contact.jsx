@@ -17,12 +17,12 @@ const Accordion = () => {
   }
 
   return (
-    <div className='container '>
-      <div className='container'><h1>Frequently Asked Questions</h1></div>
+    <div className='accordion '>
+      <div className='accordion__header'><h2>Frequently Asked Questions</h2></div>
       {items.map((item, index) => (
-        <div key={item.title} className="container">
+        <div key={item.title} className="accordion__item">
           <div onClick={() => handleClick(index)}>
-            <h2>{item.title}</h2>
+            <h3>{item.title}</h3>
           </div>
           {activeIndex === index && item.content}
         </div>
@@ -88,11 +88,15 @@ function Contact() {
                 <button type='submit'>Send Contact Request Now</button>
               </div>
             </form>
+            {(currntUrl && currntUrl === "http://localhost:5173/Contact" || currntUrl === "https://inquisitive-croissant-516f39.netlify.app/Contact") && (
+            <>
+              <Accordion />
+            </>
+            )}
           </div>
         </div>
         {(currntUrl && currntUrl === "http://localhost:5173/Contact" || currntUrl === "https://inquisitive-croissant-516f39.netlify.app/Contact") && (
           <>
-            <Accordion />
             <div className="footer__wrapper">
               <Footer />
             </div>

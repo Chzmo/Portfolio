@@ -50,8 +50,9 @@
 .contact .contact__form {
   display: flex;
   width: 100%;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
 }
 .contact .contact__form form {
   margin: auto;
@@ -93,6 +94,12 @@
   margin: 2rem 0 5rem;
 }
 
+.accordion {
+  margin: auto;
+  width: 80%;
+  padding: 1rem 3rem;
+}
+
 @media screen and (max-width: 1040px) {
   .contact .contact__header {
     padding: 1rem 0;
@@ -103,6 +110,11 @@
   .contact .contact__form form {
     width: 95%;
     padding: 1rem 4rem;
+  }
+  .accordion {
+    margin: auto;
+    width: 95%;
+    margin-left: 2rem;
   }
 }
 @media screen and (max-width: 800px) {
@@ -124,5 +136,10 @@
   }
   .contact .contact__form form div input:focus, .contact .contact__form form div select:focus, .contact .contact__form form div button:focus, .contact .contact__form form div textarea:focus {
     border: solid #222 1px;
+  }
+  .accordion {
+    margin: auto;
+    width: 100%;
+    margin-left: -1.1rem;
   }
 }/*# sourceMappingURL=Contact.css.map */

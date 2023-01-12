@@ -52,8 +52,9 @@
     .contact__form{
         display: flex;
         width: 100%;
-        justify-content: center;
-        align-items: center;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: column;
 
         form{
             margin: auto;
@@ -107,6 +108,14 @@
     }
 }
 
+.accordion{
+    margin: auto;
+    width: 80%;
+    padding: 1rem 3rem;
+    
+}
+
+
 @media screen and (max-width:1040px) {
     .contact{
         .contact__header{
@@ -122,6 +131,12 @@
                 padding: 1rem 4rem;
             }
         }
+    }
+
+    .accordion{
+        margin: auto;
+        width: 95%;
+        margin-left: 2rem;
     }
 }
 
@@ -161,5 +176,11 @@
                 }
             }
         }
+    }
+
+    .accordion{
+        margin: auto;
+        width: 100%;
+        margin-left: -1.1rem;
     }
 }
