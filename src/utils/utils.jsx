@@ -78,7 +78,7 @@ export const faqData = [
                 <ul>
                     <li>Full Name: Chisomo Zaliro Moyo</li>
                     <li>Website: chzmo.com</li>
-                    <li>City/Country of Residence: Malawi, Mzuzu</li>
+                    <li>Country of Residence: Malawi, Mzuzu</li>
                     <li>If you need any more information, you can send me an email chzmodev@gmail.com</li>
                 </ul>
             </>
