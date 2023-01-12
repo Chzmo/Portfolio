@@ -1,9 +1,35 @@
 import React, { useEffect, useState } from 'react'
 
+import { faqData } from '../../utils/utils'
 import Footer from '../../components/Footer/Footer'
 import NavBar from '../../components/NavBar/NavBar'
 
 import './Contact.css'
+
+
+const Accordion = () => {
+  const items = faqData
+
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  const handleClick = (index) => {
+    setActiveIndex(index === activeIndex ? null : index);
+  }
+
+  return (
+    <div className='container '>
+      <div className='container'><h1>Frequently Asked Questions</h1></div>
+      {items.map((item, index) => (
+        <div key={item.title} className="container">
+          <div onClick={() => handleClick(index)}>
+            <h2>{item.title}</h2>
+          </div>
+          {activeIndex === index && item.content}
+        </div>
+      ))}
+    </div>
+  );
+};
 
 function Contact() {
   const [currntUrl, setCurrntUrl] = useState(null)
@@ -65,9 +91,12 @@ function Contact() {
           </div>
         </div>
         {(currntUrl && currntUrl === "http://localhost:5173/Contact" || currntUrl === "https://inquisitive-croissant-516f39.netlify.app/Contact") && (
-          <div className="footer__wrapper">
-            <Footer />
-          </div>
+          <>
+            <Accordion />
+            <div className="footer__wrapper">
+              <Footer />
+            </div>
+          </>
         )}
     </>
   )

@@ -64,9 +64,4 @@ export const relatedWorkQuery = (_id) =>{
   return `*[_type == "post" && _id != '${_id}']`;
 }
 
-export const commentQuery = (_id) =>{
-  return `*[_type == 'post' && _id == '${_id}']{
-    comments,
-  }`;
-}
 

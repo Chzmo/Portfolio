@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { CiHeart } from 'react-icons/ci';
 import { useParams } from 'react-router-dom';
 import { BsReplyAll } from 'react-icons/bs';
 import { formatDistanceToNow } from 'date-fns';
 
 import { client } from '../../client';
-import { commentQuery } from '../../utils/query'
 
 import profileImg from '../../assets/media/zaliro_p.png';
 
@@ -154,17 +153,17 @@ function Comment(props){
     
   }
 
-  useEffect(() => {
-    setLoading(true);
-    const query = commentQuery(_id);
-    client.fetch(query)
-      .then((data)=> {
-        setCommentData(data)
-        setLoading(false)
-        console.log(data)
-      }) 
+  // useEffect(() => {
+  //   setLoading(true);
+  //   const query = commentQuery(_id);
+  //   client.fetch(query)
+  //     .then((data)=> {
+  //       setCommentData(data)
+  //       setLoading(false)
+  //       console.log(data)
+  //     }) 
 
-  }, [_id])
+  // }, [_id])
   
 
   return (
