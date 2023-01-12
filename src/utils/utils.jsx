@@ -58,10 +58,9 @@ export const faqData = [
                 </p>
                 
                 <ul>
-                    <li>Twitter: https://twitter.com/shakir260</li>
-                    <li>Linkedin: https://www.linkedin.com/in/shakir260</li>
-                    <li>Dribbble: https://dribbble.com/arshakir</li>
-                    <li>Instagram: https://instagram.com/arshakirpk</li>
+                    <li>Twitter: https://twitter.com</li>
+                    <li>Linkedin: https://www.linkedin.com/in/</li>
+                    <li>Facebook: https://instagram.com</li>
                 </ul>
             </>
         ) 
