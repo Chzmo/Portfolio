@@ -56,8 +56,8 @@ const Testimonial = () => {
             <div className="testimonial__content-t5"><img src={t5} alt="" /></div>
             <div className="testimonial__content-left"></div>
             <div className="testimonial__content-right">
-                <h2>“Originally, creative & with and innate understand of their 
-                    client’s need. These people are always a pleasure to work!”
+                <h2>“Originally, creative & with and innate understand of the
+                    client’s needs. He is always a pleasure to work!”
                 </h2>
             </div>
         </div>
