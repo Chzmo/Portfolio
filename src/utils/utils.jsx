@@ -66,4 +66,23 @@ export const faqData = [
         ) 
     },
 
+    { 
+        title: 'Can you sign a Non Disclosure Agreement ?', 
+        content: (
+            <>
+                <p>
+                    Yes. If you want me to sign the NDA 
+                    before this call, you can use the information below to create NDA
+                </p>
+                
+                <ul>
+                    <li>Full Name: Chisomo Zaliro Moyo</li>
+                    <li>Website: chzmo.com</li>
+                    <li>City/Country of Residence: Malawi, Mzuzu</li>
+                    <li>If you need any more information, you can send me an email chzmodev@gmail.com</li>
+                </ul>
+            </>
+        ) 
+    },
+
 ];

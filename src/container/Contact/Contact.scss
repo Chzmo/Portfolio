@@ -33,6 +33,7 @@
     flex-direction: column;
     gap: 2rem;
     width: 100%;
+    padding-bottom: 3rem;
 
     .contact__header{
         display: flex;
@@ -123,10 +124,33 @@
         }
     }
 
-    .accordion__items{
+    .accordion__item{
         display: flex;
         flex-direction: column;
-        gap: 1rem;
+        font-size: 1.2rem;
+        color: #222;
+        &:hover{
+            cursor: pointer;
+        }
+
+        p{
+            font-size: 1rem;
+            font-weight: 300;
+            padding: .5rem 0;
+            color: #7a7474;
+            &:hover{
+                cursor: text;
+            }
+        }
+
+        ul{
+            font-size: 1rem;
+            font-weight: 300;
+            padding: .5rem 0;
+            color: #7a7474;
+            cursor: text;
+            line-height: 1.4rem;
+        }
     }
 }
 
@@ -149,7 +173,6 @@
     }
 
     .accordion{
-        margin: auto;
         width: 95%;
         margin-left: 2rem;
     }
@@ -168,7 +191,7 @@
             form{
                 width: 100% ;
                 padding: 1rem 1.5rem;
-                grid-column: 1fr;;
+                grid-column: 1fr;
                 grid-template-areas: 
                     "name"
                     "email"
