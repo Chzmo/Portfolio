@@ -27,39 +27,41 @@ function BlogPosts(props){
   }, [props?.query])
 
   return (
-    <div className="work__portfolio ">
-      {loading ? < Spinner message={"Loading..."}/> : blogData?.map((post, key) =>{
-        return (
-          <div key={key} className="work__portfolio-item">
-            <HashLink to={ '/Blog/' + post?._id + '#'}  className="work__portfolio-item_img">
-              <img src={ urlFor(post?.thumbnail) } alt={ post?.title } />
-            </HashLink>
-            <div className="work__portfolio-item_links">
-              <a href={post?.gitHubUrl}>GitHub</a>
-              <a href={post?.liveUrl}>View Site</a>
-            </div>
-            <div className="work__portfolio-item-heading">
-              <h3>{post?.title}</h3>
-              <hr />
-            </div>
-            <div className="work__portfolio-item_details">
-              <div className="work__portfolio-item_details-time">
-                  <p>COMPLETION TIME</p>          
-                  <p>{post?.completionTime} WEEKS</p>          
+    loading ? < Spinner message={"Loading Blog Posts..."}/> :(
+      <div className="work__portfolio ">
+        {blogData?.map((post, key) =>{
+          return (
+            <div key={key} className="work__portfolio-item">
+              <HashLink to={ '/Blog/' + post?._id + '#'}  className="work__portfolio-item_img">
+                <img src={ urlFor(post?.thumbnail) } alt={ post?.title } />
+              </HashLink>
+              <div className="work__portfolio-item_links">
+                <a href={post?.gitHubUrl}>GitHub</a>
+                <a href={post?.liveUrl}>View Site</a>
               </div>
-              <div className="work__portfolio-item_details-charges">
-                <p>FEE  CHARGED</p>
-                <p>$0.00</p>  
+              <div className="work__portfolio-item-heading">
+                <h3>{post?.title}</h3>
+                <hr />
               </div>
-              <Link href='' className="work__portfolio-item_details-view">
-                <p>VIEW</p>          
-                <p>FULL DETAILS</p>               
-              </Link>
+              <div className="work__portfolio-item_details">
+                <div className="work__portfolio-item_details-time">
+                    <p>COMPLETION TIME</p>          
+                    <p>{post?.completionTime} WEEKS</p>          
+                </div>
+                <div className="work__portfolio-item_details-charges">
+                  <p>FEE  CHARGED</p>
+                  <p>$0.00</p>  
+                </div>
+                <Link href='' className="work__portfolio-item_details-view">
+                  <p>VIEW</p>          
+                  <p>FULL DETAILS</p>               
+                </Link>
+              </div>
             </div>
-          </div>
-        );
-      })}
-    </div>
+          );
+        })}
+      </div> 
+    )
   )
   
 }
