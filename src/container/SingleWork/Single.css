@@ -19,7 +19,8 @@
 .singleWork .singleWork__header .singleWork__header-related {
   display: flex;
   gap: 0.6rem;
-  overflow-y: scroll
+  overflow-y: scroll;
+  padding: .8rem;
 }
 .singleWork .singleWork__header .singleWork__header-related button {
   padding: 0.7rem 1rem;
