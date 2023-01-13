@@ -44,7 +44,7 @@ function Contact() {
           {(currntUrl && currntUrl === "http://localhost:5173/Contact" || 
             currntUrl === "https://inquisitive-croissant-516f39.netlify.app/Contact" ||
             currntUrl === "http://localhost:5173/Contact#FAQ" ||
-            currntUrl === "http://localhost:5173/.netlify.app/Contact#FAQ") && (
+            currntUrl === "https://inquisitive-croissant-516f39.netlify.app/Contact#FAQ") && (
           <>
             <NavBar />
           </>
@@ -94,7 +94,7 @@ function Contact() {
             {(currntUrl && currntUrl === "http://localhost:5173/Contact" || 
               currntUrl === "https://inquisitive-croissant-516f39.netlify.app/Contact" ||
               currntUrl === "http://localhost:5173/Contact#FAQ" ||
-              currntUrl === "http://localhost:5173/.netlify.app/Contact#FAQ") && (
+              currntUrl === "https://inquisitive-croissant-516f39.netlify.app/Contact#FAQ") && (
             <>
               <Accordion />
             </>
@@ -104,7 +104,7 @@ function Contact() {
         {(currntUrl && currntUrl === "http://localhost:5173/Contact" || 
           currntUrl === "https://inquisitive-croissant-516f39.netlify.app/Contact" ||
           currntUrl === "http://localhost:5173/Contact#FAQ" ||
-          currntUrl === "http://localhost:5173/.netlify.app/Contact#FAQ") && (
+          currntUrl === "https://inquisitive-croissant-516f39.netlify.app/Contact#FAQ") && (
           <>
             <div className="footer__wrapper">
               <Footer />
