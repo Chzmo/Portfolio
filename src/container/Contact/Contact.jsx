@@ -17,7 +17,7 @@ const Accordion = () => {
   }
 
   return (
-    <div className='accordion '>
+    <div id='FAQ' className='accordion '>
       <div className='accordion__header'><h2>Frequently Asked Questions</h2></div>
       {items.map((item, index) => (
         <div key={item.title} className="accordion__item">
@@ -41,11 +41,14 @@ function Contact() {
   return (
     <>
         <div id="Contact" className="contact">
-          {
-            (currntUrl && currntUrl === "http://localhost:5173/Contact" || currntUrl === "https://inquisitive-croissant-516f39.netlify.app/Contact") &&(
-              <NavBar />
-            )
-          }
+          {(currntUrl && currntUrl === "http://localhost:5173/Contact" || 
+            currntUrl === "https://inquisitive-croissant-516f39.netlify.app/Contact" ||
+            currntUrl === "http://localhost:5173/Contact#FAQ" ||
+            currntUrl === "http://localhost:5173/.netlify.app/Contact#FAQ") && (
+          <>
+            <NavBar />
+          </>
+          )}
           <div className="contact__header contact__wrapper">
             <p>Lets meet up over a zoom call or telegram and discuss your venture and potential collaborations.</p>
           </div>
@@ -88,14 +91,20 @@ function Contact() {
                 <button type='submit'>Send Contact Request Now</button>
               </div>
             </form>
-            {(currntUrl && currntUrl === "http://localhost:5173/Contact" || currntUrl === "https://inquisitive-croissant-516f39.netlify.app/Contact") && (
+            {(currntUrl && currntUrl === "http://localhost:5173/Contact" || 
+              currntUrl === "https://inquisitive-croissant-516f39.netlify.app/Contact" ||
+              currntUrl === "http://localhost:5173/Contact#FAQ" ||
+              currntUrl === "http://localhost:5173/.netlify.app/Contact#FAQ") && (
             <>
               <Accordion />
             </>
             )}
           </div>
         </div>
-        {(currntUrl && currntUrl === "http://localhost:5173/Contact" || currntUrl === "https://inquisitive-croissant-516f39.netlify.app/Contact") && (
+        {(currntUrl && currntUrl === "http://localhost:5173/Contact" || 
+          currntUrl === "https://inquisitive-croissant-516f39.netlify.app/Contact" ||
+          currntUrl === "http://localhost:5173/Contact#FAQ" ||
+          currntUrl === "http://localhost:5173/.netlify.app/Contact#FAQ") && (
           <>
             <div className="footer__wrapper">
               <Footer />
