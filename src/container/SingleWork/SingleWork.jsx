@@ -43,7 +43,7 @@ function SingleWork() {
           <>
             <h2>{singleWorkData?.title}</h2>
             <div className="singleWork__header-related">
-              <button>Landing Page</button>
+              <button>LandingPage</button>
               <button>Shopify</button>
               <button>Wordpress</button>
             </div>
