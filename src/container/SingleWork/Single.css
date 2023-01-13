@@ -150,4 +150,23 @@
 .singleWork .singleWork__related h2 {
   font-weight: 700;
   font-size: 1.4rem;
+}
+
+@media screen and (max-width: 430px) {
+  .singleWork__details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem !important;
+  }
+  .singleWork__details .singleWork__details-time,
+.singleWork__details .singleWork__details-charges {
+    border-right: none !important;
+  }
+  .singleWork__details .singleWork__details-time p,
+.singleWork__details .singleWork__details-charges p {
+    font-size: 0.8rem;
+  }
+  .singleWork__details .singleWork__details-feedback img {
+    width: 5rem;
+  }
 }/*# sourceMappingURL=Single.css.map */

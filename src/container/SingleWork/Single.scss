@@ -170,3 +170,27 @@
         }
     }
 }
+
+@media screen and (max-width:430px){
+
+    .singleWork__details{
+        display: flex;
+        flex-direction: column;
+        gap: 1.6rem !important;
+
+        .singleWork__details-time, 
+        .singleWork__details-charges{
+            border-right: none !important;
+
+            p{
+                font-size: .8rem;
+            }
+            
+        }
+        .singleWork__details-feedback{
+            img{
+                width: 5rem;
+            }
+        }
+    }
+}
