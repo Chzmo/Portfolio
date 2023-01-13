@@ -7,7 +7,7 @@
     grid-template-columns: 1fr 1fr;
     margin: 0 6.5%;
     gap: 1rem;
-    padding-top: 2rem;
+    padding: 4rem 0;
 
     .work__portfolio-item{
         display: flex;
@@ -202,7 +202,7 @@
         display: flex;
         flex-direction: column;
         max-width: 100%;
-        margin: 1rem;
+        
         .work__portfolio-item{
             max-width: 100%;
             .work__portfolio-item_details{
