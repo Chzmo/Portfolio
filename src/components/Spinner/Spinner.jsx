@@ -14,7 +14,7 @@ function Spinner({message}) {
         style={{
             display:"flex", 
             justifyContent:"flex-end", 
-            alignItems:"flex-end",
+            alignItems:"center",
             flexDirection:"column",
             gap:"2rem"
             }}

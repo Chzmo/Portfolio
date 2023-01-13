@@ -8,6 +8,7 @@ import {BsFillHeartFill} from 'react-icons/bs'
 import {HiOutlineShare} from 'react-icons/hi'
 import {BiMessageRoundedDetail} from 'react-icons/bi'
 
+import Spinner from '../../components/Spinner/Spinner';
 import NavBar from '../../components/NavBar/NavBar'
 import Footer from '../../components/Footer/Footer'
 import Comment from './Comment'
@@ -133,9 +134,11 @@ function SingleBlog() {
         </div>
         <p>Home {'/'} Blog {'/'} Post</p>
         <div className="singleBlog__main">
-          <div className= "singleBlog__main-img">
+          {loading ? <Spinner message={'Loading Blog Posts...'}/> : 
+            <div className= "singleBlog__main-img">
             <img src={singleBlogData && urlFor(singleBlogData?.thumbnail)} alt="" />
           </div>
+          }
           <div className="singleBlog__blog">
             <div className="socials">
               <div className="socials__date"><p>{singleBlogData && formatDistanceToNow(new Date(singleBlogData?._createdAt))} ago</p></div>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import { FiArrowUpRight } from 'react-icons/fi';
 
@@ -26,6 +26,7 @@ function Work(props) {
   const [currntUrl, setCurrntUrl] = useState(null)
   const [loading, setLoading] = useState(false);
   const [postData, setPostData] = useState(null)
+  const {_id} = useParams()
   
   
   useEffect(() => {
@@ -89,44 +90,50 @@ function Work(props) {
         )&&(
           <Heading/>
         )}
-        <div className="work__portfolio container">
-          {loading ? < Spinner message={"Loading..."}/> : postData?.map((post, key) =>{
-            return (
-              <div key={key} className="work__portfolio-item">
-                <HashLink to={ '/Work/' + post?._id + '#'}  className="work__portfolio-item_img">
-                  <img src={ urlFor(post?.thumbnail) } alt={ post?.title } />
-                </HashLink>
-                <div className="work__portfolio-item_links">
-                  <a href={post?.gitHubUrl}>GitHub</a>
-                  <a href={post?.liveUrl}>View Site</a>
-                </div>
-                <div className="work__portfolio-item-heading">
-                  <h3>{post?.title}</h3>
-                  <hr />
-                </div>
-                <div className="work__portfolio-item_details">
-                  <div className="work__portfolio-item_details-time">
-                      <p>COMPLETION TIME</p>          
-                      <p>{post?.completionTime} WEEKS</p>          
+        {loading ? < Spinner message={"Loading..."}/> : (
+          <div className="work__portfolio container">
+            {postData?.map((post, key) =>{
+              return (
+                <div key={key} className="work__portfolio-item">
+                  <HashLink to={ '/Work/' + post?._id + '#'}  className="work__portfolio-item_img">
+                    <img src={ urlFor(post?.thumbnail) } alt={ post?.title } />
+                  </HashLink>
+                  <div className="work__portfolio-item_links">
+                    <a href={post?.gitHubUrl}>GitHub</a>
+                    <a href={post?.liveUrl}>View Site</a>
                   </div>
-                  <div className="work__portfolio-item_details-charges">
-                    <p>FEE  CHARGED</p>
-                    <p>$0.00</p>  
+                  <div className="work__portfolio-item-heading">
+                    <h3>{post?.title}</h3>
+                    <hr />
                   </div>
-                  <Link href='' className="work__portfolio-item_details-view">
-                    <p>VIEW</p>          
-                    <p>FULL DETAILS</p>               
-                  </Link>
+                  <div className="work__portfolio-item_details">
+                    <div className="work__portfolio-item_details-time">
+                        <p>COMPLETION TIME</p>          
+                        <p>{post?.completionTime} WEEKS</p>          
+                    </div>
+                    <div className="work__portfolio-item_details-charges">
+                      <p>FEE  CHARGED</p>
+                      <p>$0.00</p>  
+                    </div>
+                    <Link href='' className="work__portfolio-item_details-view">
+                      <p>VIEW</p>          
+                      <p>FULL DETAILS</p>               
+                    </Link>
+                  </div>
                 </div>
-              </div>
-            );
-          })}
-        </div>
+              );
+            })}
+          </div>
+        )}
         {(currntUrl?.toLowerCase() === "http://localhost:5173/work" | 
+          currntUrl?.toLowerCase() ===  `http://localhost:5173/work/${_id}` | 
           currntUrl?.toLowerCase() === "http://localhost:5173/blog" |
           currntUrl?.toLowerCase() === "https://inquisitive-croissant-516f39.netlify.app/work" |
-          currntUrl?.toLowerCase() === "http://localhost:5173/work/single")?(<></>):(
-          <HashLink to="/Work#" className='work__cta'><span>View all Work</span> <FiArrowUpRight /></HashLink>
+          currntUrl?.toLowerCase() === `https://inquisitive-croissant-516f39.netlify.app/work/${_id}` |
+          currntUrl?.toLowerCase() === "http://localhost:5173/work/single" )?(<></>):(
+          !loading && (
+            <HashLink to="/Work#" className='work__cta'><span>View all Work</span> <FiArrowUpRight /></HashLink>
+          )
         )}
       </div>
       {(currntUrl === "http://localhost:5173/Work" | currntUrl === "https://inquisitive-croissant-516f39.netlify.app/Work")?(
