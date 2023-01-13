@@ -64,11 +64,11 @@ function Contact() {
               </div>
               <div id="div-interest"  className='contact__form-input'>
                 <label htmlFor="interest"><p>WHAT SERVICE YOU ARE INTERESTED IN<span>*</span></p></label>
-                <input type="text" placeholder='e.g Website, Desktop app, Android app'/>
+                <input type="text" placeholder='e.g Website, Android app, Desktop app'/>
               </div>
               <div id="div-budget"  className='contact__form-input'>
-                <label htmlFor="budget"><p>BUDGET RANGE (IN USD) <span>*</span></p></label>
-                <input type="text" placeholder='e.g $100 - $150'/>
+                {/* <label htmlFor="budget"><p>BUDGET RANGE (IN USD) <span>*</span></p></label>
+                <input type="text" placeholder='e.g $250 - $350'/> */}
               </div>
               <div id="div-message" className='contact__form-input'>
                 <label htmlFor="message"><p>PLEASE TELL A BIT ABOUT YOURSELF & YOUR PROJECT</p></label>

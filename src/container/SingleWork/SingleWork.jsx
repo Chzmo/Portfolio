@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { HashLink } from 'react-router-hash-link'
 import { useParams } from 'react-router-dom'
 
 import { relatedWorkQuery, singleWorkQuery } from '../../utils/query'
@@ -78,7 +79,7 @@ function SingleWork() {
             task and after checking the details, I will 
             send you email to schedule a call or chat.
           </p>
-          <a href="/Contact">Request a Quote</a>
+          <HashLink to="/Contact#">Request a Quote</HashLink>
         </div>
         <div className="singleWork__related">
           <h2>Related Work</h2>
