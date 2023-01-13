@@ -37,7 +37,7 @@ function BlogPosts(props){
               </HashLink>
               <div className="work__portfolio-item_links">
                 <a href={post?.gitHubUrl}>GitHub</a>
-                <a href={post?.liveUrl}>View Site</a>
+                <a href="#">View Site</a>
               </div>
               <div className="work__portfolio-item-heading">
                 <h3>{post?.title}</h3>
@@ -52,7 +52,7 @@ function BlogPosts(props){
                   <p>FEE  CHARGED</p>
                   <p>$0.00</p>  
                 </div>
-                <Link href='' className="work__portfolio-item_details-view">
+                <Link to={`/blog/${post?._id}`} className="work__portfolio-item_details-view">
                   <p>VIEW</p>          
                   <p>FULL DETAILS</p>               
                 </Link>
