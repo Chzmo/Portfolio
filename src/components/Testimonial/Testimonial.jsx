@@ -43,7 +43,7 @@ function moveBalls(e){
 const Testimonial = () => {
   return (
     <section 
-        id='Testimonials' 
+        id='Testimonial' 
         className='testimonial'
         onMouseMove={moveBalls}
         onTouchMove={moveBallsWithTouch}

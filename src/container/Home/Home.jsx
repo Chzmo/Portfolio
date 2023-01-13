@@ -1,5 +1,4 @@
 import React from 'react';
-import { postQuery } from '../../utils/query';
 
 import Testimonial from '../../components/Testimonial/Testimonial';
 import Mission from '../../components/Mission/Mission';
@@ -13,9 +12,6 @@ import Work from '../Work/Work';
 import './Home.css' 
 
 function Home() {
-
-  const query =  postQuery;
-
   return (
     <>
       <NavBar />
@@ -25,9 +21,7 @@ function Home() {
         <About />
       </div>
       <section>
-        <Work
-          query = {query}
-        />
+        <Work />
       </section>
       <Testimonial />
       <section className='contact__wrapper'>

@@ -66,7 +66,7 @@ function NavBar() {
           <li className="navbar__links-ul_li"><HashLink to="/#About" className="footer__top-nav-link" smooth>About Me</HashLink></li>
           <li className="navbar__links-ul_li"><HashLink className="navbar__links-ul_li-a" to="/Work#" smooth>Latest Work</HashLink></li>
           <li className="navbar__links-ul_li"><HashLink className="navbar__links-ul_li-a" to="/Blog#">Blog</HashLink></li>
-          <li className="navbar__links-ul_li"><HashLink className="navbar__links-ul_li-a" to="/#Testimonials">Testimonials</HashLink></li>
+          <li className="navbar__links-ul_li"><HashLink className="navbar__links-ul_li-a" to="/#Testimonial">Testimonials</HashLink></li>
           <li className="navbar__links-ul_li"><HashLink className="navbar__links-ul_li-a" to="/Contact#">Contact</HashLink></li>
           {!user ? (
             <div className="navbar__links-ul_li-a">
