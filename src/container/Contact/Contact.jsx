@@ -50,7 +50,7 @@ function Contact() {
           </>
           )}
           <div className="contact__header contact__wrapper">
-            <p>Lets meet up over a zoom call or telegram and discuss your venture and potential collaborations.</p>
+            <p>Lets meet up over a zoom call or WhatsApp and discuss your venture and potential collaborations.</p>
           </div>
           <div className="contact__form">
             <form >

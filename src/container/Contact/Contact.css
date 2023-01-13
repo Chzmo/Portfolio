@@ -33,6 +33,7 @@
   flex-direction: column;
   gap: 2rem;
   width: 100%;
+  padding-bottom: 3rem;
 }
 .contact .contact__header {
   display: flex;
