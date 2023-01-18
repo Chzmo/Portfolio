@@ -10,7 +10,7 @@ import profileImg from '../../assets/media/zaliro_p.png';
 
 function SingleComment({comment, props}){
 
-  const [likeCount, setlikeCount] = useState(comment.likes.length)
+  const [likeCount, setlikeCount] = useState(0)
 
   function updateLikeScore(id){
     if(1 in comment.likes){
@@ -23,7 +23,8 @@ function SingleComment({comment, props}){
     textarea.focus();
 
     const replyToComment = props.items.filter(comment => comment.id === id);
-    props.setReplyTo(replyToComment[0].user.username);
+    // props.setReplyTo(replyToComment[0].user.username);    
+    props.setReplyTo('Chiso');
     props.setCommentType('comment');
     props.setReplyToId(id);
   }
@@ -35,10 +36,11 @@ function SingleComment({comment, props}){
       </div>
       <div className="comments__main-content">
         <div className="comments__main-content_top">
-          <h3>{comment.user.username}</h3><p>{formatDistanceToNow(new Date(comment.createdAt))} ago</p>
+          {/* <h3>zaliro</h3><p>{formatDistanceToNow(new Date())} ago</p> */}
+          <h3>zaliro</h3><p>{`yesterday`} ago</p>
         </div>
         <div tabIndex="0" id={comment.id}  className="comments__main-content_message">
-          <p>{comment.content}</p>
+          <p>{comment?.comment}</p>
         </div>
         <div className="comments__main-content_bottom">
           <div className="content_bottom-social">
@@ -57,7 +59,7 @@ function SingleComment({comment, props}){
 
 function SingleReply({reply, props}){
   
-  const [likeCount, setlikeCount] = useState(reply.likes.length)
+  const [likeCount, setlikeCount] = useState(0)
 
   function updateLikeScore(id){
     if(1 in reply.likes){
@@ -73,7 +75,7 @@ function SingleReply({reply, props}){
       return acc.concat(comment.replies.filter(reply => reply.id === id));
     }, []);
     
-    props.setReplyTo(replyToReply[0].user.username);
+    props.setReplyTo(replyToReply[0].user.username);    props.setReplyTo(replyToReply[0].user.username);
     props.setCommentType('reply');
     props.setReplyToId(id);
   }
@@ -85,7 +87,7 @@ function SingleReply({reply, props}){
       </div>
       <div className="comments__main-content">
         <div className="comments__main-content_top">
-          <h3>{reply.user.username}</h3> <p>{formatDistanceToNow(new Date(reply.createdAt))} ago</p>
+          <h3>{'chiso'}</h3> <p>{`yesterday`} ago</p>
         </div>
         <div id={reply.id} tabIndex="0" className="comments__main-content_message">
           <p>{reply.content}</p>
@@ -168,15 +170,16 @@ function Comment(props){
 
   return (
     <>
-      {props?.items?.map((comment) => {
+      {props.items && props?.items?.map((comment) => {
+        console.log(props.items)
         return (
-          <div key={comment.id}>
+          <div key={comment?._key}>
             <SingleComment comment={comment} props={props}/>
             {
               comment?.replies &&(
                 comment.replies.map((reply) => {
                   //passing props with states
-                  return <div className="reply" key={reply.id}><SingleReply reply={reply} props={props}/></div> 
+                  return <div className="reply" key={reply._key}><SingleReply reply={reply} props={props}/></div> 
                 })
               )
             }
