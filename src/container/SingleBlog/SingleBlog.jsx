@@ -3,16 +3,16 @@ import React, { useEffect, useState } from 'react'
 import { formatDistanceToNow } from 'date-fns';
 import { useParams } from 'react-router-dom'
 
-import {CiHeart } from 'react-icons/ci'
-import {BsFillHeartFill} from 'react-icons/bs'
-import {HiOutlineShare} from 'react-icons/hi'
-import {BiMessageRoundedDetail} from 'react-icons/bi'
+import {CiHeart } from 'react-icons/ci';
+import {BsFillHeartFill} from 'react-icons/bs';
+import {HiOutlineShare} from 'react-icons/hi';
+import {BiMessageRoundedDetail} from 'react-icons/bi';
 
 import Spinner from '../../components/Spinner/Spinner';
-import NavBar from '../../components/NavBar/NavBar'
-import Footer from '../../components/Footer/Footer'
-import Comment from './Comment'
-import {CommentField} from './Comment'
+import NavBar from '../../components/NavBar/NavBar';
+import Footer from '../../components/Footer/Footer';
+import Comment from './Comment';
+import {CommentField} from './Comment';
 
 import profileImg from '../../assets/media/zaliro_p.png';
 import image1 from '../../assets/media/thumbs_freebie-gpt-3-landing-page.jpg';
@@ -20,23 +20,21 @@ import image2 from '../../assets/media/thumbs_freebie-website-landing-page-desig
 import image3 from '../../assets/media/thumbs_freelancer-landing-page-minimal-design-figma-freebie.jpg';
 import image4 from '../../assets/media/thumbs_real-estate-landing-page-ui-freebie.jpg';
 
-import './SingleBlog.css'
-import data from './data'
-import { singleBlogkQuery } from '../../utils/query'
-import { client, urlFor } from '../../client'
+import './SingleBlog.css';
+import data from './data';
+import { singleBlogkQuery } from '../../utils/query';
+import { client, urlFor } from '../../client';
 
 const blogs = [{ image:image1 }, { image:image2,}, {image:image3}, {image:image4}];
 
-
 function SingleBlog() {
-  
   const [items, setItems] = useState(data.comments);
   const [comment, setComment] = useState('');
-  const [replyTo, setReplyTo] = useState(null)
-  const [replyToId, setReplyToId] = useState(null)
+  const [replyTo, setReplyTo] = useState(null);
+  const [replyToId, setReplyToId] = useState(null);
   const [commentType, setCommentType] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [singleBlogData, setSingleBlogData] = useState(null)
+  const [singleBlogData, setSingleBlogData] = useState(null);
 
   const {_id} = useParams()
 
@@ -122,7 +120,6 @@ function SingleBlog() {
   return (
     <>
       <NavBar />
-      
       <div className='singleBlog'>
         <div className="singleBlog__header">
           <h2>{singleBlogData?.title}</h2>
