@@ -28,7 +28,7 @@ import { client, urlFor } from '../../client';
 const blogs = [{ image:image1 }, { image:image2,}, {image:image3}, {image:image4}];
 
 function SingleBlog() {
-  const [items, setItems] = useState(data.comments);
+  const [items, setItems] = useState(null);
   const [comment, setComment] = useState('');
   const [replyTo, setReplyTo] = useState(null);
   const [replyToId, setReplyToId] = useState(null);
@@ -193,7 +193,7 @@ function SingleBlog() {
                   <div className="comments">
                     <h2>Comments</h2>
                     <Comment 
-                      items={items}
+                      items={singleBlogData && singleBlogData?.comments}
                       setReplyTo={setReplyTo} 
                       setCommentType={setCommentType} 
                       setReplyToId = {setReplyToId}

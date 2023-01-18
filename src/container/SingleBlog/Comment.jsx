@@ -168,7 +168,7 @@ function Comment(props){
 
   return (
     <>
-      {props.items.map((comment) => {
+      {props?.items?.map((comment) => {
         return (
           <div key={comment.id}>
             <SingleComment comment={comment} props={props}/>
