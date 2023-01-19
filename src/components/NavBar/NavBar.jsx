@@ -1,6 +1,7 @@
 
 import { GoogleLogin, googleLogout } from '@react-oauth/google';
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
+import {useClickOutside} from '@mantine/hooks'
 import { HashLink} from 'react-router-hash-link';
 import jwtDecode from 'jwt-decode';
 
@@ -13,7 +14,8 @@ import './NavBar.css'
 function NavBar() {
   
   const [mobileNav, setMobileNav] = useState(false);
-  const [user, setUser] = useState(fetchUser)
+  const [user, setUser] = useState(fetchUser);
+  const ref = useClickOutside(() => mobileNav && setMobileNav(false));
   const responsiveNav = ()=>{
     !mobileNav ? setMobileNav(true): setMobileNav(false) ;
   }
@@ -61,7 +63,7 @@ function NavBar() {
       <div className="navbar__logo">
         <HashLink to="/#">CH<span>ZMO</span></HashLink>
       </div>
-      <div className="navbar__links">
+      <div ref={ref} className="navbar__links">
         <ul className={mobileNav? "mobile": "navbar__links-ul"}>
           <li className="navbar__links-ul_li"><HashLink to="/#About" className="footer__top-nav-link" smooth>About Me</HashLink></li>
           <li className="navbar__links-ul_li"><HashLink className="navbar__links-ul_li-a" to="/Work#" smooth>Latest Work</HashLink></li>
