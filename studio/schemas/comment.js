@@ -18,6 +18,12 @@ export default {
             title: 'Replies',
             type: 'array',
             of:[{type: 'reply'}]
-        }
+        },
+        {
+            name: 'likedBy',
+            title: 'Liked By',
+            type: 'array',
+            of:[{type: 'like'}]
+        },
     ],
 }

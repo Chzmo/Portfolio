@@ -44,7 +44,7 @@ function SingleComment({comment, props}){
         </div>
         <div className="comments__main-content_bottom">
           <div className="content_bottom-social">
-            <button onClick={()=>updateLikeScore(comment.id)}><CiHeart className="social-icon"/><span>{likeCount}</span></button>
+            <button onClick={()=>updateLikeScore(comment.id)}><CiHeart className="social-icon"/><span>{comment?.likedBy?.length}</span></button>
           </div>
           <div className="content_bottom-reply">
             <button onClick={() => handleReplyComment(comment.id)}>
@@ -87,7 +87,7 @@ function SingleReply({reply, props}){
       </div>
       <div className="comments__main-content">
         <div className="comments__main-content_top">
-          <h3>{'chiso'}</h3> <p>{`yesterday`} ago</p>
+          <h3>{'chiso'}</h3> <p>{`3 days`} ago</p>
         </div>
         <div id={reply.id} tabIndex="0" className="comments__main-content_message">
           <p>{reply.content}</p>
