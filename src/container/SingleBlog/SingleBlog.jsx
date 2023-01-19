@@ -35,6 +35,7 @@ function SingleBlog() {
   const [commentType, setCommentType] = useState(null);
   const [loading, setLoading] = useState(false);
   const [singleBlogData, setSingleBlogData] = useState(null);
+  const [relatedBlogData , setRelatedBlogData] = useState(null);
 
   const {_id} = useParams()
 
@@ -111,9 +112,9 @@ function SingleBlog() {
     setLoading(true);
     client.fetch(query)
     .then((data)=> {
-      setSingleBlogData(data[0]);
+      console.log(data)
+      setSingleBlogData(data.filter(post => _id === post._id));
       setLoading(false);
-      console.log(data[0]);
     }) 
   }, [_id])
   
@@ -211,23 +212,23 @@ function SingleBlog() {
               </div>
               <div className="related">
               <h2>Related Blog Posts</h2>
-                { blogs.map((blog, key) =>{
-                  return (
-                    <div key={key} className="related__post">
-                      <a  className="related__post-img" href="/Blog/Single">
-                        <img src={blog.image} alt="" />
-                      </a>
-                      <div className="related__post-title"><h3>Shopify Website Design and Development for Organic Products</h3></div>
-                      <div className="related__post-socials">
-                        <div className="related__post-socials_date"><p>2 years ago</p></div>
-                        <div className="related__post-socials_links">
-                          <div className="socials__links-like"><a href="/"><BsFillHeartFill className="social-icon"/> <span> 30K</span></a></div>
-                        </div>
+              { blogs.map((blog, key) =>{
+                return (
+                  <div key={key} className="related__post">
+                    <a  className="related__post-img" href="/Blog/Single">
+                      <img src={blog.image} alt="" />
+                    </a>
+                    <div className="related__post-title"><h3>Shopify Website Design and Development for Organic Products</h3></div>
+                    <div className="related__post-socials">
+                      <div className="related__post-socials_date"><p>2 years ago</p></div>
+                      <div className="related__post-socials_links">
+                        <div className="socials__links-like"><a href="/"><BsFillHeartFill className="social-icon"/> <span> 30K</span></a></div>
                       </div>
                     </div>
-                  );
-                })
-                }
+                  </div>
+                );
+              })
+              }
               </div>
             </div>
           </div>

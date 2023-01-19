@@ -19,33 +19,18 @@ export const postQuery = `*[_type == "post"] | order(_createdAt desc)
   } 
 `;
 
-export const blogQuery = `*[_type == "post"] | order(_createdAt desc)
-{
-  thumbnail{
-      asset->{
-        url
-      }
-    },
-    _id,
-    title,
-    about,
-    liveUrl,
-    gitHubUrl,
-    completionTime,
-    postedBy->{
-          _id,
-      userName,
-      image
-    },
-  } 
-`;
 
 export const singleWorkQuery = (_id) =>{
   return `*[_type == "post" && _id == '${_id}']`;
 }
 
+
+export const relatedWorkQuery = (_id) =>{
+  return `*[_type == "post" && _id != '${_id}']`;
+}
+
 export const singleBlogkQuery = (_id) => {
-  return `*[_type == "post" && _id == '${_id}']{
+  return `*[_type == "post"]{
     title,
     thumbnail{
       asset->{
@@ -53,6 +38,18 @@ export const singleBlogkQuery = (_id) => {
       }
     },
     technologies,
+    _id,
+    _createdAt,
+    title,
+    about,
+    liveUrl,
+    gitHubUrl,
+    completionTime,
+    postedBy->{
+      _id,
+      userName,
+      image
+    },
     comments[]{
       _key,
       comment,
@@ -71,16 +68,30 @@ export const singleBlogkQuery = (_id) => {
           image,
         },
       }
-    }
-    ,
+    },
     likedBy,
     liveUrl,
-    _createdAt,
   }`;
 }
 
-export const relatedWorkQuery = (_id) =>{
-  return `*[_type == "post" && _id != '${_id}']`;
-}
+export const blogQuery = `*[_type == "post"] | order(_createdAt desc){
+  thumbnail{
+      asset->{
+        url
+      }
+    },
+    _id,
+    title,
+    about,
+    liveUrl,
+    gitHubUrl,
+    completionTime,
+    postedBy->{
+      _id,
+      userName,
+      image
+    },
+  } 
+`;
 
 
