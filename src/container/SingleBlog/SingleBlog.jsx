@@ -1,5 +1,6 @@
-import { Link } from 'react-router-dom'
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
+import { HashLink } from 'react-router-hash-link';
 import { formatDistanceToNow } from 'date-fns';
 import { useParams } from 'react-router-dom'
 
@@ -112,8 +113,9 @@ function SingleBlog() {
     setLoading(true);
     client.fetch(query)
     .then((data)=> {
-      console.log(data)
-      setSingleBlogData(data.filter(post => _id === post._id));
+      setSingleBlogData(data.filter(post => _id === post._id)[0]);
+      setRelatedBlogData(data.filter(post => _id != post._id));
+      console.log(data.filter(post => _id != post._id))
       setLoading(false);
     }) 
   }, [_id])
@@ -212,17 +214,17 @@ function SingleBlog() {
               </div>
               <div className="related">
               <h2>Related Blog Posts</h2>
-              { blogs.map((blog, key) =>{
+              {relatedBlogData &&  relatedBlogData?.map((blog, key) =>{
                 return (
                   <div key={key} className="related__post">
-                    <a  className="related__post-img" href="/Blog/Single">
-                      <img src={blog.image} alt="" />
-                    </a>
-                    <div className="related__post-title"><h3>Shopify Website Design and Development for Organic Products</h3></div>
+                    <HashLink  className="related__post-img" to={`/Blog/${blog._id}#`}>
+                      <img src={ urlFor(blog.thumbnail)} alt="" />
+                    </HashLink>
+                    <div className="related__post-title"><h3>{blog.title}</h3></div>
                     <div className="related__post-socials">
-                      <div className="related__post-socials_date"><p>2 years ago</p></div>
+                      <div className="related__post-socials_date"><p>{formatDistanceToNow(new Date(blog?._createdAt))} ago</p></div>
                       <div className="related__post-socials_links">
-                        <div className="socials__links-like"><a href="/"><BsFillHeartFill className="social-icon"/> <span> 30K</span></a></div>
+                        <div className="socials__links-like"><a href="/"><BsFillHeartFill className="social-icon"/> <span>{blog.likedBy ? blog.likedBy.length : 0}</span></a></div>
                       </div>
                     </div>
                   </div>

@@ -32,19 +32,18 @@ function SingleComment({comment, props}){
   return (
     <div className="comments__main" tabIndex="1">
       <div className="comments__main-profile">
-        <img src={comment.postedBy.image} alt="profile" />
+        <img src={comment && comment?.postedBy?.image} alt="profile" />
       </div>
       <div className="comments__main-content">
         <div className="comments__main-content_top">
           {/* <h3>zaliro</h3><p>{formatDistanceToNow(new Date())} ago</p> */}
-          <h3>{comment.postedBy.userName}</h3><p>{`yesterday`} ago</p>
+          <h3>{comment.postedBy.userName}</h3><p>{`3hrs`} ago</p>
         </div>
         <div tabIndex="0" id={comment.id}  className="comments__main-content_message">
           <p>{comment?.comment}</p>
         </div>
         <div className="comments__main-content_bottom">
           <div className="content_bottom-social">
-            {console.log(comment.likedBy)}
             <button onClick={()=>updateLikeScore(comment.id)}><CiHeart className="social-icon"/><span>{comment?.likedBy ? comment?.likedBy?.length : (0)}</span></button>
           </div>
           <div className="content_bottom-reply">
@@ -172,7 +171,6 @@ function Comment(props){
   return (
     <>
       {props.items && props?.items?.map((comment) => {
-        console.log(props.items)
         return (
           <div key={comment?._key}>
             <SingleComment comment={comment} props={props}/>
