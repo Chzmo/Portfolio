@@ -62,7 +62,15 @@ export const singleBlogkQuery = (_id) => {
         image,
       },
       replies,
-      _createdAt
+      _createdAt,
+      likedBy[]{
+        likeId,
+        postedBy -> {
+          _id,
+          userName,
+          image,
+        },
+      }
     }
     ,
     likedBy,
