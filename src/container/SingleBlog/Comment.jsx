@@ -32,12 +32,12 @@ function SingleComment({comment, props}){
   return (
     <div className="comments__main" tabIndex="1">
       <div className="comments__main-profile">
-        <img src={profileImg} alt="profile" />
+        <img src={comment.postedBy.image} alt="profile" />
       </div>
       <div className="comments__main-content">
         <div className="comments__main-content_top">
           {/* <h3>zaliro</h3><p>{formatDistanceToNow(new Date())} ago</p> */}
-          <h3>zaliro</h3><p>{`yesterday`} ago</p>
+          <h3>{comment.postedBy.userName}</h3><p>{`yesterday`} ago</p>
         </div>
         <div tabIndex="0" id={comment.id}  className="comments__main-content_message">
           <p>{comment?.comment}</p>

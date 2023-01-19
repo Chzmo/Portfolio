@@ -53,7 +53,18 @@ export const singleBlogkQuery = (_id) => {
       }
     },
     technologies,
-    comments,
+    comments[]{
+      _key,
+      comment,
+      postedBy -> {
+        _id,
+        userName,
+        image,
+      },
+      replies,
+      _createdAt
+    }
+    ,
     likedBy,
     liveUrl,
     _createdAt,
