@@ -7,10 +7,10 @@ import './Login.css'
 function Login() {
 
     const responseGoogle = (response)=>{    
-        localStorage.setItem('user', JSON.stringify(response));
+        localStorage.setItem('user', JSON.stringify(response.credential));
         const decode = jwtDecode(localStorage.getItem('user'));
         const {name, sub, picture} = decode; 
-        console.log(name, sub, picture)
+        console.log(name, sub, picture, email)
     }
     return (
         <div className="login">

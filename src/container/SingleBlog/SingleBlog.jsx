@@ -36,7 +36,10 @@ function SingleBlog() {
 
   const addComment = () =>{
     const user = fetchUser;
-    if (!user) return;
+    if (!user) {
+      setLogin(true)
+    };
+
     const newItem = {
       "_createdAt": `${new Date()}`,
       "_key": crypto.randomUUID(),
@@ -49,7 +52,7 @@ function SingleBlog() {
       "replies": []
     };    
 
-    if(comment){
+    if(comment && user){
       const updatedItems = {...singleBlogData};
       if(commentType === 'comment' && replyToId){
         const replyToComment = items.filter(comment => comment.id === replyToId);
@@ -126,7 +129,7 @@ function SingleBlog() {
   return (
     <>
       <NavBar />
-      {!login && <Login/>}
+      {login && <Login/>}
       <div className='singleBlog'>
         <div className="singleBlog__header">
           <h2>{singleBlogData?.title}</h2>

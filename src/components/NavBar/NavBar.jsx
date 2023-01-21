@@ -40,7 +40,6 @@ function NavBar() {
       picture:decode.picture,
       email:decode.email
     }));
-    console.log(decode)
     const {name, sub, picture, email} = decode; 
    
     const doc = {
