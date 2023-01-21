@@ -2,6 +2,7 @@
 import React, { useEffect } from 'react';
 import { GoogleLogin } from '@react-oauth/google';
 import jwtDecode from 'jwt-decode';
+import './Login.css'
 
 function Login() {
 
@@ -12,15 +13,13 @@ function Login() {
         console.log(name, sub, picture)
     }
     return (
-        <div className="relative w-full h-full">
-            <div className="">
-                <div className="shadow-2xl">
-                    <GoogleLogin
-                        onSuccess={(response) => responseGoogle(response)}
-                        onFailure={(response) => console.log(response)}
-                        cookiePolicy="single_host_origin"
-                    />
-                </div>
+        <div className="login">
+            <div className="shadow-2xl">
+                <GoogleLogin
+                    onSuccess={(response) => responseGoogle(response)}
+                    onFailure={(response) => console.log(response)}
+                    cookiePolicy="single_host_origin"
+                />
             </div>
         </div>
     )
