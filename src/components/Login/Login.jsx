@@ -14,7 +14,11 @@ function Login() {
     }
     return (
         <div className="login">
-            <div className="shadow-2xl">
+            <div className="login__wrapper">
+                <div className="login__heading">
+                    <p>Sign in with CHZMO</p>
+                    <p>To continue commenting on the post</p>
+                </div>
                 <GoogleLogin
                     onSuccess={(response) => responseGoogle(response)}
                     onFailure={(response) => console.log(response)}

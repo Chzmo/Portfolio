@@ -1,5 +1,5 @@
 .login{
-    position: absolute;
+    position: fixed;
     display: flex;
     justify-content: center;
     align-content: center;
@@ -7,8 +7,24 @@
     bottom: 0;
     left: 0;
     right: 0;
-
-    div{
+    z-index: 9999999999;
+    background-color: rgba($color: #000000, $alpha: .1);
+    
+    .login__wrapper{
+        padding: 2rem .6rem 1rem;
+        gap: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        background-color: white;
+        P{
+            max-width: 15rem;
+            text-align: center;
+            margin-top: .5rem;
+        }
 
     }
+
 }

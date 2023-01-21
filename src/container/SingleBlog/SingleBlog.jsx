@@ -12,6 +12,7 @@ import {BiMessageRoundedDetail} from 'react-icons/bi';
 import Spinner from '../../components/Spinner/Spinner';
 import NavBar from '../../components/NavBar/NavBar';
 import Footer from '../../components/Footer/Footer';
+import Login from '../../components/Login/Login';
 import Comment from './Comment';
 import { CommentField } from './Comment';
 
@@ -29,6 +30,7 @@ function SingleBlog() {
   const [loading, setLoading] = useState(false);
   const [singleBlogData, setSingleBlogData] = useState(null);
   const [relatedBlogData , setRelatedBlogData] = useState(null);
+  const [login, setLogin] = useState(false)
 
   const {_id} = useParams()
 
@@ -77,7 +79,7 @@ function SingleBlog() {
             })
           })
       }
-      
+
       setSingleBlogData(updatedItems);
       setComment('');
       setReplyTo(null);
@@ -124,6 +126,7 @@ function SingleBlog() {
   return (
     <>
       <NavBar />
+      {!login && <Login/>}
       <div className='singleBlog'>
         <div className="singleBlog__header">
           <h2>{singleBlogData?.title}</h2>
