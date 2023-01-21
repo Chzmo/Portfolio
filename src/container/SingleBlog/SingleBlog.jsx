@@ -13,7 +13,8 @@ import Spinner from '../../components/Spinner/Spinner';
 import NavBar from '../../components/NavBar/NavBar';
 import Footer from '../../components/Footer/Footer';
 import Comment from './Comment';
-import {CommentField} from './Comment';
+import { client } from '../../client';
+import { CommentField } from './Comment';
 
 import profileImg from '../../assets/media/zaliro_p.png';
 import image1 from '../../assets/media/thumbs_freebie-gpt-3-landing-page.jpg';
@@ -42,9 +43,9 @@ function SingleBlog() {
 
   const addComment = () =>{
     const newItem = {
-      "_id": crypto.randomUUID(),
+      "_createdAt": `${new Date()}`,
+      "_key": crypto.randomUUID(),
       "comment": comment,
-      "_createdAt": new Date(),
       "likedBy": [],
       "postedBy": {
           "_id": "109311069651048328918",
@@ -55,9 +56,7 @@ function SingleBlog() {
     };    
 
     if(comment){
-      console.log(singleBlogData)
-      const updatedItems = [... singleBlogData.comments];
-
+      const updatedItems = {...singleBlogData};
       if(commentType === 'comment' && replyToId){
         const replyToComment = items.filter(comment => comment.id === replyToId);
         replyToComment[0].replies.push(newItem); //reply to a comment
@@ -67,12 +66,27 @@ function SingleBlog() {
         const replyToReply = items.filter(comment => {
           return comment.replies.some(reply => reply.id === replyToId);
         });
-
         replyToReply[0].replies.push(newItem); //reply to a reply
       }
-
+      
       else{
-        updatedItems.push(newItem); // just a comment
+        // update to database
+        client
+          .patch('')
+          .setIfMissing({comments: []})
+          .insert('after', 'comments[-1]',[{
+            comment,
+            _key:uuidv4(),
+            postedBy:{
+              _type:'postedBy',
+              _ref:user.sub
+            }
+          }])
+          .commit()
+          .then(() => {
+          })
+      }
+        updatedItems.comments.push(newItem); // just a comment
       }
       setSingleBlogData(updatedItems);
       setComment('');
