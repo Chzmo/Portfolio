@@ -32,14 +32,9 @@ function NavBar() {
   }, []);
   
   const responseGoogle = (response)=>{    
-    const decode = jwtDecode(response.credential);
-    localStorage.setItem('user', JSON.stringify({
-      sub:decode.sub,
-      name:decode.name,
-      given_name:decode.given_name,
-      picture:decode.picture,
-      email:decode.email
-    }));
+    localStorage.setItem('user', JSON.stringify(response.credential));
+    const decode = jwtDecode(localStorage.getItem('user'));
+
     const {name, sub, picture, email} = decode; 
    
     const doc = {
@@ -51,10 +46,12 @@ function NavBar() {
     }
   
     client.createIfNotExists(doc)
-    .then(()=>{
-      setUser(doc)
-    })
-    .catch(console.error);
+    .catch((error)=> {
+      console.log(error);
+      return
+    });
+    
+    setUser(doc)
   }
 
   return (
