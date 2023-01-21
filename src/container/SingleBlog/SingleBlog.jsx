@@ -47,9 +47,8 @@ function SingleBlog() {
       "comment": comment,
       "likedBy": [],
       "postedBy": {
-          "_id": "109311069651048328918",
-          "image": "https://lh3.googleusercontent.com/a/AEdFTp59xUmby5nuM26ZMXsXHORCIY2HM4scBWiiBuwh=s96-c",
-          "userName": "Chisomo Zaliro Moyo"
+        "_type":'postedBy',
+        "_ref":"109311069651048328918",
       },
       "replies": []
     };    
@@ -77,7 +76,7 @@ function SingleBlog() {
           .commit()
           .then(() => {
           })
-          
+
         updatedItems.comments.push(newItem); // just a comment
       }
       setSingleBlogData(updatedItems);
