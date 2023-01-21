@@ -15,18 +15,10 @@ import Footer from '../../components/Footer/Footer';
 import Comment from './Comment';
 import { CommentField } from './Comment';
 
-import profileImg from '../../assets/media/zaliro_p.png';
-import image1 from '../../assets/media/thumbs_freebie-gpt-3-landing-page.jpg';
-import image2 from '../../assets/media/thumbs_freebie-website-landing-page-design.jpg';
-import image3 from '../../assets/media/thumbs_freelancer-landing-page-minimal-design-figma-freebie.jpg';
-import image4 from '../../assets/media/thumbs_real-estate-landing-page-ui-freebie.jpg';
-
 import './SingleBlog.css';
-import data from './data';
 import { singleBlogkQuery } from '../../utils/query';
 import { client, urlFor } from '../../client';
-
-const blogs = [{ image:image1 }, { image:image2,}, {image:image3}, {image:image4}];
+import { fetchUser } from '../../utils/utils';
 
 function SingleBlog() {
   const [items, setItems] = useState(null);
@@ -41,6 +33,8 @@ function SingleBlog() {
   const {_id} = useParams()
 
   const addComment = () =>{
+    const user = fetchUser;
+    if (!user) return;
     const newItem = {
       "_createdAt": `${new Date()}`,
       "_key": crypto.randomUUID(),
@@ -75,10 +69,15 @@ function SingleBlog() {
           .insert('after', 'comments[-1]', [newItem])
           .commit()
           .then(() => {
+            const query = singleBlogkQuery(_id);
+            client.fetch(query)
+            .then((data)=> {
+              setSingleBlogData(data.filter(post => _id === post._id)[0]);
+              setRelatedBlogData(data.filter(post => _id != post._id));
+            })
           })
-
-        updatedItems.comments.push(newItem); // just a comment
       }
+      
       setSingleBlogData(updatedItems);
       setComment('');
       setReplyTo(null);
@@ -154,7 +153,7 @@ function SingleBlog() {
               <div className="blog__post">
                 <div className="blog__post-profile">
                   <div className="blog__post-profile_img">
-                    <a href="/"><img src={profileImg} height={45} alt="Chisomo-Zaliro-Moyo" /></a>
+                    <a href="/"><img src={singleBlogData?.postedBy?.image} height={45} alt="Chisomo-Zaliro-Moyo" /></a>
                   </div>
                   <div className="blog__post-profile_info">
                     <h2>Chisomo Zaliro Moyo</h2>
