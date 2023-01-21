@@ -42,23 +42,21 @@ function SingleBlog() {
 
   const addComment = () =>{
     const newItem = {
-      "id": crypto.randomUUID(),
-      "content": comment,
-      "createdAt": new Date(),
-      "likes": [],
-      "user": {
-        "image": { 
-          "png": "./images/avatars/image-amyrobson.png",
-          "webp": "./images/avatars/image-amyrobson.webp"
-        },
-        "username": "amyrobson"
+      "_id": crypto.randomUUID(),
+      "comment": comment,
+      "_createdAt": new Date(),
+      "likedBy": [],
+      "postedBy": {
+          "_id": "109311069651048328918",
+          "image": "https://lh3.googleusercontent.com/a/AEdFTp59xUmby5nuM26ZMXsXHORCIY2HM4scBWiiBuwh=s96-c",
+          "userName": "Chisomo Zaliro Moyo"
       },
       "replies": []
     };    
 
     if(comment){
-
-      const updatedItems = [...items];
+      console.log(singleBlogData)
+      const updatedItems = [... singleBlogData.comments];
 
       if(commentType === 'comment' && replyToId){
         const replyToComment = items.filter(comment => comment.id === replyToId);
@@ -76,7 +74,7 @@ function SingleBlog() {
       else{
         updatedItems.push(newItem); // just a comment
       }
-      setItems(updatedItems);
+      setSingleBlogData(updatedItems);
       setComment('');
       setReplyTo(null);
       setReplyToId(null);
@@ -115,7 +113,6 @@ function SingleBlog() {
     .then((data)=> {
       setSingleBlogData(data.filter(post => _id === post._id)[0]);
       setRelatedBlogData(data.filter(post => _id != post._id));
-      console.log(data.filter(post => _id != post._id))
       setLoading(false);
     }) 
   }, [_id])
