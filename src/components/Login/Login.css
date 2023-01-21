@@ -19,6 +19,7 @@
   align-items: center;
   margin: auto;
   background-color: white;
+  border-radius: 0.7rem;
 }
 .login .login__wrapper P {
   max-width: 15rem;
