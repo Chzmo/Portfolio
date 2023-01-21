@@ -13,7 +13,6 @@ import Spinner from '../../components/Spinner/Spinner';
 import NavBar from '../../components/NavBar/NavBar';
 import Footer from '../../components/Footer/Footer';
 import Comment from './Comment';
-import { client } from '../../client';
 import { CommentField } from './Comment';
 
 import profileImg from '../../assets/media/zaliro_p.png';
@@ -72,20 +71,13 @@ function SingleBlog() {
       else{
         // update to database
         client
-          .patch('')
+        .patch(_id)
           .setIfMissing({comments: []})
-          .insert('after', 'comments[-1]',[{
-            comment,
-            _key:uuidv4(),
-            postedBy:{
-              _type:'postedBy',
-              _ref:user.sub
-            }
-          }])
+          .insert('after', 'comments[-1]', [newItem])
           .commit()
           .then(() => {
           })
-      }
+          
         updatedItems.comments.push(newItem); // just a comment
       }
       setSingleBlogData(updatedItems);
