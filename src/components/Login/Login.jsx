@@ -2,6 +2,8 @@
 import React, { useEffect } from 'react';
 import { GoogleLogin } from '@react-oauth/google';
 import jwtDecode from 'jwt-decode';
+
+import { client } from '../../client';
 import './Login.css'
 
 function Login() {
@@ -10,7 +12,19 @@ function Login() {
         localStorage.setItem('user', JSON.stringify(response.credential));
         const decode = jwtDecode(localStorage.getItem('user'));
         const {name, sub, picture, email} = decode; 
-        console.log(name, sub, picture, email)
+        const doc = {
+            _id: sub,
+            _type: 'user',
+            userName:name,
+            image: picture,
+            email: email,
+        }
+      
+        client.createIfNotExists(doc)
+        .catch((error)=> {
+          console.log(error);
+          return
+        });
     }
     return (
         <div className="login">

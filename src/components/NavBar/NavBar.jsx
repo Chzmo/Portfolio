@@ -11,10 +11,9 @@ import './NavBar.css'
 
 
 
-function NavBar() {
+function NavBar(props) {
   
   const [mobileNav, setMobileNav] = useState(false);
-  const [user, setUser] = useState(fetchUser);
   const ref = useClickOutside(() => mobileNav && setMobileNav(false));
   const responsiveNav = ()=>{
     !mobileNav ? setMobileNav(true): setMobileNav(false) ;
@@ -51,7 +50,7 @@ function NavBar() {
       return
     });
     
-    setUser(doc)
+    props.setUser(doc)
   }
 
   return (
@@ -66,7 +65,7 @@ function NavBar() {
           <li className="navbar__links-ul_li"><HashLink className="navbar__links-ul_li-a" to="/Blog#">Blog</HashLink></li>
           <li className="navbar__links-ul_li"><HashLink className="navbar__links-ul_li-a" to="/#Testimonial">Testimonials</HashLink></li>
           <li className="navbar__links-ul_li"><HashLink className="navbar__links-ul_li-a" to="/Contact#">Contact</HashLink></li>
-          {!user ? (
+          {props?.user ? (
             <div className="navbar__links-ul_li-a">
             <GoogleLogin 
               onSuccess={respose => responseGoogle(respose)}

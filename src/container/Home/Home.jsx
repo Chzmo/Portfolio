@@ -9,12 +9,14 @@ import Hero from '../../components/Hero/Hero'
 import Contact from '../Contact/Contact';
 import Work from '../Work/Work';
 
+import { fetchUser } from '../../utils/utils';
 import './Home.css' 
 
 function Home() {
+  const [user, setUser] = useState(fetchUser);
   return (
     <>
-      <NavBar />
+      <NavBar user={user} setUser={setUser}/>
       <Hero />
       <div  className='container'>
         <Mission />
