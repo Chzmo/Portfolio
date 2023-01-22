@@ -41,7 +41,7 @@ function SingleBlog() {
       setLogin(true)
     }else{
       const newItem = {
-        "_createdAt": `${new Date()}`,
+        "createdAt": `${new Date()}`,
         "_key": crypto.randomUUID(),
         "comment": comment,
         "likedBy": [],
@@ -150,7 +150,7 @@ function SingleBlog() {
           }
           <div className="singleBlog__blog">
             <div className="socials">
-              <div className="socials__date"><p>{singleBlogData && formatDistanceToNow(new Date(singleBlogData?._createdAt))} ago</p></div>
+              <div className="socials__date"><p>{singleBlogData && formatDistanceToNow(new Date(singleBlogData?.createdAt))} ago</p></div>
               <div className="socials__links">
                 <div className="socials__links-like"><a href="#"><CiHeart className="social-icon"/> <span>{singleBlogData?.likedBy?.length || 0}</span></a></div>
                 <div className="socials__links-comment"><a href="#"><BiMessageRoundedDetail className="social-icon"/> <span>{singleBlogData?.comments?.length || 0}</span></a></div>
@@ -231,7 +231,7 @@ function SingleBlog() {
                     </HashLink>
                     <div className="related__post-title"><h3>{blog.title}</h3></div>
                     <div className="related__post-socials">
-                      <div className="related__post-socials_date"><p>{formatDistanceToNow(new Date(blog?._createdAt))} ago</p></div>
+                      <div className="related__post-socials_date"><p>{formatDistanceToNow(new Date(blog?.createdAt))} ago</p></div>
                       <div className="related__post-socials_links">
                         <div className="socials__links-like"><a href="/"><BsFillHeartFill className="social-icon"/> <span>{blog.likedBy ? blog.likedBy.length : 0}</span></a></div>
                       </div>

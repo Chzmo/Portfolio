@@ -39,6 +39,7 @@ export const singleBlogkQuery = (_id) => {
     },
     technologies,
     _id,
+    createdAt,
     title,
     about,
     liveUrl,
