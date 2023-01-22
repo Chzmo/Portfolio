@@ -41,7 +41,7 @@ function SingleBlog() {
       setLogin(true)
     }else{
       const newItem = {
-        "createdAt": `${new Date()}`,
+        "_createdAt": `${new Date()}`,
         "_key": crypto.randomUUID(),
         "comment": comment,
         "likedBy": [],
