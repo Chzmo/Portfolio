@@ -4,6 +4,7 @@ import { GoogleLogin } from '@react-oauth/google';
 import { useClickOutside } from '@mantine/hooks';
 import jwtDecode from 'jwt-decode';
 
+import { fetchUser } from '../../utils/utils';
 import { client } from '../../client';
 import './Login.css'
 
@@ -27,7 +28,11 @@ function Login(props) {
         .catch((error)=> {
           console.log(error);
           return
-        });
+        })
+        .then(()=>{
+            props.setLogin(false);
+            location.reload()
+        })
 
     }
     return (

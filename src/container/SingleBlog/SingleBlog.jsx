@@ -131,7 +131,7 @@ function SingleBlog() {
   return (
     <>
       <NavBar user={user} setUser={setUser}/>
-      {login && <Login login={login} setLogin={setLogin} />}
+      {login && <Login login={login} setLogin={setLogin} setUser={setUser}/>}
       <div className='singleBlog'>
         <div className="singleBlog__header">
           <h2>{singleBlogData?.title}</h2>
