@@ -30,7 +30,8 @@ function SingleBlog() {
   const [loading, setLoading] = useState(false);
   const [singleBlogData, setSingleBlogData] = useState(null);
   const [relatedBlogData , setRelatedBlogData] = useState(null);
-  const [login, setLogin] = useState(false)
+  const [login, setLogin] = useState(false);
+  const [user, setUser] = useState(fetchUser);
 
   const {_id} = useParams()
 
@@ -38,71 +39,72 @@ function SingleBlog() {
     const user = fetchUser;
     if (!user) {
       setLogin(true)
+    }else{
+      const newItem = {
+        "_createdAt": `${new Date()}`,
+        "_key": crypto.randomUUID(),
+        "comment": comment,
+        "likedBy": [],
+        "postedBy": {
+          "_type":'postedBy',
+          "_ref": `${fetchUser?.sub}`,
+        },
+        "replies": []
+      };    
+  
+      if(comment && user){
+        const updatedItems = {...singleBlogData};
+        if(commentType === 'comment' && replyToId){
+          const replyToComment = items.filter(comment => comment.id === replyToId);
+          replyToComment[0].replies.push(newItem); //reply to a comment
+        }
+        
+        else if( commentType == 'reply' && replyToId){
+          const replyToReply = items.filter(comment => {
+            return comment.replies.some(reply => reply.id === replyToId);
+          });
+          replyToReply[0].replies.push(newItem); //reply to a reply
+        }
+        
+        else{
+          // update to database
+          client
+          .patch(_id)
+            .setIfMissing({comments: []})
+            .insert('after', 'comments[-1]', [newItem])
+            .commit()
+            .then(() => {
+              const query = singleBlogkQuery(_id);
+              client.fetch(query)
+              .then((data)=> {
+                setSingleBlogData(data.filter(post => _id === post._id)[0]);
+                setRelatedBlogData(data.filter(post => _id != post._id));
+              })
+            })
+        }
+  
+        setSingleBlogData(updatedItems);
+        setComment('');
+        setReplyTo(null);
+        setReplyToId(null);
+        document.querySelector('textarea').value = '';
+  
+        if(replyToId){
+          const element = document.getElementById(replyToId);
+          const currentScroll = window.scrollY;
+          const newScroll = currentScroll + element.getBoundingClientRect().top;
+          window.scrollTo(0, newScroll);
+  
+        }
+      }else{
+        const textarea = document.querySelector('textarea');
+        textarea.style.border = "1px solid red";
+        setTimeout(()=>{
+          textarea.style.border = "1px solid grey";
+        }, 1000)
+      }
     };
 
-    const newItem = {
-      "_createdAt": `${new Date()}`,
-      "_key": crypto.randomUUID(),
-      "comment": comment,
-      "likedBy": [],
-      "postedBy": {
-        "_type":'postedBy',
-        "_ref": `${fetchUser?.sub}`,
-      },
-      "replies": []
-    };    
-
-    if(comment && user){
-      const updatedItems = {...singleBlogData};
-      if(commentType === 'comment' && replyToId){
-        const replyToComment = items.filter(comment => comment.id === replyToId);
-        replyToComment[0].replies.push(newItem); //reply to a comment
-      }
-      
-      else if( commentType == 'reply' && replyToId){
-        const replyToReply = items.filter(comment => {
-          return comment.replies.some(reply => reply.id === replyToId);
-        });
-        replyToReply[0].replies.push(newItem); //reply to a reply
-      }
-      
-      else{
-        // update to database
-        client
-        .patch(_id)
-          .setIfMissing({comments: []})
-          .insert('after', 'comments[-1]', [newItem])
-          .commit()
-          .then(() => {
-            const query = singleBlogkQuery(_id);
-            client.fetch(query)
-            .then((data)=> {
-              setSingleBlogData(data.filter(post => _id === post._id)[0]);
-              setRelatedBlogData(data.filter(post => _id != post._id));
-            })
-          })
-      }
-
-      setSingleBlogData(updatedItems);
-      setComment('');
-      setReplyTo(null);
-      setReplyToId(null);
-      document.querySelector('textarea').value = '';
-
-      if(replyToId){
-        const element = document.getElementById(replyToId);
-        const currentScroll = window.scrollY;
-        const newScroll = currentScroll + element.getBoundingClientRect().top;
-        window.scrollTo(0, newScroll);
-
-      }
-    }else{
-      const textarea = document.querySelector('textarea');
-      textarea.style.border = "1px solid red";
-      setTimeout(()=>{
-        textarea.style.border = "1px solid grey";
-      }, 1000)
-    }
   }
 
   useEffect(() => {
@@ -128,8 +130,8 @@ function SingleBlog() {
   
   return (
     <>
-      <NavBar />
-      {login && <Login/>}
+      <NavBar user={user} setUser={setUser}/>
+      {login && <Login login={login} setLogin={setLogin} />}
       <div className='singleBlog'>
         <div className="singleBlog__header">
           <h2>{singleBlogData?.title}</h2>
