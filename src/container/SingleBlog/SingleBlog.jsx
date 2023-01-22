@@ -63,8 +63,20 @@ function SingleBlog() {
             "_createdAt": `${new Date()}`,
             "_key": crypto.randomUUID(),
             "replyingTo":replyTo,
-            "likes":[]
+            "likes":[],
+            "userImage":`${fetchUser.picture}`,
+            "userName":`${fetchUser.given_name}`,
           }])
+          .commit()
+          .then(() => {
+            const query = singleBlogkQuery(_id);
+            client.fetch(query)
+            .then((data)=> {
+              setSingleBlogData(data.filter(post => _id === post._id)[0]);
+              setRelatedBlogData(data.filter(post => _id != post._id));
+            })
+          })
+          .catch((console.error()))
         }
         
         else if( commentType == 'reply' && replyToId){
