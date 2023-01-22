@@ -4,7 +4,7 @@ export default {
     type: 'document',
     fields:[
         {
-            name: '_createdAt',
+            name: 'createdAt',
             title: 'Created At',
             type: 'date'
         },
