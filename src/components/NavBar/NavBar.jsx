@@ -65,7 +65,7 @@ function NavBar(props) {
           <li className="navbar__links-ul_li"><HashLink className="navbar__links-ul_li-a" to="/Blog#">Blog</HashLink></li>
           <li className="navbar__links-ul_li"><HashLink className="navbar__links-ul_li-a" to="/#Testimonial">Testimonials</HashLink></li>
           <li className="navbar__links-ul_li"><HashLink className="navbar__links-ul_li-a" to="/Contact#">Contact</HashLink></li>
-          {props?.user ? (
+          {!props?.user ? (
             <div className="navbar__links-ul_li-a">
             <GoogleLogin 
               onSuccess={respose => responseGoogle(respose)}
@@ -76,7 +76,7 @@ function NavBar(props) {
           ):(
           <li className="navbar__links-ul_li">
             <div className="navbar__links-ul_li-a">
-              {user?.given_name}
+              {props.user?.given_name}
             </div>
           </li>
           )}

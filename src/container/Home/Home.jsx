@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Testimonial from '../../components/Testimonial/Testimonial';
 import Mission from '../../components/Mission/Mission';
@@ -14,6 +14,7 @@ import './Home.css'
 
 function Home() {
   const [user, setUser] = useState(fetchUser);
+
   return (
     <>
       <NavBar user={user} setUser={setUser}/>
