@@ -130,7 +130,7 @@ function SingleBlog() {
   
   return (
     <>
-      <NavBar user={user} setUser={setUser}/>
+      <NavBar />
       {login && <Login login={login} setLogin={setLogin} setUser={setUser}/>}
       <div className='singleBlog'>
         <div className="singleBlog__header">

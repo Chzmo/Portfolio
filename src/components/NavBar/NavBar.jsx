@@ -11,8 +11,8 @@ import './NavBar.css'
 
 
 
-function NavBar(props) {
-  
+function NavBar() {
+  const [user, setUser] = useState(fetchUser);
   const [mobileNav, setMobileNav] = useState(false);
   const ref = useClickOutside(() => mobileNav && setMobileNav(false));
   const responsiveNav = ()=>{
@@ -51,7 +51,7 @@ function NavBar(props) {
       return
     })
     location.reload();
-    props.setUser(doc);
+    setUser(doc);
   }
 
   return (
@@ -66,7 +66,7 @@ function NavBar(props) {
           <li className="navbar__links-ul_li"><HashLink className="navbar__links-ul_li-a" to="/Blog#">Blog</HashLink></li>
           <li className="navbar__links-ul_li"><HashLink className="navbar__links-ul_li-a" to="/#Testimonial">Testimonials</HashLink></li>
           <li className="navbar__links-ul_li"><HashLink className="navbar__links-ul_li-a" to="/Contact#">Contact</HashLink></li>
-          {!props?.user ? (
+          {!user ? (
             <div className="navbar__links-ul_li-a">
             <GoogleLogin 
               onSuccess={respose => responseGoogle(respose)}
@@ -77,7 +77,7 @@ function NavBar(props) {
           ):(
           <li className="navbar__links-ul_li">
             <div className="navbar__links-ul_li-a">
-              {props.user?.given_name}
+              {user?.given_name}
             </div>
           </li>
           )}

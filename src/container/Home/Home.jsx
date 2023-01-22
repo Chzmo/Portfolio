@@ -13,11 +13,10 @@ import { fetchUser } from '../../utils/utils';
 import './Home.css' 
 
 function Home() {
-  const [user, setUser] = useState(fetchUser);
 
   return (
     <>
-      <NavBar user={user} setUser={setUser}/>
+      <NavBar />
       <Hero />
       <div  className='container'>
         <Mission />
