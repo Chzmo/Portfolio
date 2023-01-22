@@ -55,8 +55,16 @@ function SingleBlog() {
       if(comment && user){
         const updatedItems = {...singleBlogData};
         if(commentType === 'comment' && replyToId){
-          const replyToComment = items.filter(comment => comment.id === replyToId);
-          replyToComment[0].replies.push(newItem); //reply to a comment
+          const replyToComment = singleBlogData.comments.filter(comment => comment.postedBy._id === replyToId);
+          client
+          .patch(replyToId)
+          .setIfMissing({replies:[]})
+          .insert('after', 'replies[-1]', [{
+            "_createdAt": `${new Date()}`,
+            "_key": crypto.randomUUID(),
+            "replyingTo":replyTo,
+            "likes":[]
+          }])
         }
         
         else if( commentType == 'reply' && replyToId){
@@ -89,13 +97,13 @@ function SingleBlog() {
         setReplyToId(null);
         document.querySelector('textarea').value = '';
   
-        if(replyToId){
-          const element = document.getElementById(replyToId);
-          const currentScroll = window.scrollY;
-          const newScroll = currentScroll + element.getBoundingClientRect().top;
-          window.scrollTo(0, newScroll);
+        // if(replyToId){
+        //   const element = document.getElementById(replyToId);
+        //   const currentScroll = window.scrollY;
+        //   const newScroll = currentScroll + element.getBoundingClientRect().top;
+        //   window.scrollTo(0, newScroll);
   
-        }
+        // }
       }else{
         const textarea = document.querySelector('textarea');
         textarea.style.border = "1px solid red";

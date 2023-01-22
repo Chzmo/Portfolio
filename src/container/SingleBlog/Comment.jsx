@@ -10,7 +10,7 @@ import profileImg from '../../assets/media/zaliro_p.png';
 import { fetchUser } from '../../utils/utils';
 
 function SingleComment({comment, props}){
-
+  const _id = {useParams}
   const [likeCount, setlikeCount] = useState(0)
 
   function updateLikeScore(id){
@@ -18,16 +18,12 @@ function SingleComment({comment, props}){
       alert(1)
     }
   }
-
   function handleReplyComment(id){
     const textarea = document.querySelector('textarea');
     textarea.focus();
-
-    const replyToComment = props.items.filter(comment => comment.id === id);
-    // props.setReplyTo(replyToComment[0].user.username);    
-    props.setReplyTo('Chiso');
+    props.setReplyTo(comment.postedBy.userName);
     props.setCommentType('comment');
-    props.setReplyToId(id);
+    props.setReplyToId(comment.postedBy._id);
   }
 
   return (
