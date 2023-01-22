@@ -7,6 +7,7 @@ import { formatDistanceToNow } from 'date-fns';
 import { client } from '../../client';
 
 import profileImg from '../../assets/media/zaliro_p.png';
+import { fetchUser } from '../../utils/utils';
 
 function SingleComment({comment, props}){
 
@@ -125,7 +126,7 @@ export function CommentField(props){
       )}
       <div className="comments__main">
         <div className="comments__main-profile">
-          <img src={profileImg} alt="profile" />
+          {fetchUser && (<img src={fetchUser.picture} alt="profile" />)}
         </div>
         <div className="form">
           <textarea 

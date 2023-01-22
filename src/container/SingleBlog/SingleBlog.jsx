@@ -47,7 +47,7 @@ function SingleBlog() {
       "likedBy": [],
       "postedBy": {
         "_type":'postedBy',
-        "_ref": fetchUser?._id,
+        "_ref": `${fetchUser?.sub}`,
       },
       "replies": []
     };    
