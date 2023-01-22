@@ -44,13 +44,14 @@ function NavBar(props) {
         email: email,
     }
   
-    client.createIfNotExists(doc)
+    client
+    .createIfNotExists(doc)
     .catch((error)=> {
       console.log(error);
       return
-    });
-    
-    props.setUser(doc)
+    })
+    location.reload();
+    props.setUser(doc);
   }
 
   return (
