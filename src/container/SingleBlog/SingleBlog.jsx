@@ -56,6 +56,40 @@ function SingleBlog() {
         const updatedItems = {...singleBlogData};
         if(commentType === 'comment' && replyToId){
           const replyToComment = singleBlogData.comments.filter(comment => comment.postedBy._id === replyToId);
+          const reply = {
+            "_createdAt": `${new Date()}`,
+            "_key": crypto.randomUUID(),
+            "replyingTo":replyTo,
+            "likes":[],
+            "userImage":`${fetchUser.picture}`,
+            "userName":`${fetchUser.given_name}`,
+          };
+
+          client.update({
+            _id: '67211377-bebb-4441-9ee0-8aded22ab3d8',
+            comments: {
+                _key: commentKey
+            },
+            set: {
+                'comments[].replies': {
+                    _append: [reply]
+                }
+            }
+        }).then(result => {
+            console.log("Reply added: ", result);
+        }).catch(error => {
+            console.error("Error adding reply: ", error);
+        });
+
+
+
+
+
+
+
+
+
+
           client
           .patch(replyToId)
           .setIfMissing({replies:[]})
@@ -155,6 +189,7 @@ function SingleBlog() {
       <div className='singleBlog'>
         <div className="singleBlog__header">
           <h2>{singleBlogData?.title}</h2>
+          {console.log(singleBlogData)}
           <div className="singleBlog__header-related">
             <button>LandingPage</button>
             <button>Shopify</button>
