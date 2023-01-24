@@ -23,7 +23,7 @@ function SingleComment({comment, props, index}){
     textarea.focus();
     props.setReplyTo(comment.postedBy.userName);
     props.setCommentType('comment');
-    props.setReplyToId(index+1); // this is subtracted in 
+    props.setReplyToId(index+1); // this is subtracted in single blog so that it should not be equal to zero
   }
 
   return (

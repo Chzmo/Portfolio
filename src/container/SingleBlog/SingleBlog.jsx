@@ -66,7 +66,7 @@ function SingleBlog() {
             "userName":`${fetchUser.given_name}`,
           };
 
-          const replyToIndex = `comments[${replyToId}].replies[-1]`
+          const replyToIndex = `comments[${replyToId-1}].replies[-1]`
           client
             .patch(_id)
             .setIfMissing({"comments[0].replies": []})
