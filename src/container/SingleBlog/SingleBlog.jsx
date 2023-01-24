@@ -73,7 +73,7 @@ function SingleBlog() {
             .insert('after', replyToIndex, [reply])
             .commit()
             .then((result) => {
-                console.log("Reply added: ", result);
+                location.reload()
             })
             .catch((error) => {
                 console.error("Error adding reply: ", error);
