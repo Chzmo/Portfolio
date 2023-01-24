@@ -65,52 +65,25 @@ function SingleBlog() {
             "userName":`${fetchUser.given_name}`,
           };
 
-          client.update({
-            _id: '67211377-bebb-4441-9ee0-8aded22ab3d8',
-            comments: {
-                _key: commentKey
-            },
-            set: {
-                'comments[].replies': {
-                    _append: [reply]
-                }
-            }
-        }).then(result => {
-            console.log("Reply added: ", result);
-        }).catch(error => {
-            console.error("Error adding reply: ", error);
-        });
-
-
-
-
-
-
-
-
-
-
+          const commentKey = '58204b68-3f23-4f04-af45-310a2ded7b92';
+          const patch = {
+              set: {
+                  "comments[{_key: '58204b68-3f23-4f04-af45-310a2ded7b92'}].replies": {
+                      _append: [reply]
+                  }
+              }
+          };
           client
-          .patch(replyToId)
-          .setIfMissing({replies:[]})
-          .insert('after', 'replies[-1]', [{
-            "_createdAt": `${new Date()}`,
-            "_key": crypto.randomUUID(),
-            "replyingTo":replyTo,
-            "likes":[],
-            "userImage":`${fetchUser.picture}`,
-            "userName":`${fetchUser.given_name}`,
-          }])
-          .commit()
-          .then(() => {
-            const query = singleBlogkQuery(_id);
-            client.fetch(query)
-            .then((data)=> {
-              setSingleBlogData(data.filter(post => _id === post._id)[0]);
-              setRelatedBlogData(data.filter(post => _id != post._id));
-            })
-          })
-          .catch((console.error()))
+              .patch("67211377-bebb-4441-9ee0-8aded22ab3d8")
+              .patch(patch)
+              .commit()
+              .then((result) => {
+                  console.log("Reply added: ", result);
+              })
+              .catch((error) => {
+                  console.error("Error adding reply: ", error);
+              });
+
         }
         
         else if( commentType == 'reply' && replyToId){
