@@ -54,7 +54,7 @@ function SingleBlog() {
   
       if(comment && user){
         const updatedItems = {...singleBlogData};
-        if(commentType === 'comment' && replyToId){
+        if((commentType === 'comment' || commentType === 'reply') && replyToId){
           const replyToComment = singleBlogData.comments.filter(comment => comment.postedBy._id === replyToId);
           const reply = {
             "_createdAt": `${new Date()}`,
@@ -66,17 +66,9 @@ function SingleBlog() {
             "userName":`${fetchUser.given_name}`,
           };
 
-          const commentKey = '58204b68-3f23-4f04-af45-310a2ded7b92';
-          const patch = {
-              set: {
-                  "comments[{_key: '58204b68-3f23-4f04-af45-310a2ded7b92'}].replies": {
-                      _append: [reply]
-                  }
-              }
-          };
           const testing = "comments[0].replies[-1]"
           client
-            .patch('67211377-bebb-4441-9ee0-8aded22ab3d8')
+            .patch(_id)
             .setIfMissing({"comments[0].replies": []})
             .insert('after', testing, [reply])
             .commit()
@@ -88,13 +80,6 @@ function SingleBlog() {
             });
         }
         
-        else if( commentType == 'reply' && replyToId){
-          const replyToReply = items.filter(comment => {
-            return comment.replies.some(reply => reply.id === replyToId);
-          });
-          replyToReply[0].replies.push(newItem); //reply to a reply
-        }
-        
         else{
           // update to database
           client
@@ -102,13 +87,10 @@ function SingleBlog() {
             .setIfMissing({comments: []})
             .insert('after', 'comments[-1]', [newItem])
             .commit()
-            .then(() => {
-              const query = singleBlogkQuery(_id);
-              client.fetch(query)
-              .then((data)=> {
-                setSingleBlogData(data.filter(post => _id === post._id)[0]);
-                setRelatedBlogData(data.filter(post => _id != post._id));
-              })
+            .then((data) => {
+              console.log(data)
+              setSingleBlogData(data);
+              // setRelatedBlogData(data.filter(post => _id != post._id));
             })
         }
   
@@ -164,7 +146,6 @@ function SingleBlog() {
       <div className='singleBlog'>
         <div className="singleBlog__header">
           <h2>{singleBlogData?.title}</h2>
-          {console.log(singleBlogData)}
           <div className="singleBlog__header-related">
             <button>LandingPage</button>
             <button>Shopify</button>
