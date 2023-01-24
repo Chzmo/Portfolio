@@ -26,6 +26,7 @@ function SingleBlog() {
   const [comment, setComment] = useState('');
   const [replyTo, setReplyTo] = useState(null);
   const [replyToId, setReplyToId] = useState(null);
+  const [replyToIndex, setReplyToIndex] = useState(null)
   const [commentType, setCommentType] = useState(null);
   const [loading, setLoading] = useState(false);
   const [singleBlogData, setSingleBlogData] = useState(null);
@@ -55,7 +56,6 @@ function SingleBlog() {
       if(comment && user){
         const updatedItems = {...singleBlogData};
         if((commentType === 'comment' || commentType === 'reply') && replyToId){
-          const replyToComment = singleBlogData.comments.filter(comment => comment.postedBy._id === replyToId);
           const reply = {
             "_createdAt": `${new Date()}`,
             "_key": crypto.randomUUID(),
@@ -66,11 +66,11 @@ function SingleBlog() {
             "userName":`${fetchUser.given_name}`,
           };
 
-          const testing = "comments[0].replies[-1]"
+          const replyToIndex = `comments[${replyToId}].replies[-1]`
           client
             .patch(_id)
             .setIfMissing({"comments[0].replies": []})
-            .insert('after', testing, [reply])
+            .insert('after', replyToIndex, [reply])
             .commit()
             .then((result) => {
                 console.log("Reply added: ", result);
@@ -79,7 +79,6 @@ function SingleBlog() {
                 console.error("Error adding reply: ", error);
             });
         }
-        
         else{
           // update to database
           client

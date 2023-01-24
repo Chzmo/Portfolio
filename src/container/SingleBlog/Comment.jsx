@@ -9,7 +9,7 @@ import { client } from '../../client';
 import profileImg from '../../assets/media/zaliro_p.png';
 import { fetchUser } from '../../utils/utils';
 
-function SingleComment({comment, props}){
+function SingleComment({comment, props, index}){
   const _id = {useParams}
   const [likeCount, setlikeCount] = useState(0)
 
@@ -23,7 +23,7 @@ function SingleComment({comment, props}){
     textarea.focus();
     props.setReplyTo(comment.postedBy.userName);
     props.setCommentType('comment');
-    props.setReplyToId(comment.postedBy._id);
+    props.setReplyToId(index+1); // this is subtracted in 
   }
 
   return (
@@ -40,7 +40,7 @@ function SingleComment({comment, props}){
         </div>
         <div className="comments__main-content_bottom">
           <div className="content_bottom-social">
-            <button onClick={()=>updateLikeScore(comment.id)}><CiHeart className="social-icon"/><span>{comment?.likedBy ? comment?.likedBy?.length : (0)}</span></button>
+            <button onClick={()=>updateLikeScore(index)}><CiHeart className="social-icon"/><span>{comment?.likedBy ? comment?.likedBy?.length : (0)}</span></button>
           </div>
           <div className="content_bottom-reply">
             <button onClick={() => handleReplyComment(comment.id)}>
@@ -71,7 +71,7 @@ function SingleReply({reply, props}){
       return acc.concat(comment.replies.filter(reply => reply.id === id));
     }, []);
     
-    props.setReplyTo(replyToReply[0].user.username);    props.setReplyTo(replyToReply[0].user.username);
+    props.setReplyTo(replyToReply[0].user.username);
     props.setCommentType('reply');
     props.setReplyToId(id);
   }
@@ -166,15 +166,15 @@ function Comment(props){
 
   return (
     <>
-      {props.items && props?.items?.map((comment) => {
+      {props.items && props?.items?.map((comment, index) => {
         return (
           <div key={comment?._key}>
-            <SingleComment comment={comment} props={props}/>
+            <SingleComment comment={comment} props={props} index={index}/>
             {
               comment?.replies &&(
                 comment.replies.map((reply) => {
                   //passing props with states
-                  return <div className="reply" key={reply._key}><SingleReply reply={reply} props={props}/></div> 
+                  return <div className="reply" key={reply._key}><SingleReply reply={reply} props={props} /></div> 
                 })
               )
             }
