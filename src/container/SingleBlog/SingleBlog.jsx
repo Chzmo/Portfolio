@@ -89,7 +89,6 @@ function SingleBlog() {
             .then((data) => {
               console.log(data)
               setSingleBlogData(data);
-              // setRelatedBlogData(data.filter(post => _id != post._id));
             })
         }
   
