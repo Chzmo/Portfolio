@@ -79,14 +79,14 @@ function SingleReply({reply, props}){
   return (
     <div className="comments__main">
       <div className="comments__main-profile">
-        <img src={profileImg} alt="profile" />
+        <img src={reply.userImage} alt="profile" />
       </div>
       <div className="comments__main-content">
         <div className="comments__main-content_top">
-          <h3>{'chiso'}</h3> <p>{`3 days`} ago</p>
+          <h3>{reply.userName}</h3> <p>{formatDistanceToNow(new Date(reply._createdAt))} ago</p>
         </div>
         <div id={reply.id} tabIndex="0" className="comments__main-content_message">
-          <p>{reply.content}</p>
+          <p><a>@{reply.replyingTo} </a>{reply.content}</p>
         </div>
         <div className="comments__main-content_bottom">
           <div className="content_bottom-social">

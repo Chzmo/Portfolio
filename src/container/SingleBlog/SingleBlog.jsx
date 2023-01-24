@@ -61,6 +61,7 @@ function SingleBlog() {
             "_key": crypto.randomUUID(),
             "replyingTo":replyTo,
             "likes":[],
+            "content": comment,
             "userImage":`${fetchUser.picture}`,
             "userName":`${fetchUser.given_name}`,
           };
@@ -73,17 +74,18 @@ function SingleBlog() {
                   }
               }
           };
+          const testing = "comments[0].replies[-1]"
           client
-              .patch("67211377-bebb-4441-9ee0-8aded22ab3d8")
-              .patch(patch)
-              .commit()
-              .then((result) => {
-                  console.log("Reply added: ", result);
-              })
-              .catch((error) => {
-                  console.error("Error adding reply: ", error);
-              });
-
+            .patch('67211377-bebb-4441-9ee0-8aded22ab3d8')
+            .setIfMissing({"comments[0].replies": []})
+            .insert('after', testing, [reply])
+            .commit()
+            .then((result) => {
+                console.log("Reply added: ", result);
+            })
+            .catch((error) => {
+                console.error("Error adding reply: ", error);
+            });
         }
         
         else if( commentType == 'reply' && replyToId){

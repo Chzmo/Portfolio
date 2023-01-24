@@ -13,7 +13,7 @@ import { fetchUser } from '../../utils/utils';
 import './Home.css' 
 
 function Home() {
-
+  localStorage.clear()
   return (
     <>
       <NavBar />
