@@ -88,7 +88,8 @@ function SingleBlog() {
             .commit()
             .then((data) => {
               console.log(data)
-              setSingleBlogData(data);
+              // setSingleBlogData(data);
+              location.reload()
             })
         }
   
