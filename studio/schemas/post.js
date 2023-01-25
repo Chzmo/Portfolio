@@ -46,10 +46,17 @@ export default {
             title: 'UserID',
             type: 'string'
         },
+        // {
+        //     name: 'postedBy',
+        //     title: 'PostedBy',
+        //     type: 'postedBy',
+        //     query: '*[_type == "user"] '
+        // },
         {
             name: 'postedBy',
-            title: 'PostedBy',
-            type: 'postedBy'
+            title: 'Posted by',
+            type: 'reference',
+             : [{type: 'user'}],
         },
         {
             name: 'technologies',
@@ -69,7 +76,8 @@ export default {
             name: 'comments',
             title: 'Comments',
             type: 'array',
-            of:[{type: 'comment'}]
+            of:[{type: 'comment'}],
+           
         }
     ]
 }

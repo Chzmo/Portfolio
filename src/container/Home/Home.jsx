@@ -11,8 +11,14 @@ import Work from '../Work/Work';
 
 import { fetchUser } from '../../utils/utils';
 import './Home.css' 
+import { client } from '../../client';
 
 function Home() {
+
+  const query = `*[_type == 'post']`
+  client
+    .fetch(query)
+    .then(data => console.log(data))
 
   return (
     <>
