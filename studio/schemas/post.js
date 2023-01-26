@@ -56,7 +56,10 @@ export default {
             name: 'postedBy',
             title: 'Posted by',
             type: 'reference',
-             : [{type: 'user'}],
+            to: [{type: 'user'}],
+            resolve: (doc) => {
+                return doc.user.name
+            },
         },
         {
             name: 'technologies',
@@ -64,7 +67,8 @@ export default {
             type: 'array',
             of: [{
               type: 'string'
-            }]
+            }],
+            
         },
         {
             name: 'likedBy',
