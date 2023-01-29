@@ -57,9 +57,6 @@ export default {
             title: 'Posted by',
             type: 'reference',
             to: [{type: 'user'}],
-            resolve: (doc) => {
-                return doc.user.name
-            },
         },
         {
             name: 'technologies',
