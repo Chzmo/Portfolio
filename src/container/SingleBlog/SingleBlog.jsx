@@ -134,6 +134,7 @@ function SingleBlog() {
     .then((data)=> {
       setSingleBlogData(data.filter(post => _id === post._id)[0]);
       setRelatedBlogData(data.filter(post => _id != post._id));
+      console.log(data)
       setLoading(false);
     }) 
   }, [_id])

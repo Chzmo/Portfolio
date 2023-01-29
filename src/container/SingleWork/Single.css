@@ -19,7 +19,7 @@
 .singleWork .singleWork__header .singleWork__header-related {
   display: flex;
   gap: 0.6rem;
-  overflow: scroll;
+  overflow-x: scroll;
 }
 .singleWork .singleWork__header .singleWork__header-related button {
   padding: 0.7rem 1rem;
@@ -27,6 +27,7 @@
   border: 1px solid #D9D9D9;
   border-radius: 2rem;
   color: rgb(126, 125, 125);
+  margin-bottom: 0.7rem;
 }
 .singleWork .singleWork__details {
   display: flex;
