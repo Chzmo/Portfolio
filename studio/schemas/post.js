@@ -1,3 +1,4 @@
+
 export default {
     name: 'post',
     title: 'Post',
@@ -46,17 +47,11 @@ export default {
             title: 'UserID',
             type: 'string'
         },
-        // {
-        //     name: 'postedBy',
-        //     title: 'PostedBy',
-        //     type: 'postedBy',
-        //     query: '*[_type == "user"] '
-        // },
         {
             name: 'postedBy',
             title: 'Posted by',
             type: 'reference',
-            to: [{type: 'user'}],
+            to: [{type: 'user'}]
         },
         {
             name: 'technologies',
@@ -77,8 +72,18 @@ export default {
             name: 'comments',
             title: 'Comments',
             type: 'array',
-            of:[{type: 'comment'}],
-           
+            of:[{type: 'comment'}]
         }
-    ]
+    ],
+    preview:{
+        select: {
+            user: 'postedBy.0.userName' // if the user has a userName, follow the relation and get the userName
+        },
+        prepare(selection) {
+            const { user } = selection
+            return {
+                someUser: `User: ${user ? user : 'unknown'}`
+            }
+        }
+    }
 }
