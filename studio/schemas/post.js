@@ -77,7 +77,7 @@ export default {
     ],
     preview:{
         select: {
-            postedBy: 'user.userName' // if the user has a userName, follow the relation and get the userName
+            postedBy: 'user.0.userName' // if the user has a userName, follow the relation and get the userName
         },
         // prepare(selection) {
         //     const { postedBy } = selection;
