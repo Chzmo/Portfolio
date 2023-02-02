@@ -79,11 +79,11 @@ export default {
         select: {
             postedBy: 'user.userName' // if the user has a userName, follow the relation and get the userName
         },
-        prepare(selection) {
-            const { postedBy } = selection;
-            return {
-                postedBy: postedBy.userName
-            }
-        }
+        // prepare(selection) {
+        //     const { postedBy } = selection;
+        //     return {
+        //         postedBy: postedBy.userName
+        //     }
+        // }
     }
 }
