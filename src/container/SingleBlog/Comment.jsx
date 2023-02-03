@@ -66,12 +66,9 @@ function SingleReply({reply, props}){
   function handleReplyReply(id){
     const textarea = document.querySelector('textarea');
     textarea.focus();
+    console.log(reply.userName)
     
-    const replyToReply = props.items.reduce((acc, comment) => {
-      return acc.concat(comment.replies.filter(reply => reply.id === id));
-    }, []);
-    
-    props.setReplyTo(replyToReply[0].user.username);
+    props.setReplyTo(reply?.username);
     props.setCommentType('reply');
     props.setReplyToId(id);
   }
