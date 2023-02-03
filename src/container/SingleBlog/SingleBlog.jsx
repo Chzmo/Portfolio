@@ -59,6 +59,10 @@ function SingleBlog() {
             .commit()
             .then((result) => {
               setSingleBlogData(result);
+              setComment('');
+              setReplyTo(null);
+              setReplyToId(null);
+              document.querySelector('textarea').value = '';
             })
             .catch((error) => {
                 console.error("Error adding reply: ", error);
@@ -88,6 +92,10 @@ function SingleBlog() {
           .then((data) => {
             console.log(data)
             setSingleBlogData(data);
+            setComment('');
+            setReplyTo(null);
+            setReplyToId(null);
+            document.querySelector('textarea').value = '';
           })
         }
   
@@ -95,14 +103,7 @@ function SingleBlog() {
         setReplyTo(null);
         setReplyToId(null);
         document.querySelector('textarea').value = '';
-  
-        // if(replyToId){
-        //   const element = document.getElementById(replyToId);
-        //   const currentScroll = window.scrollY;
-        //   const newScroll = currentScroll + element.getBoundingClientRect().top;
-        //   window.scrollTo(0, newScroll);
-  
-        // }
+        
       }else{
         const textarea = document.querySelector('textarea');
         textarea.style.border = "1px solid red";
