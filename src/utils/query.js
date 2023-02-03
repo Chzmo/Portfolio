@@ -86,11 +86,11 @@ export const blogQuery = `*[_type == "post"] | order(_createdAt desc){
     liveUrl,
     gitHubUrl,
     completionTime,
-    postedBy->{
-      _id,
+    postedBy->[{
+      _key,
       userName,
       image
-    },
+    }],
   } 
 `;
 

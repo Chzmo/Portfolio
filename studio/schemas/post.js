@@ -50,8 +50,8 @@ export default {
         {
             name: 'postedBy',
             title: 'Posted by',
-            type: 'reference',
-            to: [{type: 'user'}]
+            type: 'array',
+            of: [{type: 'user'}]
         },
         {
             name: 'technologies',
@@ -75,9 +75,9 @@ export default {
             of:[{type: 'comment'}]
         }
     ],
-    preview:{
-        select: {
-            postedBy: 'user.0.userName' // if the user has a userName, follow the relation and get the userName
-        },
-    }
+    // preview:{
+    //     select: {
+    //         postedBy: 'user' // if the user has a userName, follow the relation and get the userName
+    //     },
+    // }
 }
