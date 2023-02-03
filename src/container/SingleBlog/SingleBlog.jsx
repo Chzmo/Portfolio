@@ -46,10 +46,12 @@ function SingleBlog() {
         "_key": crypto.randomUUID(),
         "comment": comment,
         "likedBy": [],
-        "postedBy": {
-          "_type":'postedBy',
-          "_ref": `${fetchUser?.sub}`,
-        },
+        "postedBy": [{
+            'userName': fetchUser?.given_name,
+            'name': fetchUser?.name,
+           'image': fetchUser?.picture,
+            'email': fetchUser?.email,
+        }],
         "replies": []
       };    
   
@@ -88,8 +90,7 @@ function SingleBlog() {
             .commit()
             .then((data) => {
               console.log(data)
-              // setSingleBlogData(data);
-              location.reload()
+              setSingleBlogData(data);
             })
         }
   

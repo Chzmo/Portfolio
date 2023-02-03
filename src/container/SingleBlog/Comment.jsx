@@ -6,7 +6,6 @@ import { formatDistanceToNow } from 'date-fns';
 
 import { client } from '../../client';
 
-import profileImg from '../../assets/media/zaliro_p.png';
 import { fetchUser } from '../../utils/utils';
 
 function SingleComment({comment, props, index}){
@@ -29,11 +28,12 @@ function SingleComment({comment, props, index}){
   return (
     <div className="comments__main" tabIndex="1">
       <div className="comments__main-profile">
-        <img src={comment && comment?.postedBy?.image} alt="profile" />
+        <img src={comment?.postedBy[0]?.image ? comment?.postedBy[0]?.image : comment?.postedBy?.image} alt="profile" />
       </div>
       <div className="comments__main-content">
         <div className="comments__main-content_top">
-          <h3>{comment.postedBy.userName}</h3><p>{formatDistanceToNow(new Date(comment._createdAt))} ago</p>
+          <h3>{comment.postedBy.userName}</h3>
+          {/* <p>{formatDistanceToNow(new Date(comment._createdAt))} ago</p> */}
         </div>
         <div tabIndex="0" id={comment.id}  className="comments__main-content_message">
           <p>{comment?.comment}</p>

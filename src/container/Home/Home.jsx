@@ -19,6 +19,7 @@ function Home() {
   client
     .fetch(query)
     .then(data => console.log(data))
+    console.log(fetchUser)
 
   return (
     <>

@@ -45,7 +45,7 @@ export const singleBlogkQuery = (_id) => {
     liveUrl,
     gitHubUrl,
     completionTime,
-    postedBy->{
+    postedBy[0]{
       _id,
       userName,
       image
@@ -53,7 +53,7 @@ export const singleBlogkQuery = (_id) => {
     comments[]{
       _key,
       comment,
-      postedBy -> {
+      postedBy[0]{
         _id,
         userName,
         image,
@@ -86,11 +86,6 @@ export const blogQuery = `*[_type == "post"] | order(_createdAt desc){
     liveUrl,
     gitHubUrl,
     completionTime,
-    postedBy->[{
-      _key,
-      userName,
-      image
-    }],
   } 
 `;
 

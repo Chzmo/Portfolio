@@ -5,8 +5,9 @@ export default {
     fields: [
         {
             name: 'postedBy',
-            title: 'PostedBy',
-            type: 'postedBy'
+            title: 'Posted By',
+            type: 'array',
+            of:[{type: 'user'}]
         },
         {
             name: 'comment',
@@ -25,5 +26,5 @@ export default {
             type: 'array',
             of:[{type: 'like'}]
         },
-    ],
+    ]
 }
