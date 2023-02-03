@@ -108,6 +108,7 @@ export function CommentField(props){
 
   const setReplyToNull = () =>{
     props.setReplyTo(null)
+    props.setCommentType(null)
   }
 
   return (
