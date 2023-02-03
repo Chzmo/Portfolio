@@ -59,10 +59,6 @@ function SingleBlog() {
             .commit()
             .then((result) => {
               setSingleBlogData(result);
-              setComment('');
-              setReplyTo(null);
-              setReplyToId(null);
-              document.querySelector('textarea').value = '';
             })
             .catch((error) => {
                 console.error("Error adding reply: ", error);
@@ -92,16 +88,13 @@ function SingleBlog() {
           .then((data) => {
             console.log(data)
             setSingleBlogData(data);
-            setComment('');
-            setReplyTo(null);
-            setReplyToId(null);
-            document.querySelector('textarea').value = '';
           })
         }
   
         setComment('');
         setReplyTo(null);
         setReplyToId(null);
+        setCommentType(null);
         document.querySelector('textarea').value = '';
         
       }else{
