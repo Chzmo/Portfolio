@@ -18,7 +18,7 @@ function SingleComment({comment, props, index}){
     }
   }
   function handleReplyComment(id){
-    props.setReplyTo(comment.postedBy.userName);
+    props.setReplyTo(comment.postedBy.userName ? comment.postedBy.userName : comment.postedBy[0].userName);
     props.setCommentType('reply');
     props.setReplyToId(index+1); // this is subtracted in single blog so that it should not be equal to zero
   }
