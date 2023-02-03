@@ -18,10 +18,8 @@ function SingleComment({comment, props, index}){
     }
   }
   function handleReplyComment(id){
-    const textarea = document.querySelector('textarea');
-    textarea.focus();
     props.setReplyTo(comment.postedBy.userName);
-    props.setCommentType('comment');
+    props.setCommentType('reply');
     props.setReplyToId(index+1); // this is subtracted in single blog so that it should not be equal to zero
   }
 
@@ -53,7 +51,7 @@ function SingleComment({comment, props, index}){
   )
 }
 
-function SingleReply({reply, props}){
+function SingleReply({reply, props, index}){
   
   const [likeCount, setlikeCount] = useState(0)
 
@@ -66,11 +64,11 @@ function SingleReply({reply, props}){
   function handleReplyReply(id){
     const textarea = document.querySelector('textarea');
     textarea.focus();
-    console.log(reply.userName)
     
-    props.setReplyTo(reply?.username);
+    props.setReplyTo(reply?.userName);
     props.setCommentType('reply');
-    props.setReplyToId(id);
+    props.setReplyToId(index+1);
+    console.log(reply.userName)
   }
 
   return (
@@ -128,7 +126,6 @@ export function CommentField(props){
             onChange={(e) => props?.setComment(e.target.value)} 
             value={props.comment}
           >
-
           </textarea>
           <button onClick={props.addComment}>Comment</button>
         </div>
@@ -171,7 +168,7 @@ function Comment(props){
               comment?.replies &&(
                 comment.replies.map((reply) => {
                   //passing props with states
-                  return <div className="reply" key={reply._key}><SingleReply reply={reply} props={props} /></div> 
+                  return <div className="reply" key={reply._key}><SingleReply reply={reply} props={props} index={index}/></div> 
                 })
               )
             }

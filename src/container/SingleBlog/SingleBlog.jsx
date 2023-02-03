@@ -22,7 +22,6 @@ import { client, urlFor } from '../../client';
 import { fetchUser } from '../../utils/utils';
 
 function SingleBlog() {
-  const [items, setItems] = useState(null);
   const [comment, setComment] = useState('');
   const [replyTo, setReplyTo] = useState(null);
   const [replyToId, setReplyToId] = useState(null);
@@ -32,7 +31,6 @@ function SingleBlog() {
   const [singleBlogData, setSingleBlogData] = useState(null);
   const [relatedBlogData , setRelatedBlogData] = useState(null);
   const [login, setLogin] = useState(false);
-  const [user, setUser] = useState(fetchUser);
 
   const {_id} = useParams()
 
@@ -40,24 +38,9 @@ function SingleBlog() {
     const user = fetchUser;
     if (!user) {
       setLogin(true)
-    }else{
-      const newItem = {
-        "_createdAt": `${new Date()}`,
-        "_key": crypto.randomUUID(),
-        "comment": comment,
-        "likedBy": [],
-        "postedBy": [{
-            'userName': fetchUser?.given_name,
-            'name': fetchUser?.name,
-           'image': fetchUser?.picture,
-            'email': fetchUser?.email,
-        }],
-        "replies": []
-      };    
-  
+    }else{    
       if(comment && user){
-        const updatedItems = {...singleBlogData};
-        if((commentType === 'comment' || commentType === 'reply') && replyToId){
+        if(commentType === 'reply' && replyToId){
           const reply = {
             "_createdAt": `${new Date()}`,
             "_key": crypto.randomUUID(),
@@ -81,20 +64,33 @@ function SingleBlog() {
                 console.error("Error adding reply: ", error);
             });
         }
-        else{
+        else {
+          const newItem = {
+            "_createdAt": `${new Date()}`,
+            "_key": crypto.randomUUID(),
+            "comment": comment,
+            "likedBy": [],
+            "postedBy": [{
+                'userName': fetchUser?.given_name,
+                'name': fetchUser?.name,
+              'image': fetchUser?.picture,
+                'email': fetchUser?.email,
+            }],
+            "replies": []
+          };  
+
           // update to database
           client
           .patch(_id)
-            .setIfMissing({comments: []})
-            .insert('after', 'comments[-1]', [newItem])
-            .commit()
-            .then((data) => {
-              console.log(data)
-              setSingleBlogData(data);
-            })
+          .setIfMissing({comments: []})
+          .insert('after', 'comments[-1]', [newItem])
+          .commit()
+          .then((data) => {
+            console.log(data)
+            setSingleBlogData(data);
+          })
         }
   
-        setSingleBlogData(updatedItems);
         setComment('');
         setReplyTo(null);
         setReplyToId(null);
