@@ -31,7 +31,7 @@ function SingleComment({comment, props, index}){
       <div className="comments__main-content">
         <div className="comments__main-content_top">
           <h3>{comment.postedBy.userName ? comment.postedBy.userName : comment.postedBy[0].userName }</h3>
-          {/* <p>{formatDistanceToNow(new Date(comment._createdAt))} ago</p> */}
+          <p>{formatDistanceToNow(new Date(comment?._createdAt))} ago</p>
         </div>
         <div tabIndex="0" id={comment.id}  className="comments__main-content_message">
           <p>{comment?.comment}</p>
