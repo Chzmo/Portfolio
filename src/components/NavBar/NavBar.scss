@@ -37,6 +37,19 @@
             .navbar__links-ul_li-a{
                 color: #222;
                 align-items: center;
+                .avatar{
+                    display: flex;
+                    gap: .2rem;
+                    align-items: center;
+                    justify-content: center;
+                    
+                    img{
+                        max-width: 2rem;
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 50%;
+                    }
+                }
             }
         }
         .button{
