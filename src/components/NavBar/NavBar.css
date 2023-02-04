@@ -37,6 +37,7 @@
 .navbar .navbar__links .navbar__links-ul .navbar__links-ul_li-a {
   color: #222;
   align-items: center;
+  position: relative;
 }
 .navbar .navbar__links .navbar__links-ul .navbar__links-ul_li-a .avatar {
   display: flex;
@@ -45,10 +46,21 @@
   justify-content: center;
 }
 .navbar .navbar__links .navbar__links-ul .navbar__links-ul_li-a .avatar img {
-  max-width: 2rem;
+  max-width: 1.6rem;
   width: 100%;
   height: 100%;
   border-radius: 50%;
+}
+.navbar .navbar__links .navbar__links-ul .navbar__links-ul_li-a .dropDown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  top: 2rem;
+}
+.navbar .navbar__links .navbar__links-ul .navbar__links-ul_li-a .dropDown p {
+  width: 42rem;
 }
 .navbar .navbar__links .button {
   height: 1.6rem;

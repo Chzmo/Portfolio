@@ -2,6 +2,7 @@
 import { GoogleLogin, googleLogout } from '@react-oauth/google';
 import React, { useEffect, useState } from 'react';
 import { AiFillCaretDown } from 'react-icons/ai'
+import { GrLogout } from 'react-icons/gr'
 import {useClickOutside} from '@mantine/hooks'
 import { HashLink} from 'react-router-hash-link';
 import jwtDecode from 'jwt-decode';
@@ -80,7 +81,10 @@ function NavBar() {
             <div className="navbar__links-ul_li-a">
               <div className="avatar">
                 <img src={user?.picture} alt={user?.given_name} />
-                <AiFillCaretDown/>
+                <AiFillCaretDown fontSize={7}/>
+              </div>
+              <div className="dropDown">
+                <p><GrLogout/>Logout</p>
               </div>
             </div>
           </li>
