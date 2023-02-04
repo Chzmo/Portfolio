@@ -36,8 +36,7 @@ function SingleBlog() {
 
   const addComment = () =>{
     const user = fetchUser;
-    console.log(commentType, replyTo, replyToId)
-    return
+    
     if (!user) {
       setLogin(true)
     }else{    

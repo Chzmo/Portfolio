@@ -68,7 +68,6 @@ function SingleReply({reply, props, index}){
     props.setReplyTo(reply?.userName);
     props.setCommentType('reply');
     props.setReplyToId(index+1);
-    console.log(reply.userName)
   }
 
   return (
