@@ -36,6 +36,8 @@ function SingleBlog() {
 
   const addComment = () =>{
     const user = fetchUser;
+    console.log(commentType, replyTo, replyToId)
+    return
     if (!user) {
       setLogin(true)
     }else{    
@@ -215,6 +217,7 @@ function SingleBlog() {
                     <CommentField 
                       addComment={addComment} // function
                       setComment = {setComment} // set comment
+                      setCommentType={setCommentType} // set comment type, eg reply or comment
                       comment = {comment} // set comment
                       replyTo={replyTo} 
                       replyToId = {replyToId}

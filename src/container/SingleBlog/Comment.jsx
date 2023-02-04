@@ -107,8 +107,8 @@ function SingleReply({reply, props, index}){
 export function CommentField(props){
 
   const setReplyToNull = () =>{
-    props.setReplyTo(null)
-    props.setCommentType(null)
+    props.setReplyTo(null);
+    props.setCommentType(null);
   }
 
   return (
@@ -145,19 +145,6 @@ function Comment(props){
     // const [score, setScore] = useState(null)
     
   }
-
-  // useEffect(() => {
-  //   setLoading(true);
-  //   const query = commentQuery(_id);
-  //   client.fetch(query)
-  //     .then((data)=> {
-  //       setCommentData(data)
-  //       setLoading(false)
-  //       console.log(data)
-  //     }) 
-
-  // }, [_id])
-  
 
   return (
     <>
