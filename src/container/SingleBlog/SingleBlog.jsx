@@ -36,7 +36,7 @@ function SingleBlog() {
 
   const addComment = () =>{
     const user = fetchUser;
-    
+
     if (!user) {
       setLogin(true)
     }else{    
@@ -164,7 +164,14 @@ function SingleBlog() {
               <div className="blog__post">
                 <div className="blog__post-profile">
                   <div className="blog__post-profile_img">
-                    <a href="/"><img src={singleBlogData?.postedBy?.image} height={45} alt="Chisomo-Zaliro-Moyo" /></a>
+                    <a href="/">
+                      <img 
+                        src={singleBlogData?.postedBy?.image ? 
+                          singleBlogData?.postedBy?.image : 
+                          singleBlogData?.postedBy[0]?.image
+                        } 
+                        height={45} alt="Chisomo-Zaliro-Moyo" />
+                    </a>
                   </div>
                   <div className="blog__post-profile_info">
                     <h2>Chisomo Zaliro Moyo</h2>
