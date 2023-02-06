@@ -98,4 +98,16 @@
     background-color: rgba(209, 207, 207, 0.9);
     width: 100%;
   }
+  .mobile .navbar__links-ul_li-a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .mobile .navbar__links-ul_li-a .avatar img {
+    border-radius: 50%;
+    height: 2rem;
+  }
+  .mobile .navbar__links-ul_li-a .avatar .avatar__icon {
+    display: none;
+  }
 }/*# sourceMappingURL=NavBar.css.map */

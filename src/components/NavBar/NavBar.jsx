@@ -35,9 +35,7 @@ function NavBar() {
   const responseGoogle = (response)=>{    
     localStorage.setItem('user', JSON.stringify(response.credential));
     const decode = jwtDecode(localStorage.getItem('user'));
-
     const {name, sub, picture, email} = decode; 
-   
     const doc = {
         _id: sub,
         _type: 'user',
@@ -81,7 +79,7 @@ function NavBar() {
             <div className="navbar__links-ul_li-a">
               <div className="avatar">
                 <img src={user?.picture} alt={user?.given_name} />
-                <AiFillCaretDown fontSize={7}/>
+                <AiFillCaretDown className='avatar__icon'/>
               </div>
               <div className="dropDown">
                 <p><GrLogout/>Logout</p>

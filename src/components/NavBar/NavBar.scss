@@ -93,7 +93,7 @@
     .navbar__links{
         .navbar__links-ul{
             display: none !important;
-            
+
         }
         
         .button{
@@ -112,5 +112,25 @@
         left: 0;
         background-color:  rgba($color: rgb(209, 207, 207), $alpha: .9);
         width: 100%;
+
+        .navbar__links-ul_li-a{
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            
+            .avatar{
+                img{
+                    border-radius: 50%;
+                    height: 2rem;
+                }
+                
+                .avatar__icon{
+                    display: none;
+                }
+            }
+        }
+        .dropDown{
+            
+        }
     }
 }
