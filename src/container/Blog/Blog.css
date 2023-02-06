@@ -46,27 +46,6 @@
   justify-content: space-between;
   padding: 0 1rem 1rem;
 }
-.work__portfolio .work__portfolio-item .work__portfolio-item_details div, .work__portfolio .work__portfolio-item .work__portfolio-item_details a {
-  border-right: #D9D9D9 solid 1px;
-  padding-right: 3rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-  padding-bottom: 1rem;
-}
-.work__portfolio .work__portfolio-item .work__portfolio-item_details div :first-child, .work__portfolio .work__portfolio-item .work__portfolio-item_details a :first-child {
-  font-weight: 700;
-}
-.work__portfolio .work__portfolio-item .work__portfolio-item_details div p, .work__portfolio .work__portfolio-item .work__portfolio-item_details a p {
-  font-size: 0.8rem;
-}
-.work__portfolio .work__portfolio-item .work__portfolio-item_details a {
-  border-right: none;
-  padding-left: -2rem;
-}
-.work__portfolio .work__portfolio-item .work__portfolio-item_details a p {
-  font-size: 0.8rem;
-}
 
 @media screen and (max-width: 1100px) {
   .work .work__portfolio .work__portfolio-item .work__portfolio-item_details div, .work .work__portfolio .work__portfolio-item .work__portfolio-item_details a {

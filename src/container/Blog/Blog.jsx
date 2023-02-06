@@ -41,7 +41,6 @@ function BlogPosts(props){
               </div>
               <div className="work__portfolio-item-heading">
                 <h3>{post?.title}</h3>
-                <hr />
               </div>
               <div className="work__portfolio-item_details">
                 

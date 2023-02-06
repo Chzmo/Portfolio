@@ -55,33 +55,6 @@
             justify-content: space-between;
             padding: 0 1rem 1rem;
 
-
-            div, a{
-                border-right: #D9D9D9 solid 1px;
-                padding-right: 3rem;
-                display: flex;
-                flex-direction: column;
-                gap: .6rem;
-                padding-bottom: 1rem;
-                // align-self: center;
-
-                :first-child{
-                    font-weight: 700;
-                }
-                
-                p{
-                    font-size: .8rem;
-                }
-            }
-
-            a{
-                border-right: none;
-                padding-left: -2rem;
-
-                p{
-                    font-size: .8rem;
-                }
-            }
         }
     }
 }
