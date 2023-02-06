@@ -44,18 +44,7 @@ function BlogPosts(props){
                 <hr />
               </div>
               <div className="work__portfolio-item_details">
-                <div className="work__portfolio-item_details-time">
-                    <p>COMPLETION TIME</p>          
-                    <p>{post?.completionTime} WEEKS</p>          
-                </div>
-                <div className="work__portfolio-item_details-charges">
-                  <p>FEE  CHARGED</p>
-                  <p>$0.00</p>  
-                </div>
-                <Link to={`/blog/${post?._id}`} className="work__portfolio-item_details-view">
-                  <p>VIEW</p>          
-                  <p>FULL DETAILS</p>               
-                </Link>
+                
               </div>
             </div>
           );
