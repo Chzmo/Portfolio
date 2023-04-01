@@ -1,11 +1,27 @@
 # Portfolio Project
 - Link [Portfolio](https://inquisitive-croissant-516f39.netlify.app)
-This is a portfolio project that showcases my work as a web developer. It uses various technologies to implement different features, including:
-- Link [Portfolio](https://inquisitive-croissant-516f39.netlify.app)
+
+This is a portfolio project that showcases yor work as a web developer. It uses various technologies to implement different features, including:
+
 - Google Oauth2 for user authentication
 - Sanity Studio for content management
 - React.js with Vite for building the user interface
 - Custom CSS for styling
+
+## Table of Contents
+
+- [Getting Started](#getting-started)
+  * [Installation](#installation)
+  * [Configuration](#configuration)
+  * [Running the App](#running-the-app)
+  * [Building the App](#building-the-app)
+- [Features](#features)
+  * [User Authentication](#user-authentication)
+  * [Content Management](#content-management)
+  * [User Interface](#user-interface)
+- [Contributing](#contributing)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
 
 ## Getting Started
 
@@ -15,6 +31,10 @@ To get started with this project, you will need to have the following installed 
 - npm or yarn package manager
 
 ### Installation
+
+To install the project dependencies, run the following command in your terminal:
+
+
 
 To install the project dependencies, run the following command in your terminal:
 npm install
