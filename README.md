@@ -33,10 +33,6 @@ To get started with this project, you will need to have the following installed 
 ### Installation
 
 To install the project dependencies, run the following command in your terminal:
-
-
-
-To install the project dependencies, run the following command in your terminal:
 npm install
 
 ### Configuration
