@@ -17,10 +17,12 @@
 
         .hero__main-left{
             max-width: 100%;
+            height: 315px;
             
             img{
-                max-width: 100%;
-                height: 315px;
+                width: 100%;
+                height: 100%;
+                // object-fit: cover;
             }
         }
 
