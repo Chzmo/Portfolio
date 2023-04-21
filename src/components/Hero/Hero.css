@@ -22,6 +22,8 @@
 .hero .hero__main .hero__main-left img {
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .hero .hero__main .hero__main-right {
   display: flex;
