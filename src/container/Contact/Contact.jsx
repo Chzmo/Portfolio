@@ -42,6 +42,8 @@ function Contact() {
     <>
         <div id="Contact" className="contact">
           {(currntUrl && currntUrl === "http://localhost:5173/Contact" || 
+            currntUrl === "https://chzmo.com/Contact" || 
+            currntUrl === "https://www.chzmo.com/Contact" ||
             currntUrl === "https://inquisitive-croissant-516f39.netlify.app/Contact" ||
             currntUrl === "http://localhost:5173/Contact#FAQ" ||
             currntUrl === "https://inquisitive-croissant-516f39.netlify.app/Contact#FAQ") && (
@@ -102,6 +104,8 @@ function Contact() {
           </div>
         </div>
         {(currntUrl && currntUrl === "http://localhost:5173/Contact" || 
+          currntUrl === "https://chzmo.com/Contact" || 
+          currntUrl === "https://www.chzmo.com/Contact" ||
           currntUrl === "https://inquisitive-croissant-516f39.netlify.app/Contact" ||
           currntUrl === "http://localhost:5173/Contact#FAQ" ||
           currntUrl === "https://inquisitive-croissant-516f39.netlify.app/Contact#FAQ") && (
