@@ -48,7 +48,7 @@ You will need to set up a Google Oauth2 client ID to enable user authentication.
 7. Add "http://localhost:3000" as an authorized JavaScript origin.
 8. Add "http://localhost:3000" as an authorized redirect URI.
 9. Click "Create".
-10. Copy the client ID and paste it into the `.env.local` file in the root of the project, like this:
+10. Copy the client ID and paste it into the `.example.env` file in the root of the project, like this:
 
 REACT_APP_GOOGLE_CLIENT_ID=your-client-id-here
 
