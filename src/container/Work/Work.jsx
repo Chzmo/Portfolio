@@ -45,7 +45,10 @@ function Work(props) {
   
   return (
     <>
-      {(currntUrl === "http://www.chzmo.com/Work" || currntUrl === "http://www.chzmo.com/Work" || currntUrl === "http://localhost:5173/Work" || currntUrl === "https://inquisitive-croissant-516f39.netlify.app/Work") &&(
+      {(currntUrl === "http://chzmo.com/Work" || 
+        currntUrl === "http://www.chzmo.com/Work" || 
+        currntUrl === "http://localhost:5173/Work" || 
+        currntUrl === "https://inquisitive-croissant-516f39.netlify.app/Work") &&(
         <div >
           <NavBar />
           <div className='header'>
