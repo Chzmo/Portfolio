@@ -88,8 +88,12 @@ function Work(props) {
       <div className='work '>
         {(currntUrl === "http://localhost:5173/" || currntUrl === "https://inquisitive-croissant-516f39.netlify.app/" ||
           currntUrl === "http://localhost:5173/#" || currntUrl === "https://inquisitive-croissant-516f39.netlify.app/#" ||
+          currntUrl === "https://www.chzmo.com/#" || currntUrl === "https://chzmo.com/#" ||
+          currntUrl === "https://www.chzmo.com/" || currntUrl === "https://chzmo.com/" ||
           currntUrl === "http://localhost:5173/#about" || currntUrl === "https://inquisitive-croissant-516f39.netlify.app/#about" ||
-          currntUrl === "http://localhost:5173/#Testimonials" || currntUrl === "https://inquisitive-croissant-516f39.netlify.app/#Testimonials"
+          currntUrl === "http://localhost:5173/#Testimonials" || 
+          currntUrl === "http://www.chzmo.com/#Testimonials" || 
+          currntUrl === "https://inquisitive-croissant-516f39.netlify.app/#Testimonials"
         )&&(
           <Heading/>
         )}
