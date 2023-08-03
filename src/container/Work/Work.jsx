@@ -141,7 +141,10 @@ function Work(props) {
           )
         )}
       </div>
-      {(currntUrl === "http://localhost:5173/Work" | currntUrl === "https://inquisitive-croissant-516f39.netlify.app/Work")?(
+      {(currntUrl === "http://localhost:5173/Work" | 
+        currntUrl?.toLowerCase() === "https://chzmo.com/work" |
+        currntUrl?.toLowerCase() === "https://www.chzmo.com/work" |
+        currntUrl === "https://inquisitive-croissant-516f39.netlify.app/Work")?(
         <div className="footer__wrapper">
           <Footer />
         </div>
