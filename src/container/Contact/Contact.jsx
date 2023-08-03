@@ -96,6 +96,8 @@ function Contact() {
             {(currntUrl && currntUrl === "http://localhost:5173/Contact" || 
               currntUrl === "https://inquisitive-croissant-516f39.netlify.app/Contact" ||
               currntUrl === "http://localhost:5173/Contact#FAQ" ||
+              currntUrl === "http://www.chzmo.com/Contact#FAQ" ||
+              currntUrl === "http://chzmo.com/Contact#FAQ" ||
               currntUrl === "https://inquisitive-croissant-516f39.netlify.app/Contact#FAQ") && (
             <>
               <Accordion />
