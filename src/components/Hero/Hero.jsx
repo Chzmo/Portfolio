@@ -32,7 +32,7 @@ function Hero() {
     <div className='hero'>
         <div className="hero__main">
             <div className="hero__main-left">
-                <img src={IMG1} alt="" />
+                <img src='https://github.com/Chzmo/Portfolio/blob/main/src/assets/media/chisomo.jpg' alt="Chisomo Zaliro Moyo" />
             </div>
             <div className="hero__main-right">
                 <h3>HELLO THERE, I AM:</h3>
