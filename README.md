@@ -55,10 +55,7 @@ REACT_APP_GOOGLE_CLIENT_ID=your-client-id-here
 ### Running the App
 
 To run the app in development mode, run the following command in your terminal:
-npm run build
-
-
-This will create a production-ready build of the app in the `dist` directory.
+npm run dev
 
 ## Features
 
