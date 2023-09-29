@@ -1,7 +1,7 @@
 # Portfolio Project
 - Link [Portfolio](https://inquisitive-croissant-516f39.netlify.app)
 
-This is a portfolio project that showcases your work as a web developer. It uses various technologies to implement different features, including:
+This is a portfolio project that showcases your work (as a web developer for example). It uses various technologies to implement different features, including:
 
 - Google Oauth2 for user authentication
 - Sanity Studio for content management
