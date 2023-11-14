@@ -81,9 +81,5 @@ This project is open to contributions. If you would like to contribute, please c
 
 This project is licensed under the MIT license. See the `LICENSE` file for more information.
 
-## Acknowledgments
-
-- Thanks to Google, Sanity, React.js, and Vite for providing the technologies used in this project.
-
 
 
