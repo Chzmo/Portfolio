@@ -17,7 +17,7 @@ function Heading(){
   return (
     <>
       <h2 className='heading'>Work</h2>
-      <p className='paragraph'>Award-winning designs for real clients.</p>
+      <p className='paragraph'>Award-winning designs.</p>
     </>
   )
 }
