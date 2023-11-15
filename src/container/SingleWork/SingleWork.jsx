@@ -78,7 +78,8 @@ function SingleWork() {
 					<div className='singleWork__main-quote'>
 						<h2>Let's Connect</h2>
 						<p>
-							Please provide some information about your task and let's a call or chat.
+							Lets meet up over a zoom call or WhatsApp and discuss your venture and
+							potential collaborations.
 						</p>
 						<HashLink to='/Contact#'>CONTACT</HashLink>
 					</div>
