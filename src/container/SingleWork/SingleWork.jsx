@@ -78,10 +78,9 @@ function SingleWork() {
 					<div className='singleWork__main-quote'>
 						<h2>Let's Connect</h2>
 						<p>
-							Please provide some information about your task and after checking the
-							details, I will send you email to schedule a call or chat.
+							Please provide some information about your task and let's a call or chat.
 						</p>
-						<HashLink to='/Contact#'>Contact</HashLink>
+						<HashLink to='/Contact#'>CONTACT</HashLink>
 					</div>
 					<div className='singleWork__related'>
 						<h2>Related Work</h2>
