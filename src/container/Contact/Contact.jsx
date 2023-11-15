@@ -112,11 +112,11 @@ function Contact() {
 								<option value='I want to schedule a Zoom call'>
 									I want to schedule a Zoom call
 								</option>
-								<option value='I want to connect via Whatsapp'>
-									I want to connect via Whatsapp
-								</option>
 								<option value='I want to connect via Email'>
 									I want to connect via Email
+								</option>
+								<option value='I want to connect via Whatsapp'>
+									I want to connect via Whatsapp
 								</option>
 							</select>
 						</div>
