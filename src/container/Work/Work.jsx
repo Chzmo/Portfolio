@@ -115,8 +115,7 @@ function Work(props) {
 										<img src={urlFor(post?.thumbnail)} alt={post?.title} />
 									</HashLink>
 									<div className='work__portfolio-item_links'>
-										{/* <a href={post?.gitHubUrl}>GitHub</a> */}
-										<a href={`https://github.com/chzmo`}>GitHub</a>
+										<a href={post?.gitHubUrl}>GitHub</a>
 										<a href='#'>View Site</a>
 									</div>
 									<div className='work__portfolio-item-heading'>
