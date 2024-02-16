@@ -118,7 +118,7 @@ function Work(props) {
 										{post?.gitHubUrl && 
 											<a href={post?.gitHubUrl}>GitHub</a>
 										}
-										<a href={post?.LiveUrl}>View Site</a>
+										<a href={post?.liveUrl} >View Site</a>
 									</div>
 									<div className='work__portfolio-item-heading'>
 										<h3>{post?.title}</h3>
