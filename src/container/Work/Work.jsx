@@ -150,7 +150,8 @@ function Work(props) {
 					"https://inquisitive-croissant-516f39.netlify.app/work") |
 				(currntUrl?.toLowerCase() ===
 					`https://inquisitive-croissant-516f39.netlify.app/work/${_id}`) |
-				(currntUrl?.toLowerCase() === "http://localhost:5173/work/single") ? (
+				(currntUrl?.toLowerCase() === "http://localhost:5173/work/single") | 
+				(currntUrl?.toLowerCase() === `https://chzmo.com/work/${_id}`) ? (
 					<></>
 				) : (
 					!loading && (
